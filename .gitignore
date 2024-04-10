@@ -1,3 +1,6 @@
 Pipfile
 key.py
 client_secret
+debug/
+target/
+Cargo.lock
