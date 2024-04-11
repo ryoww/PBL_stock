@@ -4,3 +4,4 @@ client_secret
 debug/
 target/
 Cargo.lock
+.env
