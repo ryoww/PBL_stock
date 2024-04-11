@@ -1,4 +1,7 @@
 use actix_web::{web, App, HttpResponse, HttpServer, Responder};
+use dotenv::dotenv;
+use sqlx::MySqlPool;
+use std::env;
 
 async fn echo(req_body: String) -> impl Responder {
     println!("Received : {}", req_body);
