@@ -1,13 +1,11 @@
 [package]
-name = "sql_server"
+name = "tes_db"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "4"
-serde = {version = "1.0.197", features = ["derive"]}
 sqlx = {version = "0.7", features = ["runtime-tokio", "runtime-async-std", "tls-native-tls", "mysql"]}
+tokio = { version = "1", features = ["full"] }
 dotenv = "0.15"
-env_logger = "0.11.3"
