@@ -4,4 +4,5 @@ client_secret
 debug/
 target/
 Cargo.lock
+Pipfile.lock
 .env
