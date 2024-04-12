@@ -6,6 +6,7 @@ use std::env;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct User {
+    table: String,
     id: i32,
     name: String,
     email: String,
@@ -13,8 +14,17 @@ pub struct User {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CreateUser {
+    table: String,
     name: String,
     email: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Update {
+    table: String,
+    column: String,
+    data: String,
+    update_id: String
 }
 
 async fn echo(req_body: String) -> impl Responder {
@@ -25,6 +35,7 @@ async fn echo(req_body: String) -> impl Responder {
 async fn create_user(pool: web::Data<MySqlPool>, user: web::Json<CreateUser>) -> impl Responder {
     let _ = sqlx::query!(
         "INSERT INTO test (name, email) VALUES (?, ?)",
+        &user.table,
         &user.name,
         &user.email,
     )
@@ -44,11 +55,20 @@ async fn get_users_table(pool: web::Data<MySqlPool>) -> impl Responder {
     HttpResponse::Ok().json(result)
 }
 
-// async fn update_user(pool: web::Data<MySqlPool>) -> impl Responder {
-//     let _ = sqlx::query!(
-//         ""
-//     )
-// }
+async fn update_user(pool: web::Data<MySqlPool>, update: web::Json<Update) -> impl Responder {
+    let _ = sqlx::query!(
+        "UPDATE ? SET ? = ? WHERE id = ?",
+        &update.table,
+        &update.column,
+        &update.data,
+        &update.update_id
+    )
+    .execute(&**pool)
+    .await
+    .expect("Failed to execute query");
+
+    HttpResponse::Created().finish()
+}
 
 async fn create_db_pool() -> MySqlPool {
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
@@ -71,7 +91,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(Logger::default())
             .route("/users", web::post().to(create_user))
             .route("/users", web::get().to(get_users_table))
-        // .route("/update", web::post().to(update_user))
+        .route("/update", web::post().to(update_user))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
