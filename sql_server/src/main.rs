@@ -14,6 +14,18 @@ pub struct User {
     email: String,
 }
 
+#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+pub struct GetColumn {
+    table: String,
+    column: String,
+}
+
+#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+pub struct ColumnData {
+    id: i32,
+    data: String,
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CreateUser {
     table: String,
@@ -83,7 +95,7 @@ async fn create_user(pool: web::Data<MySqlPool>, user: web::Json<CreateUser>) ->
     }
 }
 
-// GET users
+// GET table
 async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -> impl Responder {
     println!("Fetching users from table: {}", req.table);
     if !TABLES.contains(&req.table.as_str()) {
@@ -103,8 +115,35 @@ async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -
 
     match result {
         Ok(users) => {
-            println!("Query successful, retrieved users.");
+            println!("Query successful, retrieved {}.", req.table);
             HttpResponse::Ok().json(users)
+        }
+        Err(e) => {
+            println!("Database error: {}", e);
+            HttpResponse::InternalServerError().body(format!("Database error: {}", e))
+        }
+    }
+}
+
+// GET column
+async fn get_users_clumn(pool: web::Data<MySqlPool>, req: web::Json<GetColumn>) -> impl Responder {
+    if !TABLES.contains(&req.table.as_str()) {
+        return HttpResponse::BadRequest().body(format!("{} is not registered", req.table));
+    } else if !COLUMNS.contains(&req.column.as_str()) {
+        return HttpResponse::BadRequest().body(format!("{} is not registered", req.column));
+    }
+
+    let query = format!("SELECT id, {} as data FROM {}", req.column, req.table);
+    println!("Executing query: {}", query);
+
+    let result = sqlx::query_as::<_, ColumnData>(&query)
+        .fetch_all(pool.get_ref())
+        .await;
+
+    match result {
+        Ok(data) => {
+            println!("Query successful, retrieved {}.", req.table);
+            HttpResponse::Ok().json(data)
         }
         Err(e) => {
             println!("Database error: {}", e);
@@ -190,6 +229,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(Logger::default())
             .route("/users", web::post().to(create_user))
             .route("/users", web::get().to(get_users_table))
+            .route("/column", web::get().to(get_users_clumn))
             .route("/update", web::post().to(update_user))
             .route("/delete", web::delete().to(delete_user))
     })
