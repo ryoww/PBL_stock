@@ -1,13 +1,13 @@
 use actix_web::{middleware::Logger, web, App, HttpResponse, HttpServer, Responder};
 use dotenv::dotenv;
 use serde::{Deserialize, Serialize};
-use sqlx::{FromRow, MySqlPool};
-use std::{env, result};
+use sqlx::MySqlPool;
+use std::env;
 
 static TABLES: [&str; 2] = ["users", "table"];
 static COLUMNS: [&str; 3] = ["id", "name", "email"];
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 pub struct User {
     id: i32,
     name: String,
@@ -62,11 +62,12 @@ async fn create_user(pool: web::Data<MySqlPool>, user: web::Json<CreateUser>) ->
     }
 
     let query = format!(
-        "INSERT INTO {} (name, email) VALUES ({}, {})",
-        user.table, user.name, user.email
-    );
+        "INSERT INTO {} (name, email) VALUES (?, ?)",
+        user.table);
 
     let _ = sqlx::query(&query)
+        .bind(&user.name)
+        .bind(&user.email)
         .execute(&**pool)
         .await
         .expect("Failed to execute query");
@@ -87,12 +88,16 @@ async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -
 
     let query = format!("SELECT {} FROM {}", columns, req.table);
 
+    println!("{}", query);
+
     let result = sqlx::query_as::<_, User>(&query)
         .fetch_all(pool.get_ref())
         .await;
 
+    // println!("{}",result);
     match result {
         Ok(users) => HttpResponse::Ok().json(users),
+        Err(e) => HttpResponse::InternalServerError().body(format!("Database error: {}", e)),
     }
 }
 
@@ -116,7 +121,7 @@ async fn update_user(pool: web::Data<MySqlPool>, update: web::Json<Update>) -> i
 
 // DELETE
 async fn delete_user(pool: web::Data<MySqlPool>, req: web::Json<Delete>) -> impl Responder {
-    let result = sqlx::query!("DELETE FROM test WHERE id = ?", req.id)
+    let result = sqlx::query!("DELETE FROM users WHERE id = ?", req.id)
         .execute(&**pool)
         .await;
 
