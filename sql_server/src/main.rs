@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use sqlx::MySqlPool;
 use std::env;
 
-static TABLES: [&str; 2] = ["users", "table"];
+static TABLES: [&str; 2] = ["users", "test"];
 static COLUMNS: [&str; 3] = ["id", "name", "email"];
 
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
@@ -23,6 +23,7 @@ pub struct CreateUser {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Update {
+    table: String,
     column: String,
     data: String,
     update_id: String,
@@ -30,6 +31,7 @@ pub struct Update {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Delete {
+    table: String,
     id: String,
 }
 
@@ -45,7 +47,6 @@ async fn is_columns(columns: &Vec<String>) -> bool {
             return false;
         }
     }
-
     return true;
 }
 
@@ -57,78 +58,112 @@ async fn echo(req_body: String) -> impl Responder {
 
 // CREATE user
 async fn create_user(pool: web::Data<MySqlPool>, user: web::Json<CreateUser>) -> impl Responder {
+    println!("Creating user: {:?}", user);
     if !TABLES.contains(&user.table.as_str()) {
-        return HttpResponse::BadRequest().body(format!("{} is no registered", user.table));
+        return HttpResponse::BadRequest().body(format!("{} is not registered", user.table));
     }
 
-    let query = format!(
-        "INSERT INTO {} (name, email) VALUES (?, ?)",
-        user.table);
+    let query = format!("INSERT INTO {} (name, email) VALUES (?, ?)", user.table);
 
-    let _ = sqlx::query(&query)
+    let result = sqlx::query(&query)
         .bind(&user.name)
         .bind(&user.email)
         .execute(&**pool)
-        .await
-        .expect("Failed to execute query");
+        .await;
 
-    HttpResponse::Created().finish()
+    match result {
+        Ok(_) => {
+            println!("User created successfully.");
+            HttpResponse::Created().finish()
+        }
+        Err(e) => {
+            println!("Failed to create user: {}", e);
+            HttpResponse::InternalServerError().body("Failed to create user")
+        }
+    }
 }
 
 // GET users
 async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -> impl Responder {
+    println!("Fetching users from table: {}", req.table);
     if !TABLES.contains(&req.table.as_str()) {
         return HttpResponse::BadRequest().body(format!("{} is not registered", req.table));
     } else if !is_columns(&req.columns).await {
         return HttpResponse::BadRequest()
-            .body(format!("{} is no registered", req.columns.join(", ")));
+            .body(format!("{} is not registered", req.columns.join(", ")));
     }
 
     let columns = req.columns.join(", ");
-
     let query = format!("SELECT {} FROM {}", columns, req.table);
-
-    println!("{}", query);
+    println!("Executing query: {}", query);
 
     let result = sqlx::query_as::<_, User>(&query)
         .fetch_all(pool.get_ref())
         .await;
 
-    // println!("{}",result);
     match result {
-        Ok(users) => HttpResponse::Ok().json(users),
-        Err(e) => HttpResponse::InternalServerError().body(format!("Database error: {}", e)),
+        Ok(users) => {
+            println!("Query successful, retrieved users.");
+            HttpResponse::Ok().json(users)
+        }
+        Err(e) => {
+            println!("Database error: {}", e);
+            HttpResponse::InternalServerError().body(format!("Database error: {}", e))
+        }
     }
 }
 
 // UPDATE safety
 async fn update_user(pool: web::Data<MySqlPool>, update: web::Json<Update>) -> impl Responder {
+    println!("Updating user: {}", update.update_id);
     let valid_columns = vec!["name", "email"];
-    if !valid_columns.contains(&update.column.as_str()) {
+
+    if !TABLES.contains(&update.table.as_str()) {
+        return HttpResponse::BadRequest().body(format!("{} is not registered", update.table));
+    } else if !valid_columns.contains(&update.column.as_str()) {
         return HttpResponse::BadRequest().body("Invalid column name");
     }
 
-    let query = format!("UPDATE users SET {} = ? WHERE id = ?", update.column);
-    let _ = sqlx::query(&query)
+    let query = format!(
+        "UPDATE {} SET {} = ? WHERE id = ?",
+        update.table, update.column
+    );
+
+    let result = sqlx::query(&query)
         .bind(&update.data)
         .bind(&update.update_id)
-        .execute(&**pool)
-        .await
-        .expect("Failed to execute query");
-
-    HttpResponse::Created().finish()
-}
-
-// DELETE
-async fn delete_user(pool: web::Data<MySqlPool>, req: web::Json<Delete>) -> impl Responder {
-    let result = sqlx::query!("DELETE FROM users WHERE id = ?", req.id)
         .execute(&**pool)
         .await;
 
     match result {
-        Ok(_) => HttpResponse::Ok().body("User deleted successfully"),
+        Ok(_) => {
+            println!("Update successful.");
+            HttpResponse::Created().finish()
+        }
         Err(e) => {
-            println!("Failed to Delete user {}", e);
+            println!("Failed to update user: {}", e);
+            HttpResponse::InternalServerError().body("Failed to update user")
+        }
+    }
+}
+
+// DELETE
+async fn delete_user(pool: web::Data<MySqlPool>, req: web::Json<Delete>) -> impl Responder {
+    println!("Deleting user with ID: {}", req.id);
+    if !TABLES.contains(&req.table.as_str()) {
+        return HttpResponse::BadRequest().body(format!("{} is not registered", req.table));
+    }
+
+    let query = format!("DELETE FROM {} WHERE id = {}", req.table, req.id);
+    let result = sqlx::query(&query).execute(&**pool).await;
+
+    match result {
+        Ok(_) => {
+            println!("User deleted successfully.");
+            HttpResponse::Ok().body("User deleted successfully")
+        }
+        Err(e) => {
+            println!("Failed to delete user: {}", e);
             HttpResponse::InternalServerError().body("Failed to delete user")
         }
     }
@@ -156,7 +191,7 @@ async fn main() -> std::io::Result<()> {
             .route("/users", web::post().to(create_user))
             .route("/users", web::get().to(get_users_table))
             .route("/update", web::post().to(update_user))
-            .route("/delete", web::post().to(delete_user))
+            .route("/delete", web::delete().to(delete_user))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
