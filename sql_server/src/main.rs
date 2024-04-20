@@ -5,13 +5,14 @@ use sqlx::MySqlPool;
 use std::env;
 
 static TABLES: [&str; 2] = ["users", "test"];
-static COLUMNS: [&str; 3] = ["id", "name", "email"];
+static COLUMNS: [&str; 4] = ["id", "name", "email", "company_id"];
 
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 pub struct User {
     id: i32,
     name: String,
     email: String,
+    company_id: i32,
 }
 
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
@@ -22,6 +23,19 @@ pub struct GetColumn {
 
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 pub struct ColumnData {
+    id: i32,
+    data: String,
+}
+
+#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+pub struct GetId {
+    table: String,
+    column: String,
+    conditions: String,
+}
+
+#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+pub struct IdData {
     id: i32,
     data: String,
 }
@@ -50,16 +64,6 @@ pub struct Delete {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct GetDatas {
     table: String,
-    columns: Vec<String>,
-}
-
-async fn is_columns(columns: &Vec<String>) -> bool {
-    for e in columns {
-        if !COLUMNS.contains(&e.as_str()) {
-            return false;
-        }
-    }
-    return true;
 }
 
 // ECHO
@@ -75,7 +79,8 @@ async fn create_user(pool: web::Data<MySqlPool>, user: web::Json<CreateUser>) ->
         return HttpResponse::BadRequest().body(format!("{} is not registered", user.table));
     }
 
-    let query = format!("INSERT INTO {} (name, email) VALUES (?, ?)", user.table);
+    let columns = COLUMNS.join(", ");
+    let query = format!("INSERT INTO {} ({}) VALUES (?, ?, ?)", user.table, columns);
 
     let result = sqlx::query(&query)
         .bind(&user.name)
@@ -100,12 +105,9 @@ async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -
     println!("Fetching users from table: {}", req.table);
     if !TABLES.contains(&req.table.as_str()) {
         return HttpResponse::BadRequest().body(format!("{} is not registered", req.table));
-    } else if !is_columns(&req.columns).await {
-        return HttpResponse::BadRequest()
-            .body(format!("{} is not registered", req.columns.join(", ")));
     }
 
-    let columns = req.columns.join(", ");
+    let columns = COLUMNS.join(", ");
     let query = format!("SELECT {} FROM {}", columns, req.table);
     println!("Executing query: {}", query);
 
@@ -117,6 +119,36 @@ async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -
         Ok(users) => {
             println!("Query successful, retrieved {}.", req.table);
             HttpResponse::Ok().json(users)
+        }
+        Err(e) => {
+            println!("Database error: {}", e);
+            HttpResponse::InternalServerError().body(format!("Database error: {}", e))
+        }
+    }
+}
+
+// GET id
+async fn get_users_id(pool: web::Data<MySqlPool>, req: web::Json<GetId>) -> impl Responder {
+    if !TABLES.contains(&req.table.as_str()) {
+        return HttpResponse::BadRequest().body(format!("{} is not registered", req.table));
+    } else if !COLUMNS.contains(&req.column.as_str()) {
+        return HttpResponse::BadRequest().body(format!("{} is not registered", req.column));
+    }
+
+    let query = format!(
+        "SELECT id, {} AS data FROM {} WHERE {}",
+        req.column, req.table, req.conditions
+    );
+    println!("Executing query: {}", query);
+
+    let result = sqlx::query_as::<_, IdData>(&query)
+        .fetch_all(pool.get_ref())
+        .await;
+
+    match result {
+        Ok(iddata) => {
+            println!("Query successful, retrieved {}.", req.table);
+            HttpResponse::Ok().json(iddata)
         }
         Err(e) => {
             println!("Database error: {}", e);
@@ -155,7 +187,7 @@ async fn get_users_clumn(pool: web::Data<MySqlPool>, req: web::Json<GetColumn>) 
 // UPDATE safety
 async fn update_user(pool: web::Data<MySqlPool>, update: web::Json<Update>) -> impl Responder {
     println!("Updating user: {}", update.update_id);
-    let valid_columns = vec!["name", "email"];
+    let valid_columns = vec!["name", "email", "company_id"];
 
     if !TABLES.contains(&update.table.as_str()) {
         return HttpResponse::BadRequest().body(format!("{} is not registered", update.table));
@@ -232,6 +264,7 @@ async fn main() -> std::io::Result<()> {
             .route("/column", web::get().to(get_users_clumn))
             .route("/update", web::post().to(update_user))
             .route("/delete", web::delete().to(delete_user))
+            .route("/getid", web::get().to(get_users_id))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
