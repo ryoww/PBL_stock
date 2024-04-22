@@ -66,6 +66,11 @@ pub struct GetDatas {
     table: String,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CreateTable {
+    table_name: String,
+}
+
 // ECHO
 async fn echo(req_body: String) -> impl Responder {
     println!("Received : {}", req_body);
@@ -123,6 +128,35 @@ async fn get_users_table(pool: web::Data<MySqlPool>, req: web::Json<GetDatas>) -
         Err(e) => {
             println!("Database error: {}", e);
             HttpResponse::InternalServerError().body(format!("Database error: {}", e))
+        }
+    }
+}
+
+
+// CREATE table
+async fn create_table(pool: web::Data<MySqlPool>, table_name: web::Json<CreateTable>) -> impl Responder {
+    println!("Creating table: {}", table_name.table_name);
+    if TABLES.contains(&table_name.table_name.as_str()) {
+        return HttpResponse::BadRequest().body(format!("Table '{}' is registered", table_name.table_name));
+    }
+
+    let query = format!(
+        "CREATE TABLE IF NOT EXISTS {} (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255))",
+        table_name.table_name
+    );
+
+    let result = sqlx::query(&query)
+    .execute(&**pool)
+    .await;
+
+    match result {
+        Ok(_) => {
+            println!("Table '{}' created successfully.", table_name.table_name);
+            HttpResponse::Created().body(format!("Table '{}' created successfully", table_name.table_name))
+        }
+        Err(e) => {
+            println!("Failed to create table '{}': {}", table_name.table_name, e);
+            HttpResponse::InternalServerError().body(format!("Failed to create table '{}'", table_name.table_name))
         }
     }
 }
@@ -265,6 +299,7 @@ async fn main() -> std::io::Result<()> {
             .route("/update", web::post().to(update_user))
             .route("/delete", web::delete().to(delete_user))
             .route("/getid", web::get().to(get_users_id))
+            .route("/create", web::post().to(create_table))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
