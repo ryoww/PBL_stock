@@ -2,3 +2,4 @@ Pipfile
 key.py
 client_secret
 ./__pycache__
+model
