@@ -44,7 +44,7 @@ train_size = int(0.9 * len(dataset))
 test_size = len(dataset) - train_size
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
 
-batch_size = 40
+batch_size = 64
 
 train_dataloader = DataLoader(train_dataset, sampler=RandomSampler(train_dataset), batch_size=batch_size)
 test_dataloader = DataLoader(test_dataset, sampler=SequentialSampler(test_dataset), batch_size=batch_size)
@@ -129,7 +129,7 @@ def test(model):
         test_loss += loss.item()
     return test_loss
 
-max_epoch = 100
+max_epoch = 1000
 train_loss_ = []
 test_loss_ = []
 
