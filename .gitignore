@@ -1,6 +1,8 @@
 Pipfile
 key.py
 client_secret
-./__pycache__
+__pycache__
 model
 Pipfile.lock
+sql_server/target
+testDB/target
