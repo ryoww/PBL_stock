@@ -1,0 +1,11 @@
+C:\Users\MIRAI\programs\PBL_stock\sql_server\target\debug\deps\libasync_task-6d165cd1769fc862.rmeta: C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\lib.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\header.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\raw.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\runnable.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\state.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\task.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\utils.rs
+
+C:\Users\MIRAI\programs\PBL_stock\sql_server\target\debug\deps\async_task-6d165cd1769fc862.d: C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\lib.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\header.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\raw.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\runnable.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\state.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\task.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\utils.rs
+
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\lib.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\header.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\raw.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\runnable.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\state.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\task.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-task-4.7.0\src\utils.rs:

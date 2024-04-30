@@ -1,0 +1,11 @@
+C:\Users\MIRAI\programs\PBL_stock\testDB\target\debug\deps\libgetrandom-cd8d1fa4c7b88418.rmeta: C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\lib.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\util.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error_impls.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\windows.rs
+
+C:\Users\MIRAI\programs\PBL_stock\testDB\target\debug\deps\libgetrandom-cd8d1fa4c7b88418.rlib: C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\lib.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\util.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error_impls.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\windows.rs
+
+C:\Users\MIRAI\programs\PBL_stock\testDB\target\debug\deps\getrandom-cd8d1fa4c7b88418.d: C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\lib.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\util.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error_impls.rs C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\windows.rs
+
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\lib.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\util.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\error_impls.rs:
+C:\Users\MIRAI\.cargo\registry\src\index.crates.io-6f17d22bba15001f\getrandom-0.2.14\src\windows.rs:
