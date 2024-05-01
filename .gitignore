@@ -6,3 +6,4 @@ target/
 Cargo.lock
 Pipfile.lock
 .env
+model
