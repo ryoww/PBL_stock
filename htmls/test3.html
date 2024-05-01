@@ -1,0 +1,544 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>News PC</title>
+    <link
+      rel="stylesheet"
+      href="css/common_pc.css?v=V1.1.10.20230831a"
+      type="text/css"
+    />
+    <script type="text/javascript" src="lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="lib/pagination.min.js"></script>
+    <script type="text/javascript" src="lib/AppWebViewBridge.js"></script>
+    <script
+      type="text/javascript"
+      src="js/constants.js?v=V1.1.10.20230831a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/utils.js?v=V1.1.10.20230831a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/news_pc.js?v=V1.1.10.20230831a"
+      symbol="NVDA"
+      url_ticker_redirect="https://global.sbisec.co.jp/invest/us/stock/XXXX?resource=price"
+      id="news_pc"
+    ></script>
+  </head>
+  <body id="news" class="news">
+    <div id="loading" class="loading" style="display: none"></div>
+    <div id="news-headlines">
+      <div style="width: 100%; height: 100%; overflow: hidden">
+        <div id="pagination-container1">
+          <div class="paginationjs">
+            <div class="paginationjs-pages">
+              <ul>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-prev J-paginationjs-previous"
+                  data-num="88"
+                  title="Previous page"
+                >
+                  <a></a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page paginationjs-first J-paginationjs-page"
+                  data-num="1"
+                >
+                  <a>1</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-ellipsis disabled"
+                >
+                  <a>…</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="85"
+                >
+                  <a>85</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="86"
+                >
+                  <a>86</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="87"
+                >
+                  <a>87</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="88"
+                >
+                  <a>88</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page active"
+                  data-num="89"
+                >
+                  <a>89</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-next disabled"
+                >
+                  <a></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="data-list" class="data-list">
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131221117:nL4N3EL57E"
+            count="0"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                UPDATE
+                1-ＮＹ市場サマリー（31日）米国株下落、ドル上昇、利回り低下
+              </div>
+            </div>
+            <div class="date">2024-02-01 07:11</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131220951:nL6N3EL0KQ"
+            count="1"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                UPDATE 1-米国株式市場＝下落、ＦＯＭＣ受け3月利下げ観測が後退
+              </div>
+            </div>
+            <div class="date">2024-02-01 07:09</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131215014:nL6N3EL0KU"
+            count="2"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                ＮＹ市場サマリー（31日）米国株下落、ドル上昇、利回り低下
+              </div>
+            </div>
+            <div class="date">2024-02-01 06:50</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131213639:nL6N3EL0JX"
+            count="3"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                米国株式市場＝下落、ＦＯＭＣ受け3月利下げ観測が後退
+              </div>
+            </div>
+            <div class="date">2024-02-01 06:36</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131212407:nL4N3EL4ZM"
+            count="4"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                リファイライブ市場-FANGは消え去るのか？
+              </div>
+            </div>
+            <div class="date">
+              2024-02-01 06:24
+              <div class="translatednewsicon">
+                <img src="img/icon_translated_news_pc.svg" alt="" />自動翻訳
+              </div>
+            </div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131190529:nL4N3EL4OL"
+            count="5"
+            is-open="true"
+            has-story="true"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                話題-動き出した米国株-バイオジェン、オーティス、シグナ
+              </div>
+            </div>
+            <div class="date">
+              2024-02-01 04:05
+              <div class="translatednewsicon">
+                <img src="img/icon_translated_news_pc.svg" alt="" />自動翻訳
+              </div>
+            </div>
+            <button class="icon remove"></button>
+            <div class="content">
+              <pre>((ロイターにより自動化された翻訳です。免責条項をご覧ください。https://bit.ly/rtrsauto))
+
+        * 
+      Eikonで個別銘柄の動きを検索する文字列：[STXBZ］
+    
+
+        * 
+      The Day Ahead ニュースレター https://refini.tv/3LI4BU7 
+    
+
+        * 
+      モーニング・ニュース・コールのニュースレター https://refini.tv/3dKUyB8 
+    
+
+  
+
+    ［　１月３１日　］ - アルファベットがAIコストの上昇を予想したことで、メガ株やチップ株の多くが、この日のうちに予定されている米連邦準備制度理事会（FRB）の重要な政策決定を前に、株価を下げた。[.N]
+ 
+ 東部標準時間13時43分現在、ダウ工業株30種平均は0.03％安の38,454.62。S&amp;P500種株価指数は0.78％安の4,886.59、ナスダック総合株価指数は1.25％安の15,315.292。
+ 
+ S&amp;P500種指数の上昇率トップ3：
+ ** ストライカー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/SYK?resource=price" target="_parent">SYK.N</a></span>&gt;、8％上昇
+ ** パラマウント・グローバル、7.8％上昇
+ ** エドワーズ・ライフサイエンシズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/EW?resource=price" target="_parent">EW.N</a></span>&gt;、7.5％上昇
+ 
+ S&amp;P 500種の値上がり率トップ3：
+ ** マーケットアクセス、15.5%下落
+ ** ロックウェルオートメーション&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/ROK?resource=price" target="_parent">ROK.N</a></span>&gt;、15.4%下落
+ ** テラダイン、8%下落
+ 
+ NYSEの上昇率トップ3：
+ ** アシュランド&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/ASH?resource=price" target="_parent">ASH.N</a></span>&gt;、15.5％高
+ ** 野村、12.4％高
+ ** スピリット・エアロシステムズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/SPR?resource=price" target="_parent">SPR.N</a></span>&gt;、9.7％高
+ 
+ NYSEの値上がり率トップ2：
+ ** オラジェニクス、45.5％安
+ ** ニューヨーク・コミュニティ・バンコープ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/NYCB?resource=price" target="_parent">NYCB.N</a></span>&gt;、37.2％安
+ 
+ ナスダックの値上がり率トップ3：
+ ** ミニム&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MINM?resource=price" target="_parent">MINM.O</a></span>&gt;、61.4%上昇
+ ** ガーディオン・ヘルス・サイエンシズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/GHSI?resource=price" target="_parent">GHSI.O</a></span>&gt;、61.2%上昇
+ ** パウエル・インダストリーズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/POWL?resource=price" target="_parent">POWL.O</a></span>&gt;、50.1%上昇
+ 
+ ナスダックの下落率トップ3：
+ ** エバクシオン・バイオテック&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/EVAX?resource=price" target="_parent">EVAX.O</a></span>&gt;、30.9％安
+ ** スペクトラルAI&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MDAI?resource=price" target="_parent">MDAI.O</a></span>&gt;、24.7％安
+ ** メタ・マテリアルズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MMAT?resource=price" target="_parent">MMAT.O</a></span>&gt;、21.7％安
+ 
+ 
+ ** パラマウント・グローバル&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/PARA?resource=price" target="_parent">PARA.O</a></span>&gt;：7.8％高
+ BUZZ - バイロン・アレンの300億ドル提示で急伸、負債含む [nL4N3EL2FB] 
+ 
+ ** ボーイング&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/BA?resource=price" target="_parent">BA.N</a></span>&gt;：5.7％高
+ BUZZ - 予想以上の第4四半期決算で上昇 [nL4N3EL3CB] 
+ 
+ ** アドバンスト・マイクロ・デバイセズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/AMD?resource=price" target="_parent">AMD.O</a></span>&gt;：2.3％安
+ ** エヌビディア・コープ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/NVDA?resource=price" target="_parent">NVDA.O</a></span>&gt;：2.2％安
+ BUZZ - AMDの弱気予想を受けてチップメーカーが下落 [nL4N3EL2I0] 
+ 
+ ** アルファベット&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/GOOGL?resource=price" target="_parent">GOOGL.O</a></span>&gt;：6.4％安
+ ** メタ・プラットフォームズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/META?resource=price" target="_parent">META.O</a></span>&gt;：1.2％安
+ ** スナップ・インク&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/SNAP?resource=price" target="_parent">SNAP.N</a></span>&gt;：1％安
+ BUZZ - アルファベットの広告収入が期待外れで下落 [nL4N3EL2KB] 
+ 
+ ** ガーディオン・ヘルス・サイエンシズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/GHSI?resource=price" target="_parent">GHSI.O</a></span>&gt;：61.2％高
+ BUZZ - 子会社部門を1720万ドルで売却する契約で上昇 [nL4N3EL2KX] 
+ 
+ ** スターバックス&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/SBUX?resource=price" target="_parent">SBUX.O</a></span>&gt;：0.1％高
+ BUZZ - 予想を上回る決算を発表し急伸 [nL4N3EL3NU] 
+ 
+ ** テスラ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/TSLA?resource=price" target="_parent">TSLA.O</a></span>&gt;：0.2％高
+ BUZZ - Techs suggest new depths may be fathomed [nL1N3EJ1TR] 
+ 
+ ** マイクロソフト&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MSFT?resource=price" target="_parent">MSFT.O</a></span>&gt;：1.5％安
+ ** マイクロン・テクノロジー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MU?resource=price" target="_parent">MU.O</a></span>&gt;：0.5％安
+ ** マーベル・テクノロジー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MRVL?resource=price" target="_parent">MRVL.O</a></span>&gt;：1.2%下落
+ ** アマゾン・ドット・コム&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/AMZN?resource=price" target="_parent">AMZN.O</a></span>&gt;：1.3％安
+ BUZZ - マイクロソフト、アルファベット、AMDの決算後、メガキャップ、チップ株が打撃を受ける [nL4N3EL2BO] 
+ 
+ ** ZIM Integrated Shipping Services Ltd ：2.9％上昇。
+ ** イーグルバルクシッピング：0.5％高
+ BUZZ - 運賃高騰でコンテナ・コスの見通し改善へ-ジェフリーズ [nL8N3EL2WX] 
+ 
+ ** モンデリーズ・インターナショナル&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MDLZ?resource=price" target="_parent">MDLZ.O</a></span>&gt;：1.7％安
+ BUZZ-第4四半期の北米での販売数量減少で下落 [nL4N3EL2WE] 
+ 
+ ** ウォルマート&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/WMT?resource=price" target="_parent">WMT.N</a></span>&gt;：0.4％高
+ BUZZ-1株を3株に分割発表で上昇 [nL4N3EL2SC] 
+ 
+ ** ハイタイド・インク&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/HITI?resource=price" target="_parent">HITI.O</a></span>&gt;：1.9％高
+ BUZZ - エシュロン、ハイタイドの第4四半期業績上振れでポジティブ [nL4N3EL2YX] 
+ 
+ ** サーモフィッシャーサイエンティフィック&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/TMO?resource=price" target="_parent">TMO.N</a></span>&gt;：3.4％安
+ ** ダナハー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/DHR?resource=price" target="_parent">DHR.N</a></span>&gt;：1.1％安
+ ** アジレント・テクノロジー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/A?resource=price" target="_parent">A.N</a></span>&gt;：1.5％安
+ ** レヴィティ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/RVTY?resource=price" target="_parent">RVTY.N</a></span>&gt;：1.6％安
+ BUZZ - サーモフィッシャーの2024年予測下方修正で医療機器メーカーが下落 [nL4N3EL4F1] 
+ 
+ ** ベーカーヒューズ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/BKR?resource=price" target="_parent">BKR.O</a></span>&gt;：2％安
+ ** シュルンベルジェNV&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/SLB?resource=price" target="_parent">SLB.N</a></span>&gt;：1.2％安
+ BUZZ - アラムコが生産能力目標を引き下げ、ゼフィリンが油田会社のPTを引き下げ [nL4N3EL2XT] 
+ 
+ ** ボストン・サイエンティフィック&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/BSX?resource=price" target="_parent">BSX.N</a></span>&gt;：3.3％高
+ BUZZ - FDAの心臓機器承認、好調な年間利益見通しで上昇 [nL4N3EL34U] 
+ 
+ ** ニューヨーク・コミュニティー・バンコープ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/NYCB?resource=price" target="_parent">NYCB.N</a></span>&gt;：37.2％安
+ BUZZ-第4四半期赤字に振れ、株価低迷 [nL4N3EL3JB] 
+ 
+ ** ローパー・テクノロジーズ：3.6％安
+ BUZZ - 年間利益見通しの下方修正で下落 [nL4N3EL3A3] 
+ 
+ ** フィリップス66&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/PSX?resource=price" target="_parent">PSX.N</a></span>&gt;：1.4％高
+ BUZZ - 第4四半期利益上振れで史上最高値を更新 [nL4N3EL4J9] 
+ 
+ ** アメリカンスーパーコンダクター&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/AMSC?resource=price" target="_parent">AMSC.O</a></span>&gt;：17.3％安
+ BUZZ - 株式公開の価格決定で下落 [nL1N3EL1QX] 
+ 
+ ** ロックウェル・オートメーション&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/ROK?resource=price" target="_parent">ROK.N</a></span>&gt;：15.4％安
+ BUZZ - 第1四半期決算の未達を受けて下落 [nL4N3EL38X] 
+ 
+ ** オートマチック・データ・プロセッシング &lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/ADP?resource=price" target="_parent">ADP.O</a></span>&gt;： 3.6％高
+ BUZZ - 第2四半期決算の上振れで上昇 [nL4N3EL3F0] 
+ 
+ ** エクストリーム・ネットワークス&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/EXTR?resource=price" target="_parent">EXTR.O</a></span>&gt;：16.6％安
+ BUZZ - 第3四半期業績予想の悪化で急落 [nL4N3EL3DE] 
+ 
+ ** ノババックス&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/NVAX?resource=price" target="_parent">NVAX.O</a></span>&gt;：4.1％高
+ BUZZ - 世界従業員12％削減で上昇 [nL4N3EL3GE] 
+ 
+ ** テラダイン&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/TER?resource=price" target="_parent">TER.O</a></span>&gt;：8.0％安
+ BUZZ - 第1四半期の減収予想で下落 [nL4N3EL3KA] 
+
+    
+ ** ヴァクシート&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/PCVX?resource=price" target="_parent">PCVX.O</a></span>&gt;：4.5％上昇
+BUZZ - 7億5000万ドルの増資で上昇。 [nL1N3EL1P9] 
+ 
+ ** カーディナル・ヘルス&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/CAH?resource=price" target="_parent">CAH.N</a></span>&gt;：0.8％上昇
+BUZZ - 民間ハイテク企業を12億ドルで買収し上昇。 [nL4N3EL3WN] 
+ 
+ ** マスターカード&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MA?resource=price" target="_parent">MA.N</a></span>&gt;：1.3％高
+BUZZ-第4四半期利益上振れで上昇 [nL4N3EG392] 
+ 
+ ** プラグパワー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/PLUG?resource=price" target="_parent">PLUG.O</a></span>&gt;：26.5％上昇
+BUZZ - ロスがジョージア州の水素プラントを楽観視し格上げで上昇 [nL4N3EL40R] 
+ 
+ ** バイオジェン&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/BIIB?resource=price" target="_parent">BIIB.O</a></span>&gt;：0.6％高
+BUZZ - アルツハイマー病治療薬Aduhelmを中止し、Leqembiに注力、株価は上昇 [nL4N3EL447] 
+ 
+ ** ストライカー&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/SYK?resource=price" target="_parent">SYK.N</a></span>&gt;：8％高
+BUZZ-2024年予想上振れで過去最高値、証券各社がPT引き上げ [nL4N3EL340] 
+ 
+ ** シェブロン&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/CVX?resource=price" target="_parent">CVX.N</a></span>&gt;：0.8％安
+ ** エクソンモービル&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/XOM?resource=price" target="_parent">XOM.N</a></span>&gt;：1.1％安
+ ** マラソン・オイル&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MRO?resource=price" target="_parent">MRO.N</a></span>&gt;：1.9％安 
+ ** ハリバートン&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/HAL?resource=price" target="_parent">HAL.N</a></span>&gt;：2.1％安
+BUZZ - 中国懸念が原油価格の重しとなり、米エネルギー・セクターは下落。 [nL4N3EL450] 
+ 
+ ** シチズンズ・ファイナンシャル・グループ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/CFG?resource=price" target="_parent">CFG.N</a></span>&gt;：2.1％安
+ ** バンク・オブ・カリフォルニア&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/BANC?resource=price" target="_parent">BANC.N</a></span>&gt;：3.1％安
+ ** コメリカ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/CMA?resource=price" target="_parent">CMA.N</a></span>&gt;：2.6％安
+ ** M&amp;Tバンク・コーポレーション&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/MTB?resource=price" target="_parent">MTB.N</a></span>&gt;：2.3％安
+BUZZ-ニューヨーク・コミュニティ・バンコープのサプライズ損失で米地銀が下落 [nL4N3DZ2A7] 
+ 
+ ** ブリンカー・インターナショナル&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/EAT?resource=price" target="_parent">EAT.N</a></span>&gt;：7.7％高
+BUZZ - 通期利益予想の上方修正で急伸 [nL4N3EL3WT] 
+
+ ** ニューモント・コープ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/NEM?resource=price" target="_parent">NEM.N</a></span>&gt;：1.9％高
+ ** バリック・ゴールド：0.8％高
+ ** シバニー・スティルウォーター：2.4％高
+ ** ゴールドフィールズ：1.6％高
+BUZZ-FRB決定を前に金鉱各社が上昇 [nL4N3EL48I] 
+ 
+ ** オーティス・ワールドワイド&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/OTIS?resource=price" target="_parent">OTIS.N</a></span>&gt;：0.3％上昇
+BUZZ-第4四半期ビートを受けて上昇 [nL4N3EL44T] 
+ 
+ ** シグナ・グループ&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/CI?resource=price" target="_parent">CI.N</a></span>&gt;：0.7％高
+BUZZ-メディケア事業の33億ドル買収で上昇 [nL4N3EL49U] 
+ 
+ ** ハネウェル・インターナショナル&lt;<span class="quote-link"><a href="https://global.sbisec.co.jp/invest/us/stock/HON?resource=price" target="_parent">HON.O</a></span>&gt;：0.9％安
+BUZZ - 四半期決算を前に下落。 [nL1N3EL2EA] 
+
+    
+ S&amp;P 500 主要11セクター:
+ 
+ 通信サービス              3.01%下落
+                         ：3.01%下  
+                         落         
+ 消費者裁量              &lt;.SPLRCD   0.58%下落
+ コンシューマー・ステー  &lt;.SPLRCS   0.24%下落
+ プル                               
+ エネルギー              &lt;.SPNY     1.15%下落
+ 金融                    &lt;.SPSY     0.20%下落
+ 健康                    &lt;.SPXHC    0.47%上昇
+ インダストリアル        &lt;.SPLRCI   0.28%下落
+ 情報技術                &lt;.SPLRCT   1.41%下落
+ 素材                    &lt;.SPLRCM   0.34%下落
+ 不動産                  &lt;.SPLRCR   0.59% 上昇
+ 公益事業                &lt;.SPLRCU   0.45% 上昇
+ </pre>
+            </div>
+          </div>
+        </div>
+        <div id="pagination-container2">
+          <div class="paginationjs">
+            <div class="paginationjs-pages">
+              <ul>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-prev J-paginationjs-previous"
+                  data-num="88"
+                  title="Previous page"
+                >
+                  <a></a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page paginationjs-first J-paginationjs-page"
+                  data-num="1"
+                >
+                  <a>1</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-ellipsis disabled"
+                >
+                  <a>…</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="85"
+                >
+                  <a>85</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="86"
+                >
+                  <a>86</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="87"
+                >
+                  <a>87</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="88"
+                >
+                  <a>88</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page active"
+                  data-num="89"
+                >
+                  <a>89</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-next disabled"
+                >
+                  <a></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="no-news" class="no-news" style="display: none">
+          現在配信されているニュースはありません。
+        </div>
+      </div>
+    </div>
+    <div
+      id="news-story"
+      style="width: 100%; height: 100%; overflow: hidden; display: none"
+    >
+      <div class="nav-bar">
+        <div id="back-to-news-headline" class="back-to-news-headline">
+          銘柄ニュース 一覧へ
+        </div>
+      </div>
+      <div id="new-story-nav-body" class="nav-body" style="">
+        <div class="news-content">
+          <div class="news-content-headline">
+            <div
+              id="news-content-headline-inner"
+              class="vertical-center"
+              style="top: 22px"
+            ></div>
+          </div>
+          <div id="news-content-datetime" class="news-content-datetime"></div>
+          <div id="news-content-body" class="news-content-body"></div>
+        </div>
+        <div id="news-content-body-footer" class="news-content-body-footer">
+          <div id="back-to-news-headline-2" class="back-to-news-headline-2">
+            銘柄ニュース 一覧へ
+          </div>
+        </div>
+      </div>
+      <div id="new-story-nav-footer" class="nav-footer" style="display: block">
+        <div id="prev-news" class="prev-news" style="float: left">前へ</div>
+        <div id="next-news" class="next-news" style="float: right">次へ</div>
+      </div>
+    </div>
+  </body>
+</html>

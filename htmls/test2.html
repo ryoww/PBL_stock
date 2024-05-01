@@ -1,0 +1,339 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>News PC</title>
+    <link
+      rel="stylesheet"
+      href="css/common_pc.css?v=V1.1.10.20230831a"
+      type="text/css"
+    />
+    <script type="text/javascript" src="lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="lib/pagination.min.js"></script>
+    <script type="text/javascript" src="lib/AppWebViewBridge.js"></script>
+    <script
+      type="text/javascript"
+      src="js/constants.js?v=V1.1.10.20230831a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/utils.js?v=V1.1.10.20230831a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/news_pc.js?v=V1.1.10.20230831a"
+      symbol="NVDA"
+      url_ticker_redirect="https://global.sbisec.co.jp/invest/us/stock/XXXX?resource=price"
+      id="news_pc"
+    ></script>
+  </head>
+  <body id="news" class="news">
+    <div id="loading" class="loading" style="display: none"></div>
+    <div id="news-headlines">
+      <div style="width: 100%; height: 100%; overflow: hidden">
+        <div id="pagination-container1">
+          <div class="paginationjs">
+            <div class="paginationjs-pages">
+              <ul>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-prev J-paginationjs-previous"
+                  data-num="88"
+                  title="Previous page"
+                >
+                  <a></a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page paginationjs-first J-paginationjs-page"
+                  data-num="1"
+                >
+                  <a>1</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-ellipsis disabled"
+                >
+                  <a>…</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="85"
+                >
+                  <a>85</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="86"
+                >
+                  <a>86</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="87"
+                >
+                  <a>87</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="88"
+                >
+                  <a>88</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page active"
+                  data-num="89"
+                >
+                  <a>89</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-next disabled"
+                >
+                  <a></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="data-list" class="data-list">
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131221117:nL4N3EL57E"
+            count="0"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                UPDATE
+                1-ＮＹ市場サマリー（31日）米国株下落、ドル上昇、利回り低下
+              </div>
+            </div>
+            <div class="date">2024-02-01 07:11</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131220951:nL6N3EL0KQ"
+            count="1"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                UPDATE 1-米国株式市場＝下落、ＦＯＭＣ受け3月利下げ観測が後退
+              </div>
+            </div>
+            <div class="date">2024-02-01 07:09</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131215014:nL6N3EL0KU"
+            count="2"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                ＮＹ市場サマリー（31日）米国株下落、ドル上昇、利回り低下
+              </div>
+            </div>
+            <div class="date">2024-02-01 06:50</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131213639:nL6N3EL0JX"
+            count="3"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                米国株式市場＝下落、ＦＯＭＣ受け3月利下げ観測が後退
+              </div>
+            </div>
+            <div class="date">2024-02-01 06:36</div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131212407:nL4N3EL4ZM"
+            count="4"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                リファイライブ市場-FANGは消え去るのか？
+              </div>
+            </div>
+            <div class="date">
+              2024-02-01 06:24
+              <div class="translatednewsicon">
+                <img src="img/icon_translated_news_pc.svg" alt="" />自動翻訳
+              </div>
+            </div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+          <div
+            class="data-row"
+            news-code="urn:newsml:reuters.com:20240131190529:nL4N3EL4OL"
+            count="5"
+            is-open="false"
+            has-story="false"
+          >
+            <div class="headline">
+              <div class="vertical-center" style="top: 2px">
+                話題-動き出した米国株-バイオジェン、オーティス、シグナ
+              </div>
+            </div>
+            <div class="date">
+              2024-02-01 04:05
+              <div class="translatednewsicon">
+                <img src="img/icon_translated_news_pc.svg" alt="" />自動翻訳
+              </div>
+            </div>
+            <button class="icon add"></button>
+            <div class="content"></div>
+          </div>
+        </div>
+        <div id="pagination-container2">
+          <div class="paginationjs">
+            <div class="paginationjs-pages">
+              <ul>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-prev J-paginationjs-previous"
+                  data-num="88"
+                  title="Previous page"
+                >
+                  <a></a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page paginationjs-first J-paginationjs-page"
+                  data-num="1"
+                >
+                  <a>1</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-ellipsis disabled"
+                >
+                  <a>…</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="85"
+                >
+                  <a>85</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="86"
+                >
+                  <a>86</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="87"
+                >
+                  <a>87</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page"
+                  data-num="88"
+                >
+                  <a>88</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-page J-paginationjs-page active"
+                  data-num="89"
+                >
+                  <a>89</a>
+                </li>
+                <li
+                  tabindex="0"
+                  onkeyup="enterToClick(event)"
+                  class="paginationjs-next disabled"
+                >
+                  <a></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="no-news" class="no-news" style="display: none">
+          現在配信されているニュースはありません。
+        </div>
+      </div>
+    </div>
+    <div
+      id="news-story"
+      style="width: 100%; height: 100%; overflow: hidden; display: none"
+    >
+      <div class="nav-bar">
+        <div id="back-to-news-headline" class="back-to-news-headline">
+          銘柄ニュース 一覧へ
+        </div>
+      </div>
+      <div id="new-story-nav-body" class="nav-body">
+        <div class="news-content">
+          <div class="news-content-headline">
+            <div id="news-content-headline-inner" class="vertical-center"></div>
+          </div>
+          <div id="news-content-datetime" class="news-content-datetime"></div>
+          <div id="news-content-body" class="news-content-body"></div>
+        </div>
+        <div id="news-content-body-footer" class="news-content-body-footer">
+          <div id="back-to-news-headline-2" class="back-to-news-headline-2">
+            銘柄ニュース 一覧へ
+          </div>
+        </div>
+      </div>
+      <div id="new-story-nav-footer" class="nav-footer" style="display: block">
+        <div id="prev-news" class="prev-news" style="float: left">前へ</div>
+        <div id="next-news" class="next-news" style="float: right">次へ</div>
+      </div>
+    </div>
+  </body>
+</html>
