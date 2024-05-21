@@ -7,3 +7,4 @@ Pipfile.lock
 sql_server/target
 testDB/target
 .env
+tensorboard_logs
