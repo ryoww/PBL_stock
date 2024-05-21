@@ -15,6 +15,9 @@ from transformers import get_cosine_schedule_with_warmup
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
+
+max_epoch = 100
+
 # CSVファイル生成関数
 def make_csv(path):
     with open(f'./train_data/{path}.json', 'r', encoding='utf-8') as file:
@@ -86,7 +89,7 @@ model = BertForSequenceClassification.from_pretrained('cl-tohoku/bert-base-japan
 optimizer = AdamW(model.parameters(), lr=5e-6)
 
 # 学習率スケジューラーの準備
-total_steps = len(train_dataloader) * 50  # 50エポックでのトータルステップ数
+total_steps = len(train_dataloader) * max_epoch  # 50エポックでのトータルステップ数
 scheduler = get_cosine_schedule_with_warmup(optimizer, num_warmup_steps=int(total_steps/10), num_training_steps=total_steps)
 
 # 現在の日時を取得してログの名前に使用
@@ -175,7 +178,6 @@ def test(model, epoch):
     return avg_test_loss
 
 # トレーニングループ
-max_epoch = 100
 train_loss_list, test_loss_list = [], []
 
 for epoch in tqdm(range(max_epoch), desc="Epochs"):
