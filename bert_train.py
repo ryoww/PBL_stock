@@ -78,7 +78,7 @@ train_dataset, valid_dataset = random_split(train_dataset, [train_size, valid_si
 print('train size:', train_size)
 print('valid size:', valid_size)
 
-batch_size = 40
+batch_size = 50
 
 train_dataloader = DataLoader(train_dataset, sampler=RandomSampler(train_dataset), batch_size=batch_size)
 valid_dataloader = DataLoader(valid_dataset, sampler=SequentialSampler(valid_dataset), batch_size=batch_size)
@@ -205,7 +205,7 @@ writer.close()
 # 最終精度の計算とモデル保存
 train_accuracy, train_f1 = calculate_accuracy_and_f1(model, valid_dataloader)
 test_accuracy, test_f1 = calculate_accuracy_and_f1(model, test_dataloader)
-save_model(model, optimizer, test_accuracy)
+save_model(model, optimizer, test_f1)
 
 print(f"Final Training Accuracy: {train_accuracy:.4f}")
 print(f"Final Test Accuracy: {test_accuracy:.4f}")
