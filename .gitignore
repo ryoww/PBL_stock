@@ -7,3 +7,5 @@ Pipfile.lock
 sql_server/target
 testDB/target
 .env
+/test_LSTM/data/
+/test_LSTM/labeled_anomalies.csv
