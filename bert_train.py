@@ -78,7 +78,7 @@ train_dataset, valid_dataset = random_split(train_dataset, [train_size, valid_si
 print('train size:', train_size)
 print('valid size:', valid_size)
 
-batch_size = 50
+batch_size = 40
 
 train_dataloader = DataLoader(train_dataset, sampler=RandomSampler(train_dataset), batch_size=batch_size)
 valid_dataloader = DataLoader(valid_dataset, sampler=SequentialSampler(valid_dataset), batch_size=batch_size)
@@ -126,9 +126,15 @@ def calculate_accuracy_and_f1(model, dataloader):
             b_input_ids, b_input_mask, b_labels = batch[0].to(device), batch[1].to(device), batch[2].to(device)
             outputs = model(b_input_ids, token_type_ids=None, attention_mask=b_input_mask, labels=b_labels)
             logits = outputs.logits
-            probabilities = torch.clamp(torch.nn.functional.relu(logits), 0, 1)
+            # probabilities = torch.nn.functional.softmax(logits, dim=-1)
+            # predicted_labels = torch.argmax(probabilities, dim=1)
+            # true_labels = torch.argmax(b_labels, dim=1)
+ 
+            # 修正: softmaxの代わりにsigmoidを使用
+            probabilities = torch.sigmoid(logits)
             predicted_labels = torch.argmax(probabilities, dim=1)
             true_labels = torch.argmax(b_labels, dim=1)
+
             correct_predictions += (predicted_labels == true_labels).sum().item()
             total_predictions += b_labels.size(0)
             
