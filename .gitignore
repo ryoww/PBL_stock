@@ -8,5 +8,7 @@ sql_server/target
 testDB/target
 .env
 /test_LSTM/data/
+/test_LSTM/runs/
+/test_LSTM/models/
 /test_LSTM/labeled_anomalies.csv
 tensorboard_logs
