@@ -7,3 +7,5 @@ Cargo.lock
 Pipfile.lock
 .env
 model
+scrape_data/
+__pycache__
