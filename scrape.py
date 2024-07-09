@@ -47,6 +47,9 @@ with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
 # 全てのシンボルをプリント
 for category in data:
     for company in data[category]:
+        i = 0
+        current_datetime = datetime.now().strftime('-%Y-%m-%d-%H-%M')
+
         stock_name = company["symbol"]
         print(stock_name)
 
@@ -59,13 +62,40 @@ for category in data:
         iframe_urls = [iframe.get('src') for iframe in soup.find_all('iframe', src=True) if iframe['src'].startswith(url_pattern)]
 
         token = iframe_urls[0].split("token=")[1]
-        url = f"https://graph.sbisec.co.jp/sbinews/srvdetail?symbol={stock_name}&token={token}"
+        url_head = f"https://graph.sbisec.co.jp/sbinews/srvdetail?symbol={stock_name}&token={token}"
 
-        res = requests.get(url)
-        current_datetime = datetime.now().strftime('-%Y-%m-%d-%H-%M')
-        data = res.json()
+        res_head = requests.get(url_head)
+        data_head = res_head.json()
+
+        len_head = len(data_head['data'])
+
+        formatted_data = {'data' : []}
+
+        for articl in data_head['data']:
+
+            id = articl['id']
+            date = articl['date_new']
+            headline = articl['headline']
+
+            url_body = f'https://graph.sbisec.co.jp/sbinews/srvdetail?newsid={id}&token={token}'
+            res_body = requests.get(url_body)
+            data_body = res_body.json()
+
+            formatted_article ={
+                'date' : date,
+                'headline' : headline,
+                'content' : data_body['data'][0]['content']
+            }
+
+            print(f'{i} / {len_head}')
+            # print(formatted_article)
+
+            # ここでサーバーにpostするようにする
+            i += 1
+            formatted_data['data'].append(formatted_article)
+
         path = f"./scrape_data/{stock_name}{current_datetime}.json"
 
         with open(path, 'w', encoding='utf-8') as json_file:
-            json.dump(data, json_file, ensure_ascii=False, indent=4)
+            json.dump(formatted_data, json_file, ensure_ascii=False, indent=4)
         print("saved : ", path)
