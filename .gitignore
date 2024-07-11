@@ -8,3 +8,4 @@ sql_server/target
 testDB/target
 .env
 tensorboard_logs
+Cargo.lock
