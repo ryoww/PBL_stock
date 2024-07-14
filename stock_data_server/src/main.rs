@@ -228,7 +228,7 @@ async fn main() -> std::io::Result<()> {
             .route("/ml_data/{stock_code}", web::get().to(get_ml_data))
             .route("/update_column", web::post().to(update_column))
     })
-    .bind("127.0.0.1:8080")?
+    .bind("127.0.0.1:8999")?
     .run()
     .await
 }
