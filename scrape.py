@@ -5,7 +5,6 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import time
 import json
-from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -48,12 +47,13 @@ with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
 for category in data:
     for company in data[category]:
         i = 0
-        current_datetime = datetime.now().strftime('-%Y-%m-%d-%H-%M')
+        # current_datetime = datetime.now().strftime('%Y-%m-%d-%H-%M')
 
-        stock_name = company["symbol"]
-        print(stock_name)
+        stock_code = company["symbol"]
+        stock_name = company["company_name"]
+        print(stock_code, ':', stock_name)
 
-        driver.get(f"https://global.sbisec.co.jp/invest/us/stock/{stock_name}?resource=news&searchType=include")
+        driver.get(f"https://global.sbisec.co.jp/invest/us/stock/{stock_code}?resource=news&searchType=include")
         time.sleep(0.3)
 
         iframe = driver.page_source
@@ -62,19 +62,21 @@ for category in data:
         iframe_urls = [iframe.get('src') for iframe in soup.find_all('iframe', src=True) if iframe['src'].startswith(url_pattern)]
 
         token = iframe_urls[0].split("token=")[1]
-        url_head = f"https://graph.sbisec.co.jp/sbinews/srvdetail?symbol={stock_name}&token={token}"
+        url_head = f"https://graph.sbisec.co.jp/sbinews/srvdetail?symbol={stock_code}&token={token}"
+        print(url_head)
 
         res_head = requests.get(url_head)
         data_head = res_head.json()
 
         len_head = len(data_head['data'])
+        time.sleep(1)
 
-        formatted_data = {'data' : []}
+        # formatted_data = {'data' : []}
 
         for articl in data_head['data']:
 
             id = articl['id']
-            date = articl['date_new']
+            datetime = articl['date_new']
             headline = articl['headline']
 
             url_body = f'https://graph.sbisec.co.jp/sbinews/srvdetail?newsid={id}&token={token}'
@@ -82,20 +84,30 @@ for category in data:
             data_body = res_body.json()
 
             formatted_article ={
-                'date' : date,
-                'headline' : headline,
-                'content' : data_body['data'][0]['content']
+                'stock_name' : str(stock_name),
+                'stock_code' : str(stock_code),
+                'datetime' : str(datetime),
+                'headline' : str(headline),
+                'content' : str(data_body['data'][0]['content'].replace('\n', '').replace('　', '').replace(' ', ''))
             }
+
+            headers = {
+                "Content-Type": "application/json"
+            }
+
+            server_url = 'http://192.168.1.222:8999/row_data'
+
+            res = requests.post(server_url, headers=headers, json=formatted_article)
+            print(res.status_code)
+            print(res.text)
+            print(formatted_article['datetime'])
+            i += 1
 
             print(f'{i} / {len_head}')
             # print(formatted_article)
 
-            # ここでサーバーにpostするようにする
-            i += 1
-            formatted_data['data'].append(formatted_article)
+        # path = f"./scrape_data/{stock_name}{current_datetime}.json"
 
-        path = f"./scrape_data/{stock_name}{current_datetime}.json"
-
-        with open(path, 'w', encoding='utf-8') as json_file:
-            json.dump(formatted_data, json_file, ensure_ascii=False, indent=4)
-        print("saved : ", path)
+        # with open(path, 'w', encoding='utf-8') as json_file:
+        #     json.dump(formatted_data, json_file, ensure_ascii=False, indent=4)
+        # print("saved : ", path)
