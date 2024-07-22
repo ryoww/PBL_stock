@@ -2,7 +2,7 @@ create database if not exists stock;
 
 use stock;
 
-create table test_dataset (
+create table stock_dataset (
     id int auto_increment primary key,
     stock_name varchar(100) not null,
     stock_code varchar(100) not null,
