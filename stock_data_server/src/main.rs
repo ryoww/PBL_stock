@@ -1,8 +1,8 @@
 use actix_web::{middleware::Logger, web, App, HttpResponse, HttpServer, Responder};
-use chrono::{NaiveDateTime, ParseError};
+use chrono::{NaiveDate, NaiveDateTime, ParseError};
 use dotenv::dotenv;
 use serde::{Deserialize, Serialize};
-use sqlx::MySqlPool;
+use sqlx::{MySqlPool, Row, mysql::MySqlRow};
 use log::{info, error};
 use std::env;
 
@@ -39,7 +39,7 @@ pub struct UpdateColumnData {
     stock_code: Option<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct GetRowData {
     id: i32,
     stock_name: String,
@@ -49,7 +49,20 @@ pub struct GetRowData {
     content: Option<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+impl<'r> sqlx::FromRow<'r, MySqlRow> for GetRowData {
+    fn from_row(row: &MySqlRow) -> Result<Self, sqlx::Error> {
+        Ok(GetRowData {
+            id: row.try_get("id")?,
+            stock_name: row.try_get("stock_name")?,
+            stock_code: row.try_get("stock_code")?,
+            date: row.try_get("date")?,
+            time: row.try_get("time")?,
+            content: row.try_get("content")?,
+        })
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct MLData {
     date: String,
     time: String,
@@ -61,9 +74,32 @@ pub struct MLData {
     value: Option<f64>,
 }
 
-#[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
+impl<'r> sqlx::FromRow<'r, MySqlRow> for MLData {
+    fn from_row(row: &MySqlRow) -> Result<Self, sqlx::Error> {
+        Ok(MLData {
+            date: row.try_get("date")?,
+            time: row.try_get("time")?,
+            despair: row.try_get("despair")?,
+            optimism: row.try_get("optimism")?,
+            concern: row.try_get("concern")?,
+            excitement: row.try_get("excitement")?,
+            stability: row.try_get("stability")?,
+            value: row.try_get("value")?,
+        })
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct MaxId {
     max_id: Option<i64>,
+}
+
+impl<'r> sqlx::FromRow<'r, MySqlRow> for MaxId {
+    fn from_row(row: &MySqlRow) -> Result<Self, sqlx::Error> {
+        Ok(MaxId {
+            max_id: row.try_get("max_id")?,
+        })
+    }
 }
 
 // エラー応答の共通化
@@ -108,7 +144,7 @@ async fn get_row_data(pool: web::Data<MySqlPool>, path: web::Path<i32>) -> impl 
     let id = path.into_inner();
     info!("Fetching data for ID: {}", id);
 
-    let query = "SELECT stock_name, stock_code, date, time, headline, content FROM stock_dataset WHERE id = ?";
+    let query = "SELECT id, stock_name, stock_code, date, time, headline, content FROM stock_dataset WHERE id = ?";
 
     match sqlx::query_as::<_, GetRowData>(query)
         .bind(id)
@@ -183,7 +219,7 @@ async fn update_column(pool: web::Data<MySqlPool>, update_data: web::Json<Update
     let mut query = format!("UPDATE stock_dataset SET {} = ? WHERE date = ?", update_data.column_name);
 
     // stock_codeが指定されている場合は条件に追加
-    if let Some(_stock_code) = &update_data.stock_code {
+    if let Some(stock_code) = &update_data.stock_code {
         if !COLUMNS.contains(&update_data.column_name.as_str()) {
             return HttpResponse::BadRequest().body(format!("{} is not registered", update_data.column_name));
         }
@@ -213,6 +249,22 @@ async fn update_column(pool: web::Data<MySqlPool>, update_data: web::Json<Update
     }
 }
 
+// 各株の日付のリストを取得
+async fn get_days(pool: web::Data<MySqlPool>, path: web::Path<String>) -> impl Responder {
+    let stock_code = path.into_inner();
+    info!("Fetching datetime for stock_code: {}", stock_code);
+
+    let query = "SELECT date, time FROM stock_dataset WHERE stock_code = ?";
+
+    match sqlx::query_as::<_, (String, String)>(query)
+        .bind(stock_code)
+        .fetch_all(pool.get_ref())
+        .await {
+        Ok(data) => HttpResponse::Ok().json(data),
+        Err(e) => create_error_response(&format!("Failed to fetch ML data: {}", e)),
+    }
+}
+
 // DBプールの作成
 async fn create_db_pool() -> MySqlPool {
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
@@ -239,6 +291,7 @@ async fn main() -> std::io::Result<()> {
             .route("/ml_data/{id}", web::post().to(post_ml_data))
             .route("/ml_data/{stock_code}", web::get().to(get_ml_data))
             .route("/update_column", web::post().to(update_column))
+            .route("/getdays/{stock_code}", web::get().to(get_days))
     })
     .bind("0.0.0.0:8999")?
     .run()
