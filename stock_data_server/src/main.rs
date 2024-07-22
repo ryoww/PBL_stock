@@ -6,29 +6,23 @@ use sqlx::{MySqlPool, Row, mysql::MySqlRow};
 use log::{info, error};
 use std::env;
 
-static COLUMNS: [&str; 5] = ["value", "vix", "SP_500", "NASDAQ", "NY_Dow"];
+static COLUMNS: [&str; 4] = ["value", "vix", "SP_500", "NY_Dow"];
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PostRowData {
     stock_name: String,
     stock_code: String,
     datetime: String,
-    headline: String,
     content: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PostMLData {
-    headline_despair: f64,
-    headline_optimism: f64,
-    headline_concern: f64,
-    headline_excitement: f64,
-    headline_stability: f64,
-    content_despair: f64,
-    content_optimism: f64,
-    content_concern: f64,
-    content_excitement: f64,
-    content_stability: f64,
+    despair: f64,
+    optimism: f64,
+    concern: f64,
+    excitement: f64,
+    stability: f64,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -110,7 +104,7 @@ fn create_error_response(message: &str) -> HttpResponse {
 
 // 日時文字列を日付と時間に分割する
 fn parse_and_split_datetime(datetime_str: &str) -> Result<(String, String), ParseError> {
-    let datetime = NaiveDateTime::parse_from_str(datetime_str, "%Y-%m-%d %H:%M")?;
+    let datetime = NaiveDateTime::parse_from_str(datetime_str, "%Y-%m-%d %H:%M:%S")?;
     Ok((datetime.date().to_string(), datetime.time().to_string()))
 }
 
@@ -123,16 +117,15 @@ async fn add_row_data(pool: web::Data<MySqlPool>, rowdata: web::Json<PostRowData
         Err(_) => return HttpResponse::BadRequest().body("Invalid datetime format"),
     };
 
-    let query = "INSERT INTO stock_dataset (stock_name, stock_code, date, time, headline, content) VALUES (?, ?, ?, ?, ?, ?)";
+    let query = "INSERT INTO stock_dataset (stock_name, stock_code, date, time, content) VALUES (?, ?, ?, ?, ?)";
 
     match sqlx::query(query)
         .bind(&rowdata.stock_name)
         .bind(&rowdata.stock_code)
-        .bind(&date)  // Ensure date is bound as string
-        .bind(&time)  // Ensure time is bound as string
-        .bind(&rowdata.headline)  // Add this to match columns
+        .bind(date)
+        .bind(time)
         .bind(&rowdata.content)
-        .execute(pool.get_ref())
+        .execute(&**pool)
         .await {
         Ok(_) => HttpResponse::Created().finish(),
         Err(e) => create_error_response(&format!("Failed to add data: {}", e)),
@@ -174,21 +167,16 @@ async fn post_ml_data(pool: web::Data<MySqlPool>, path: web::Path<i32>, ml_data:
     let id = path.into_inner();
     info!("Posting ML data for ID: {}", id);
 
-    let query = "UPDATE stock_dataset SET headline_despair = ?, headline_optimism = ?, headline_concern = ?, headline_excitement = ?, headline_stability = ?, content_despair = ?, content_optimism = ?, content_concern = ?, content_excitement = ?, content_stability = ? WHERE id = ?";
+    let query = "UPDATE stock_dataset SET despair = ?, optimism = ?, concern = ?, excitement = ?, stability = ? WHERE id = ?";
 
     match sqlx::query(query)
-        .bind(ml_data.headline_despair)
-        .bind(ml_data.headline_optimism)
-        .bind(ml_data.headline_concern)
-        .bind(ml_data.headline_excitement)
-        .bind(ml_data.headline_stability)
-        .bind(ml_data.content_despair)
-        .bind(ml_data.content_optimism)
-        .bind(ml_data.content_concern)
-        .bind(ml_data.content_excitement)
-        .bind(ml_data.content_stability)
+        .bind(ml_data.despair)
+        .bind(ml_data.optimism)
+        .bind(ml_data.concern)
+        .bind(ml_data.excitement)
+        .bind(ml_data.stability)
         .bind(id)
-        .execute(pool.get_ref())
+        .execute(&**pool)
         .await {
         Ok(_) => HttpResponse::Ok().body("ML data updated successfully"),
         Err(e) => create_error_response(&format!("Failed to update ML data: {}", e)),
@@ -235,7 +223,7 @@ async fn update_column(pool: web::Data<MySqlPool>, update_data: web::Json<Update
         sql_query = sql_query.bind(stock_code);
     }
 
-    let result = sql_query.execute(pool.get_ref()).await;
+    let result = sql_query.execute(&**pool).await;
 
     match result {
         Ok(result) => {
@@ -293,7 +281,7 @@ async fn main() -> std::io::Result<()> {
             .route("/update_column", web::post().to(update_column))
             .route("/getdays/{stock_code}", web::get().to(get_days))
     })
-    .bind("0.0.0.0:8999")?
+    .bind("127.0.0.1:8999")?
     .run()
     .await
 }
