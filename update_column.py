@@ -39,5 +39,7 @@ for stock_symbol, entries in data.items():
                 "stock_code" : stock_symbol
             }
 
+            print(data)
+
             response = requests.post(f"{BASE_URL}/update_column", json=data)
-            print(response.status_code, response.text)
+            print( response.status_code, response.text)
