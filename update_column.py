@@ -11,10 +11,11 @@ BASE_URL = "http://192.168.1.222:8999/"
 def test_get_days(stock_code):
     url = f"{BASE_URL}/getdays/{stock_code}"
     response = requests.get(url)
-    print(f"GET /getdays/{stock_code}:", response.status_code, response.json())
     days = response.json()
-    dates = [entry['date'] for entry in days]
-    print(dates)
+    dates = list(set(entry['date'] for entry in days))
+    # dates = [entry['date'] for entry in days]
+    print(len(days))
+    print(len(dates))
     return dates
 
 
@@ -38,5 +39,5 @@ for stock_symbol, entries in data.items():
                 "stock_code" : stock_symbol
             }
 
-            # response = requests.post(f"{BASE_URL}/update_column", json=data)
-            # print(response.status_code, response.text)
+            response = requests.post(f"{BASE_URL}/update_column", json=data)
+            print(response.status_code, response.text)
