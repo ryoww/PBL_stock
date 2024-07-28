@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, make_response
 from flask_marshmallow import Marshmallow
-import mysql.connector
-from mysql.connector import Error
+from mysql.connector import pooling, Error
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
@@ -16,6 +15,11 @@ DB_CONFIG = {
     'password': os.getenv("DB_PASSWORD", "ryotaro1212"),
     'database': os.getenv("DB_NAME", "stock")
 }
+
+# Create connection pool
+connection_pool = pooling.MySQLConnectionPool(pool_name="mypool",
+                                              pool_size=10,
+                                              **DB_CONFIG)
 
 # Flask setup
 app = Flask(__name__)
@@ -32,7 +36,10 @@ class PostRowDataSchema(ma.Schema):
 
 class PostMLDataSchema(ma.Schema):
     class Meta:
-        fields = ("despair", "optimism", "concern", "excitement", "stability")
+        fields = (
+            "headline_despair", "headline_optimism", "headline_concern", "headline_excitement", "headline_stability",
+            "content_despair", "content_optimism", "content_concern", "content_excitement", "content_stability"
+        )
 
 class UpdateColumnDataSchema(ma.Schema):
     class Meta:
@@ -42,10 +49,10 @@ post_row_data_schema = PostRowDataSchema()
 post_ml_data_schema = PostMLDataSchema()
 update_column_data_schema = UpdateColumnDataSchema()
 
-# Helper function to connect to the database
+# Helper function to get connection from the pool
 def get_db_connection():
     try:
-        connection = mysql.connector.connect(**DB_CONFIG)
+        connection = connection_pool.get_connection()
         if connection.is_connected():
             return connection
     except Error as e:
@@ -60,6 +67,10 @@ def timedelta_to_str(td):
     return f"{hours:02}:{minutes:02}:{seconds:02}"
 
 # Routes
+@app.route('/', methods=['GET'])
+def hellow():
+    return make_response('Hello Server\n', 200)
+
 @app.route("/row_data", methods=["POST"])
 def add_row_data():
     rowdata = request.get_json()
@@ -88,9 +99,11 @@ def add_row_data():
     try:
         cursor.execute(query, (data['stock_name'], data['stock_code'], date, time, data['content']))
         connection.commit()
+        print("Executed query:", cursor.statement)
         return make_response("Data added successfully", 201)
     except Error as e:
         logger.error(f"Error adding data: {e}")
+        print("Error message:", e)
         return make_response("Failed to add data", 500)
     finally:
         cursor.close()
@@ -101,7 +114,7 @@ def get_row_data(id):
     logger.info(f"Fetching data for ID: {id}")
 
     query = """
-    SELECT id, stock_name, stock_code, date, time, content
+    SELECT id, stock_name, stock_code, date, time, headline, content
     FROM stock_dataset
     WHERE id = %s
     """
@@ -111,7 +124,9 @@ def get_row_data(id):
 
     try:
         cursor.execute(query, (id,))
+        print("Executed query:", cursor.statement)
         row = cursor.fetchone()
+        print("Fetched row:", row)
         if row:
             row['date'] = row['date'].isoformat()
             row['time'] = timedelta_to_str(row['time']) if isinstance(row['time'], timedelta) else row['time'].isoformat()
@@ -120,6 +135,7 @@ def get_row_data(id):
             return make_response("Data not found", 404)
     except Error as e:
         logger.error(f"Error fetching data: {e}")
+        print("Error message:", e)
         return make_response("Failed to fetch data", 500)
     finally:
         cursor.close()
@@ -136,12 +152,15 @@ def get_len():
 
     try:
         cursor.execute(query)
+        print("Executed query:", cursor.statement)
         result = cursor.fetchone()
+        print("Max ID:", result)
         return jsonify(result)
     except Error as e:
         logger.error(f"Error fetching max id: {e}")
+        print("Error message:", e)
         return make_response("Failed to get max id", 500)
-    finally:
+    finally: 
         cursor.close()
         connection.close()
 
@@ -157,7 +176,8 @@ def post_ml_data(id):
 
     query = """
     UPDATE stock_dataset
-    SET despair = %s, optimism = %s, concern = %s, excitement = %s, stability = %s
+    SET headline_despair = %s, headline_optimism = %s, headline_concern = %s, headline_excitement = %s, headline_stability = %s,
+        content_despair = %s, content_optimism = %s, content_concern = %s, content_excitement = %s, content_stability = %s
     WHERE id = %s
     """
 
@@ -165,24 +185,30 @@ def post_ml_data(id):
     cursor = connection.cursor()
 
     try:
-        cursor.execute(query, (data['despair'], data['optimism'], data['concern'], data['excitement'], data['stability'], id))
+        cursor.execute(query, (
+            data['headline_despair'], data['headline_optimism'], data['headline_concern'], data['headline_excitement'], data['headline_stability'],
+            data['content_despair'], data['content_optimism'], data['content_concern'], data['content_excitement'], data['content_stability'], id
+        ))
         connection.commit()
+        print("Executed query:", cursor.statement)
         if cursor.rowcount == 0:
             return make_response("Data not found", 404)
         return make_response("ML data updated successfully", 200)
     except Error as e:
         logger.error(f"Error updating ML data: {e}")
+        print("Error message:", e)
         return make_response("Failed to update ML data", 500)
     finally:
         cursor.close()
         connection.close()
+
 
 @app.route("/ml_data/<string:stock_code>", methods=["GET"])
 def get_ml_data(stock_code):
     logger.info(f"Fetching ML data for stock_code: {stock_code}")
 
     query = """
-    SELECT date, time, despair, optimism, concern, excitement, stability, value, vix, SP_500, NY_Dow
+    SELECT date, time, headline_despair, headline_optimism, headline_concern, headline_excitement, headline_stability, content_despair, content_optimism, content_concern, content_excitement, content_stability, vix, SP_500, NY_Dow, value
     FROM stock_dataset
     WHERE stock_code = %s
     """
@@ -192,13 +218,16 @@ def get_ml_data(stock_code):
 
     try:
         cursor.execute(query, (stock_code,))
+        print("Executed query:", cursor.statement)
         rows = cursor.fetchall()
+        print("Fetched rows:", rows)
         for row in rows:
             row['date'] = row['date'].isoformat()
             row['time'] = timedelta_to_str(row['time']) if isinstance(row['time'], timedelta) else row['time'].isoformat()
         return jsonify(rows)
     except Error as e:
         logger.error(f"Error fetching ML data: {e}")
+        print("Error message:", e)
         return make_response("Failed to fetch ML data", 500)
     finally:
         cursor.close()
@@ -209,10 +238,11 @@ def update_column():
     update_data = request.get_json()
     errors = update_column_data_schema.validate(update_data)
     if errors:
+        logger.error(f"Validation errors: {errors}")
         return make_response(jsonify(errors), 400)
     data = update_column_data_schema.load(update_data)
 
-    logger.info(f"Updating column: {data['column_name']} on date: {data['date']}")
+    logger.info(f"Updating column: {data['column_name']} on date: {data['date']} with stock_code: {data.get('stock_code')}")
 
     query = f"""
     UPDATE stock_dataset
@@ -221,7 +251,7 @@ def update_column():
     """
 
     if data.get('stock_code'):
-        query += " AND stock_code = %s"
+        query += f""" AND stock_code = %s"""
 
     connection = get_db_connection()
     cursor = connection.cursor()
@@ -232,11 +262,16 @@ def update_column():
         else:
             cursor.execute(query, (data['update_value'], data['date']))
         connection.commit()
+        logger.info(f"Executed query: {cursor.statement}")
+        print("Executed query:", cursor.statement)
+        print("Affected rows:", cursor.rowcount)
         if cursor.rowcount == 0:
+            logger.warning("No record found for the given date and stock_code")
             return make_response("No record found for the given date and stock_code", 404)
         return make_response("Column updated successfully", 200)
     except Error as e:
         logger.error(f"Error updating column: {e}")
+        print("Error message:", e)
         return make_response("Failed to update column", 500)
     finally:
         cursor.close()
@@ -250,6 +285,7 @@ def get_days(stock_code):
     SELECT date, time
     FROM stock_dataset
     WHERE stock_code = %s
+    AND value IS NULL
     """
 
     connection = get_db_connection()
@@ -257,13 +293,16 @@ def get_days(stock_code):
 
     try:
         cursor.execute(query, (stock_code,))
+        print("Executed query:", cursor.statement)
         rows = cursor.fetchall()
+        # print("Fetched rows:", rows)
         for row in rows:
             row['date'] = row['date'].isoformat()
             row['time'] = timedelta_to_str(row['time']) if isinstance(row['time'], timedelta) else row['time'].isoformat()
         return jsonify(rows)
     except Error as e:
         logger.error(f"Error fetching datetime: {e}")
+        print("Error message:", e)
         return make_response("Failed to fetch datetime", 500)
     finally:
         cursor.close()
@@ -271,4 +310,4 @@ def get_days(stock_code):
 
 # Run the server
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8999)
+    app.run(host="0.0.0.0", port=8999)
