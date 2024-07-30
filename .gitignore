@@ -13,3 +13,4 @@ testDB/target
 /test_LSTM/labeled_anomalies.csv
 tensorboard_logs
 /test_iTransformer/data/
+models_lstm
