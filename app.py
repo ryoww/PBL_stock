@@ -45,9 +45,19 @@ class UpdateColumnDataSchema(ma.Schema):
     class Meta:
         fields = ("date", "column_name", "update_value", "stock_code")
 
+class SpotUpdateSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "column_name", "update_value")
+
+class SpotGetSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "column_name")
+
 post_row_data_schema = PostRowDataSchema()
 post_ml_data_schema = PostMLDataSchema()
 update_column_data_schema = UpdateColumnDataSchema()
+spot_update_schema = SpotUpdateSchema()
+spot_get_schema = SpotGetSchema()
 
 # Helper function to get connection from the pool
 def get_db_connection():
@@ -202,7 +212,6 @@ def post_ml_data(id):
         cursor.close()
         connection.close()
 
-
 @app.route("/ml_data/<string:stock_code>", methods=["GET"])
 def get_ml_data(stock_code):
     logger.info(f"Fetching ML data for stock_code: {stock_code}")
@@ -295,7 +304,6 @@ def get_days(stock_code):
         cursor.execute(query, (stock_code,))
         print("Executed query:", cursor.statement)
         rows = cursor.fetchall()
-        # print("Fetched rows:", rows)
         for row in rows:
             row['date'] = row['date'].isoformat()
             row['time'] = timedelta_to_str(row['time']) if isinstance(row['time'], timedelta) else row['time'].isoformat()
@@ -304,6 +312,105 @@ def get_days(stock_code):
         logger.error(f"Error fetching datetime: {e}")
         print("Error message:", e)
         return make_response("Failed to fetch datetime", 500)
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route("/spot_update", methods=["POST"])
+def spot_update():
+    update_data = request.get_json()
+    errors = spot_update_schema.validate(update_data)
+    if errors:
+        logger.error(f"Validation errors: {errors}")
+        return make_response(jsonify(errors), 400)
+    data = spot_update_schema.load(update_data)
+
+    logger.info(f"Updating column: {data['column_name']} for ID: {data['id']}")
+
+    query = f"""
+    UPDATE stock_dataset
+    SET {data['column_name']} = %s
+    WHERE id = %s
+    """
+
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    try:
+        cursor.execute(query, (data['update_value'], data['id']))
+        connection.commit()
+        logger.info(f"Executed query: {cursor.statement}")
+        print("Executed query:", cursor.statement)
+        print("Affected rows:", cursor.rowcount)
+        if cursor.rowcount == 0:
+            logger.warning("No record found for the given ID")
+            return make_response("No record found for the given ID", 404)
+        return make_response("Column updated successfully", 200)
+    except Error as e:
+        logger.error(f"Error updating column: {e}")
+        print("Error message:", e)
+        return make_response("Failed to update column", 500)
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route("/spot_get", methods=["POST"])
+def spot_get():
+    get_data = request.get_json()
+    errors = spot_get_schema.validate(get_data)
+    if errors:
+        logger.error(f"Validation errors: {errors}")
+        return make_response(jsonify(errors), 400)
+    data = spot_get_schema.load(get_data)
+
+    logger.info(f"Fetching column: {data['column_name']} for ID: {data['id']}")
+
+    query = f"""
+    SELECT {data['column_name']}
+    FROM stock_dataset
+    WHERE id = %s
+    """
+
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    try:
+        cursor.execute(query, (data['id'],))
+        print("Executed query:", cursor.statement)
+        row = cursor.fetchone()
+        print("Fetched row:", row)
+        if row:
+            return jsonify(row)
+        else:
+            return make_response("Data not found", 404)
+    except Error as e:
+        logger.error(f"Error fetching data: {e}")
+        print("Error message:", e)
+        return make_response("Failed to fetch data", 500)
+    finally:
+        cursor.close()
+        connection.close()
+
+# 新しいエンドポイント: 特定のカラムを取得する
+@app.route("/get_column/<string:column_name>", methods=["GET"])
+def get_column_data(column_name):
+    logger.info(f"Fetching column: {column_name} for all records")
+
+    query = f"SELECT {column_name} FROM stock_dataset"
+
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    try:
+        cursor.execute(query)
+        print("Executed query:", cursor.statement)
+        rows = cursor.fetchall()
+        print("Fetched rows:", rows)
+        return jsonify(rows)
+    except Error as e:
+        logger.error(f"Error fetching column data: {e}")
+        print("Error message:", e)
+        return make_response("Failed to fetch column data", 500)
     finally:
         cursor.close()
         connection.close()
