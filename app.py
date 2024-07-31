@@ -45,19 +45,9 @@ class UpdateColumnDataSchema(ma.Schema):
     class Meta:
         fields = ("date", "column_name", "update_value", "stock_code")
 
-class SpotUpdateSchema(ma.Schema):
-    class Meta:
-        fields = ("id", "column_name", "update_value")
-
-class SpotGetSchema(ma.Schema):
-    class Meta:
-        fields = ("id", "column_name")
-
 post_row_data_schema = PostRowDataSchema()
 post_ml_data_schema = PostMLDataSchema()
 update_column_data_schema = UpdateColumnDataSchema()
-spot_update_schema = SpotUpdateSchema()
-spot_get_schema = SpotGetSchema()
 
 # Helper function to get connection from the pool
 def get_db_connection():
@@ -316,6 +306,7 @@ def get_days(stock_code):
         cursor.close()
         connection.close()
 
+<<<<<<< HEAD
 @app.route("/spot_update", methods=["POST"])
 def spot_update():
     update_data = request.get_json()
@@ -415,6 +406,8 @@ def get_column_data(column_name):
         cursor.close()
         connection.close()
 
+=======
+>>>>>>> parent of 1b98e71 (add spot)
 # Run the server
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8999)
