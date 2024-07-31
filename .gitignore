@@ -14,3 +14,4 @@ testDB/target
 tensorboard_logs
 /test_iTransformer/data/
 models_lstm
+scrape_data
