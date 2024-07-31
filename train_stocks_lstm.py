@@ -33,6 +33,22 @@ current_datetime = datetime.now().strftime('%Y-%m-%d-%H-%M')
 with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
     data = json.load(file)
 
+class MyLSTM(nn.Module):
+    def __init__(self, feature_size, hidden_dim, n_layers):
+        super(MyLSTM, self).__init__()
+        self.lstm = nn.LSTM(feature_size, hidden_dim, n_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, 1)
+        
+
+    def forward(self, x):
+        h_0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device)
+        c_0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device)
+        out, _ = self.lstm(x, (h_0, c_0))
+        out = out[:, -1, :]  # 最後の時刻の出力を使用
+        out = self.fc(out)
+        return out
+
+
 # 全てのシンボルをプリント
 for category in data:
     for company in data[category]:
@@ -66,5 +82,22 @@ for category in data:
         train = np.array([df_train.iloc[i:i+window_size].values for i in range(n_train)])
         train_labels = np.array([df_train.iloc[i+window_size].values for i in range(n_train)])[:12]
         
+        test = np.array([df_test.iloc[i:i+window_size].values for i in range(n_test)])
+        test_labels = np.array([df_test.iloc[i+window_size].values for i in range(n_test)])[:,12]
         
+        train_data = torch.tensor(train, dtype=torch.float64)
+        train_labels = torch.tensor(train_labels, dtype=torch.float64)
+        test_data = torch.tensor(test, dtype=torch.float64)
+        test_labels = torch.tensor(test_labels, dtype=torch.float64)
         
+        feature_size = train_data.shape[2]
+        hidden_dim = 128
+        n_layers = 2
+        net = MyLSTM(feature_size, hidden_dim, n_layers)
+        
+        criterion = nn.MSELoss()
+        optimizer = optim.AdamW(net.parameters(), lr=0.001)
+        
+        summary(net)
+
+        net.to(device)        
