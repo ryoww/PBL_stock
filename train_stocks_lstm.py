@@ -27,7 +27,7 @@ BASE_URL = 'http://192.168.1.222:8999'
 
 print(requests.get(f'{BASE_URL}/').text)
 
-current_datetime = datetime.now().strftime('%Y-%m-%d-%H-%M')
+current_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
 # JSONファイルの読み込み
 with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
@@ -100,4 +100,27 @@ for category in data:
         
         summary(net)
 
-        net.to(device)        
+        net.to(device)
+        train_data, train_labels = train_data.to(device), train_labels.to(device)
+        
+        log_dir = f'runs/{stock_code}_{current_datetime}'
+        writer = SummaryWriter(log_dir)
+        
+        epochs = 300
+        loss_history = []
+        
+        for epoch in tqdm(range(epochs), desc='Training Epochs'):
+            net.train()
+            optimizer.zero_grad()
+            output = net(train_data)
+            loss = criterion(output.squeeze(), train_labels)
+            loss.backward()
+            optimizer.step()
+            loss_history.append(loss.item())
+            
+            writer.add_scalar('Loss/train', loss.item(), epoch)
+            
+            if (epoch+1) % 10 == 0:
+                print(f'Epoch {epoch+1}/{epochs}, Loss: {loss.item()}')
+        
+            writer.close()
