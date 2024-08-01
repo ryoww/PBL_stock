@@ -29,6 +29,14 @@ print(requests.get(f'{BASE_URL}/').text)
 
 current_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
+path = f'models_lstm/{current_datetime}/'
+
+try:
+    os.makedirs(path, exist_ok=True)
+    print(f"フォルダが作成されました: {path}")
+except OSError as error:
+    print(f"フォルダの作成に失敗しました: {error}")
+
 # JSONファイルの読み込み
 with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
     data = json.load(file)
@@ -103,7 +111,7 @@ for category in data:
         net.to(device)
         train_data, train_labels = train_data.to(device), train_labels.to(device)
         
-        log_dir = f'runs/{stock_code}_{current_datetime}'
+        log_dir = f'runs/{stock_code}'
         writer = SummaryWriter(log_dir)
         
         epochs = 300
@@ -123,4 +131,58 @@ for category in data:
             if (epoch+1) % 10 == 0:
                 print(f'Epoch {epoch+1}/{epochs}, Loss: {loss.item()}')
         
-            writer.close()
+        writer.close()
+        
+        temp_model_path = f'./models_lstm/temp/temp_model.pth'
+        torch.save(net.state_dict(), temp_model_path)
+        
+        net = MyLSTM(feature_size, hidden_dim, n_layers)
+        net.load_state_dict(torch.load(temp_model_path))
+        net.to(device)
+        net.eval()
+        
+        predicted_train_plot = []
+        
+        # 訓練データに対する予測
+        predicted_train_plot = []
+        for k in tqdm(range(n_train), desc="Predicting Training Data"):
+            x = torch.tensor(train[k]).reshape(1, window_size, feature_size).to(device).float()
+            y = net(x)
+            predicted_train_plot.append(y.item())  # 予測値を取得
+
+        # テストデータに対する予測
+        predicted_test_plot = []
+        for k in tqdm(range(n_test), desc="Predicting Test Data"):
+            x = torch.tensor(test[k]).reshape(1, window_size, feature_size).to(device).float()
+            y = net(x)
+            predicted_test_plot.append(y.item())  # 予測値を取得
+
+        # 20日先の予測
+        future_predictions = []
+        last_window = test[-1]  # テストデータの最後のウィンドウを使用
+
+        for _ in range(20):
+            x = torch.tensor(last_window).reshape(1, window_size, feature_size).to(device)
+            y = net(x)
+            future_predictions.append(y.item())
+            
+            # 新しいデータポイントをウィンドウに追加
+            new_point = y.cpu().detach().numpy()
+            last_window = np.roll(last_window, -1, axis=0)
+            last_window[-1, 12] = new_point  # ここでは `ave_tmp` を予測している前提
+
+        train_mae = mae(train_labels.cpu().numpy(), predicted_train_plot)
+        train_r2 = r2(train_labels.cpu().numpy(), predicted_train_plot)
+
+        test_mse = mse(test_labels.cpu().numpy(), predicted_test_plot)
+        test_mae = mae(test_labels.cpu().numpy(), predicted_test_plot)
+        test_r2 = r2(test_labels.cpu().numpy(), predicted_test_plot)
+        
+        train_mse = mse(train_labels.cpu().numpy(), predicted_train_plot)
+        print(f'Train MSE: {train_mse}, Train MAE: {train_mae}, Train R2: {train_r2}')
+        print(f'Test MSE: {test_mse}, Test MAE: {test_mae}, Test R2: {test_r2}')
+
+        new_model_path = f'./models/{current_datetime}/{stock_code}-{test_r2:.2f}-{test_mse:.2f}.pth'
+        torch.save(net.state_dict(), new_model_path)
+
+        os.remove(temp_model_path)
