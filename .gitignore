@@ -7,3 +7,5 @@ Cargo.lock
 Pipfile.lock
 .env
 backup.sql
+backup2.sql
+scrape_data
