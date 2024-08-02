@@ -214,7 +214,8 @@ for category in data:
 
             # NaNを含むかチェック
             if np.isnan(test_labels.cpu().numpy()).any() or np.isnan(predicted_test_plot).any():
-                raise ValueError("テストデータまたは予測データにNaNが含まれています。")
+                print("テストデータまたは予測データにNaNが含まれています。")
+                continue
 
             test_mse = mse(test_labels.cpu().numpy(), predicted_test_plot)
             test_mae = mae(test_labels.cpu().numpy(), predicted_test_plot)
