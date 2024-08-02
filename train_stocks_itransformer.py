@@ -6,8 +6,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error as mse, mean_absolute_error as mae, r2_score as r2
 
 import torch
-from torch import nn, optim
+from torch import optim, nn
 from torchinfo import summary
+
+from iTransformer import iTransformer
 
 from tqdm import tqdm
 
@@ -25,25 +27,11 @@ print(requests.get(f'{BASE_URL}/').text)
 
 current_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
-path = f'models_lstm/{current_datetime}/'
+path = f'models_itransformer/{current_datetime}/'
 
 # JSONファイルの読み込み
 with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
     data = json.load(file)
-
-class MyLSTM(nn.Module):
-    def __init__(self, feature_size, hidden_dim, n_layers):
-        super(MyLSTM, self).__init__()
-        self.lstm = nn.LSTM(feature_size, hidden_dim, n_layers, batch_first=True)
-        self.fc = nn.Linear(hidden_dim, 1)
-        
-    def forward(self, x):
-        h_0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device, dtype=torch.float32)
-        c_0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device, dtype=torch.float32)
-        out, _ = self.lstm(x, (h_0, c_0))
-        out = out[:, -1, :]  # 最後の時刻の出力を使用
-        out = self.fc(out)
-        return out
 
 def norm(column):
     norm_value = np.linalg.norm(column)
@@ -51,7 +39,6 @@ def norm(column):
         return column  # norm が 0 の場合、そのままの値を返す
     else:
         return column / norm_value, norm_value
-    
 
 try:
     os.makedirs(path, exist_ok=True)
@@ -144,40 +131,56 @@ for category in data:
         test_data = torch.tensor(test, dtype=torch.float32).to(device) if test.size > 0 else None
         test_labels = torch.tensor(test_labels, dtype=torch.float32).to(device) if test_labels.size > 0 else None
         
+        # iTransformerの設定
         feature_size = train_data.shape[2]
-        hidden_dim = 128
-        n_layers = 2
-        net = MyLSTM(feature_size, hidden_dim, n_layers)
+        lookback_len = window_size
+        net = iTransformer(
+            num_variates=feature_size,
+            lookback_len=lookback_len,
+            dim=256,
+            depth=6,
+            heads=8,
+            dim_head=64,
+            pred_length=12,  # 12ステップ先の値を予測
+        )
         
-        criterion = nn.L1Loss()
-        optimizer = optim.AdamW(net.parameters(), lr=1e-20)
+        criterion = nn.MSELoss()
+        optimizer = optim.AdamW(net.parameters(), lr=0.001)
         
         summary(net)
 
         net.to(device)
         train_data, train_labels = train_data.to(device), train_labels.to(device)
         
-        epochs = 100
+        epochs = 300
         loss_history = []
         
         for epoch in tqdm(range(epochs), desc='Training Epochs'):
             net.train()
             optimizer.zero_grad()
-            output = net(train_data)
+            output_dict = net(train_data)
+            output = output_dict[12]  # 12ステップ先の予測値を使用
             loss = criterion(output.squeeze(), train_labels)
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(net.parameters(), max_norm=1.0)
             optimizer.step()
             loss_history.append(loss.item())
             
             if (epoch+1) % 10 == 0:
                 print(f'Epoch {epoch+1}/{epochs}, Loss: {loss.item()}')
         
-        temp_model_path = f'./models_lstm/temp/temp_model.pth'
+        temp_model_path = f'./models_itransformer/temp/temp_model.pth'
         os.makedirs(os.path.dirname(temp_model_path), exist_ok=True)
         torch.save(net.state_dict(), temp_model_path)
         
-        net = MyLSTM(feature_size, hidden_dim, n_layers)
+        net = iTransformer(
+            num_variates=feature_size,
+            lookback_len=lookback_len,
+            dim=256,
+            depth=6,
+            heads=8,
+            dim_head=64,
+            pred_length=12,  # 12ステップ先の値を予測
+        )
         net.load_state_dict(torch.load(temp_model_path))
         net.to(device)
         net.eval()
@@ -188,7 +191,7 @@ for category in data:
         for k in tqdm(range(n_train), desc="Predicting Training Data"):
             x = torch.tensor(train[k]).reshape(1, window_size, feature_size).to(device).float()
             y = net(x)
-            predicted_train_plot.append(y.item())  # 予測値を取得
+            predicted_train_plot.append(y[12].item())  # 12ステップ先の予測値を取得
 
         # テストデータに対する予測
         predicted_test_plot = []
@@ -196,7 +199,7 @@ for category in data:
             for k in tqdm(range(n_test), desc="Predicting Test Data"):
                 x = torch.tensor(test[k]).reshape(1, window_size, feature_size).to(device).float()
                 y = net(x)
-                predicted_test_plot.append(y.item())  # 予測値を取得
+                predicted_test_plot.append(y[12].item())  # 12ステップ先の予測値を取得
 
             # 20日先の予測
             future_predictions = []
@@ -205,12 +208,12 @@ for category in data:
             for _ in range(20):
                 x = torch.tensor(last_window).reshape(1, window_size, feature_size).to(device)
                 y = net(x)
-                future_predictions.append(y.item())
+                future_predictions.append(y[12].item())
                 
                 # スカラー値を抽出してから代入
-                new_point = y.cpu().detach().numpy().item()
+                new_point = y[12].cpu().detach().numpy().item()
                 last_window = np.roll(last_window, -1, axis=0)
-                last_window[-1, 12] = new_point  # ここでは `ave_tmp` を予測している前提
+                last_window[-1, 12] = new_point  # ここでは `value` 列を予測している前提
 
             # NaNを含むかチェック
             if np.isnan(test_labels.cpu().numpy()).any() or np.isnan(predicted_test_plot).any():
@@ -227,7 +230,7 @@ for category in data:
         train_mse = mse(train_labels.cpu().numpy(), predicted_train_plot)
         print(f'Train MSE: {train_mse}, Train MAE: {train_mae}, Train R2: {train_r2}')
 
-        new_model_path = f'./models_lstm/{current_datetime}/{stock_code}-{train_r2:.2f}-{train_mse:.2f}.pth'
+        new_model_path = f'./models_itransformer/{current_datetime}/{stock_code}-{train_r2:.2f}-{train_mse:.2f}.pth'
         os.makedirs(os.path.dirname(new_model_path), exist_ok=True)
         torch.save(net.state_dict(), new_model_path)
 
