@@ -63,8 +63,7 @@ except OSError as error:
 for category in data:
     for company in data[category]:
 
-        # stock_code = company["symbol"]
-        stock_code = 'AAL'
+        stock_code = company['symbol']
         print(stock_code)
         
         df = requests.get(f'{BASE_URL}/ml_data/{stock_code}').json()
@@ -105,8 +104,8 @@ for category in data:
             'headline_excitement': headline_excitement,
             'headline_optimism': headline_optimism,
             'headline_stability': headline_stability,
-            'value': value,
-            'vix': vix
+            'vix': vix,
+            'value': value
         }
 
         # 辞書をデータフレームに変換
@@ -114,7 +113,22 @@ for category in data:
         data['date'] = pd.to_datetime(df['date'])
         data.set_index('date', inplace=True)
         
-        data = data.resample('D').max()
+        # 同じ日の要素ごとに和を取る列
+        sum_columns = ['content_concern', 'content_despair', 'content_excitement', 
+                       'content_optimism', 'content_stability', 'headline_concern',
+                       'headline_despair', 'headline_excitement', 'headline_optimism',
+                       'headline_stability']
+        
+        # 和を取る列は日毎に集約
+        summed_data = data[sum_columns].resample('D').sum()
+
+        # それ以外の列は最大値を取る
+        max_columns = [col for col in data.columns if col not in sum_columns]
+        max_data = data[max_columns].resample('D').max()
+
+        # 両方を結合
+        data = pd.concat([summed_data, max_data], axis=1)
+        
         print(data.info())
         print(data)
         
@@ -150,7 +164,7 @@ for category in data:
         net = MyLSTM(feature_size, hidden_dim, n_layers)
         
         criterion = nn.L1Loss()
-        optimizer = optim.AdamW(net.parameters(), lr=1e-20)
+        optimizer = optim.AdamW(net.parameters(), lr=1e-7)
         
         summary(net)
 
@@ -210,7 +224,7 @@ for category in data:
                 # スカラー値を抽出してから代入
                 new_point = y.cpu().detach().numpy().item()
                 last_window = np.roll(last_window, -1, axis=0)
-                last_window[-1, 12] = new_point  # ここでは `ave_tmp` を予測している前提
+                last_window[-1, 13] = new_point
 
             # NaNを含むかチェック
             if np.isnan(test_labels.cpu().numpy()).any() or np.isnan(predicted_test_plot).any():
