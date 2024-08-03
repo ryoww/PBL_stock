@@ -171,7 +171,7 @@ for category in data:
         net.to(device)
         train_data, train_labels = train_data.to(device), train_labels.to(device)
         
-        epochs = 100
+        epochs = 300
         loss_history = []
         
         for epoch in tqdm(range(epochs), desc='Training Epochs'):
