@@ -78,7 +78,7 @@ BASE_URL = 'http://192.168.1.222:8999'
 db_len = int(requests.get(f'{BASE_URL}/get_len').json()['max_id'])
 print(db_len)
 
-i = 7405
+i = 1
 
 while i <= db_len:
     response = requests.get(f'{BASE_URL}/row_data/{i}').json()
@@ -88,6 +88,8 @@ while i <= db_len:
 
     headline_array = predict_text_probabilities(model, tokenizer, headline, device)
     content_array = predict_text_probabilities(model, tokenizer, content, device)
+    print(headline_array)
+    print(content_array)
     
     data = {
         "headline_despair": float(headline_array[0]),

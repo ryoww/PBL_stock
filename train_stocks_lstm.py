@@ -29,7 +29,7 @@ path = f'models_lstm/{current_datetime}/'
 
 # JSONファイルの読み込み
 with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
-    data = json.load(file)
+    JSON_data = json.load(file)
 
 class MyLSTM(nn.Module):
     def __init__(self, feature_size, hidden_dim, n_layers):
@@ -60,15 +60,19 @@ except OSError as error:
     print(f"フォルダの作成に失敗しました: {error}")
 
 # 全てのシンボルをプリント
-for category in data:
-    for company in data[category]:
-
+for category in JSON_data:
+    for company in JSON_data[category]:
         stock_code = company['symbol']
         print(stock_code)
-        
-        df = requests.get(f'{BASE_URL}/ml_data/{stock_code}').json()
-        df = pd.DataFrame(df)
+
+        df = pd.DataFrame(requests.get(f'{BASE_URL}/ml_data/{stock_code}').json())
         print(df.info())
+        
+        df['date'] = pd.to_datetime(df['date'])
+        df.set_index('date', inplace=True)
+        
+        path = f'./ml_data/{stock_code}.csv'
+        df.to_csv(f'./ml_data/{stock_code}_pre.csv', index=False, encoding='utf-8')
 
         exclude_columns = ['date', 'time']
         columns = [col for col in df.columns if col not in exclude_columns]
@@ -110,9 +114,7 @@ for category in data:
 
         # 辞書をデータフレームに変換
         data = pd.DataFrame(data_dict)
-        data['date'] = pd.to_datetime(df['date'])
-        data.set_index('date', inplace=True)
-        
+
         # 同じ日の要素ごとに和を取る列
         sum_columns = ['content_concern', 'content_despair', 'content_excitement', 
                        'content_optimism', 'content_stability', 'headline_concern',
@@ -129,8 +131,26 @@ for category in data:
         # 両方を結合
         data = pd.concat([summed_data, max_data], axis=1)
         
-        print(data.info())
-        print(data)
+        data_dict = {
+                'NY_Dow': data['NY_Dow'],
+                'SP_500': data['SP_500'],
+                'content_concern': norm(data['content_concern'])[0],
+                'content_despair': norm(data['content_despair'])[0],
+                'content_excitement': norm(data['content_excitement'])[0],
+                'content_optimism': norm(data['content_optimism'])[0],
+                'content_stability': norm(data['content_stability'])[0],
+                'headline_concern': norm(data['headline_concern'])[0],
+                'headline_despair': norm(data['headline_despair'])[0],
+                'headline_excitement': norm(data['headline_excitement'])[0],
+                'headline_optimism': norm(data['headline_optimism'])[0],
+                'headline_stability': norm(data['headline_stability'])[0],
+                'vix': data['vix'],
+                'value': data['value']
+        }
+        
+        data = pd.DataFrame(data_dict).dropna()
+        
+        data.to_csv(path, index=False, encoding='utf-8')
         
         df_train, df_test = train_test_split(data, test_size=0.1, shuffle=False)
         
