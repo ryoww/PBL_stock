@@ -72,7 +72,7 @@ for category in JSON_data:
         df.set_index('date', inplace=True)
         
         path = f'./ml_data/{stock_code}.csv'
-        df.to_csv(f'./ml_data/{stock_code}_pre.csv', index=False, encoding='utf-8')
+        # df.to_csv(f'./ml_data/{stock_code}_pre.csv', index=False, encoding='utf-8')
 
         exclude_columns = ['date', 'time']
         columns = [col for col in df.columns if col not in exclude_columns]
