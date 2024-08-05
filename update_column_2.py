@@ -27,7 +27,7 @@ def find_previous_value(stock_symbol, date_str, json_days, entries):
     # 存在しなければさらに1日さかのぼる
     return find_previous_value(stock_symbol, previous_date_str, json_days, entries)
 
-for stock_symbol, entries in data.items():
+for stock_symbol, entries in reversed(data.items()):
     print(f'Stock Symbol: {stock_symbol}')
 
     days = test_get_days(stock_symbol)
