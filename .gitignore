@@ -16,3 +16,4 @@ tensorboard_logs
 models_lstm
 scrape_data
 ml_data
+predictions
