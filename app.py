@@ -186,8 +186,7 @@ def post_ml_data(id):
 
     query = """
     UPDATE stock_dataset
-    SET headline_despair = %s, headline_optimism = %s, headline_concern = %s, headline_excitement = %s, headline_stability = %s,
-        content_despair = %s, content_optimism = %s, content_concern = %s, content_excitement = %s, content_stability = %s
+    SET headline_despair = %s, headline_optimism = %s, headline_concern = %s, headline_excitement = %s, headline_stability = %s, content_despair = %s, content_optimism = %s, content_concern = %s, content_excitement = %s, content_stability = %s
     WHERE id = %s
     """
 
