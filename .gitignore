@@ -9,3 +9,5 @@ Pipfile.lock
 backup.sql
 backup2.sql
 scrape_data
+run_server.sh
+nohup.out
