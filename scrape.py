@@ -7,8 +7,11 @@ import time
 import json
 
 import requests
+import pandas as pd
 from bs4 import BeautifulSoup
 from key import sbi_id, sbi_pass
+
+BASE_URL = 'http://192.168.1.222:8999'
 
 caps = DesiredCapabilities.CHROME
 caps['goog:loggingPrefs'] = {'performance': 'ALL'}
@@ -40,7 +43,7 @@ time.sleep(0.3)
 driver.find_element(By.XPATH, r'//*[@id="root"]/main/article/div[1]/div[2]/a[2]').click()
 
 # JSONファイルの読み込み
-with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
+with open('./stock_name.json', 'r', encoding="utf-8") as file:
     data = json.load(file)
 
 # 全てのシンボルをプリント
@@ -65,49 +68,51 @@ for category in data:
         url_head = f"https://graph.sbisec.co.jp/sbinews/srvdetail?symbol={stock_code}&token={token}"
         print(url_head)
 
+
         res_head = requests.get(url_head)
         data_head = res_head.json()
 
         len_head = len(data_head['data'])
         time.sleep(1)
 
-        # formatted_data = {'data' : []}
+        date_time_res = requests.get(f'{BASE_URL}/getdays/{stock_code}')
+        date_time_df = pd.DataFrame(date_time_res.json())
+        date_time_df['datetime'] = pd.to_datetime(date_time_df['date'] + ' ' + date_time_df['time'])
+        date_time_array = [dt.strftime('%Y-%m-%d %H:%M') for dt in date_time_df['datetime']]
 
-        for articl in data_head['data']:
+
+        for articl in reversed(data_head['data']):
 
             id = articl['id']
             datetime = articl['date_new']
             headline = articl['headline']
+            print(articl)
 
-            url_body = f'https://graph.sbisec.co.jp/sbinews/srvdetail?newsid={id}&token={token}'
-            res_body = requests.get(url_body)
-            data_body = res_body.json()
+            if datetime not in date_time_array:
+                url_body = f'https://graph.sbisec.co.jp/sbinews/srvdetail?newsid={id}&token={token}'
+                res_body = requests.get(url_body)
+                data_body = res_body.json()
 
-            formatted_article ={
-                'stock_name' : str(stock_name),
-                'stock_code' : str(stock_code),
-                'datetime' : str(datetime),
-                'headline' : str(headline),
-                'content' : str(data_body['data'][0]['content'].replace('\n', '').replace('　', '').replace(' ', ''))
-            }
+                formatted_article ={
+                    'stock_name' : str(stock_name),
+                    'stock_code' : str(stock_code),
+                    'datetime' : str(datetime),
+                    'headline' : str(headline),
+                    'content' : str(data_body['data'][0]['content'].replace('\n', '').replace('　', '').replace(' ', ''))
+                }
 
-            headers = {
-                "Content-Type": "application/json"
-            }
+                headers = {
+                    "Content-Type": "application/json"
+                }
 
-            server_url = 'http://192.168.1.222:8999/row_data'
+                # print(formatted_article)
 
-            res = requests.post(server_url, headers=headers, json=formatted_article)
-            print(res.status_code)
-            print(res.text)
-            print(formatted_article['datetime'])
-            i += 1
+                post_url = f'{BASE_URL}/row_data'
+
+                res = requests.post(post_url, headers=headers, json=formatted_article)
+                print(res.status_code)
+                print(res.text)
+                print(formatted_article['datetime'])
+                i += 1
 
             print(f'{i} / {len_head}')
-            # print(formatted_article)
-
-        # path = f"./scrape_data/{stock_name}{current_datetime}.json"
-
-        # with open(path, 'w', encoding='utf-8') as json_file:
-        #     json.dump(formatted_data, json_file, ensure_ascii=False, indent=4)
-        # print("saved : ", path)

@@ -1,2559 +1,2434 @@
 {
-  "a": [
-    {
-      "symbol": "A",
-      "company_name": "アジレント テクノロジー",
-      "description": "化学分析 電子計測機器"
-    },
-    {
-      "symbol": "AAL",
-      "company_name": "アメリカン エアラインズ グループ",
-      "description": "航空会社"
-    },
-    {
-      "symbol": "AAPL",
-      "company_name": "アップル",
-      "description": "インターネット デジタル家電製品"
-    },
-    {
-      "symbol": "ABBV",
-      "company_name": "アッヴィ",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "ABNB",
-      "company_name": "エアビーアンドビー",
-      "description": "民宿仲介サービス"
-    },
-    {
-      "symbol": "ABT",
-      "company_name": "アボット ラボラトリーズ",
-      "description": "製薬"
-    },
-    {
-      "symbol": "ACGL",
-      "company_name": "アーチ キャピタル グループ",
-      "description": "保険・再保険 住宅ローン保険"
-    },
-    {
-      "symbol": "ACN",
-      "company_name": "アクセンチュア",
-      "description": "コンサルティング サービス"
-    },
-    {
-      "symbol": "ADBE",
-      "company_name": "アドビ",
-      "description": "ソフトウェア クラウドサービス"
-    },
-    {
-      "symbol": "ADI",
-      "company_name": "アナログ デバイセズ",
-      "description": "半導体 デバイスメーカー"
-    },
-    {
-      "symbol": "ADM",
-      "company_name": "アーチャー ダニエルズ ミッドランド",
-      "description": "農産物加工 食品原料メーカー"
-    },
-    {
-      "symbol": "ADP",
-      "company_name": "オートマチック データ プロセシング",
-      "description": "人事管理ソフトウェア サービス"
-    },
-    {
-      "symbol": "ADSK",
-      "company_name": "オートデスク",
-      "description": "3D図面作成 ソフトウェア"
-    },
-    {
-      "symbol": "AEE",
-      "company_name": "アメレン",
-      "description": "電力 & ガス"
-    },
-    {
-      "symbol": "AEP",
-      "company_name": "アメリカン エレクトリック パワー",
-      "description": "電力持株会社"
-    },
-    {
-      "symbol": "AES",
-      "company_name": "AES",
-      "description": "電力持株会社"
-    },
-    {
-      "symbol": "AFL",
-      "company_name": "アフラック",
-      "description": "がん・医療・生命保険"
-    },
-    {
-      "symbol": "AIG",
-      "company_name": "アメリカン インターナショナル グループ",
-      "description": "損害・生命保険"
-    },
-    {
-      "symbol": "AIZ",
-      "company_name": "アシュラント",
-      "description": "損害保険"
-    },
-    {
-      "symbol": "AJG",
-      "company_name": "アーサー J ギャラガー",
-      "description": "保険仲介 コンサルサービス"
-    },
-    {
-      "symbol": "AKAM",
-      "company_name": "アカマイ テクノロジーズ",
-      "description": "CDN クラウドセキュリティー"
-    },
-    {
-      "symbol": "ALB",
-      "company_name": "アルベマール",
-      "description": "リチウム・臭素 精製用触媒"
-    },
-    {
-      "symbol": "ALGN",
-      "company_name": "アライン テクノロジー",
-      "description": "歯列矯正システム マウスピース"
-    },
-    {
-      "symbol": "ALL",
-      "company_name": "オールステート",
-      "description": "損害保険"
-    },
-    {
-      "symbol": "ALLE",
-      "company_name": "アレジオン",
-      "description": "ドアセキュリティー"
-    },
-    {
-      "symbol": "AMAT",
-      "company_name": "アプライド マテリアルズ",
-      "description": "半導体 製造装置メーカー"
-    },
-    {
-      "symbol": "AMCR",
-      "company_name": "アムコア",
-      "description": "包装資材メ ーカー"
-    },
-    {
-      "symbol": "AMD",
-      "company_name": "アドバンスト マイクロ デバイセズ",
-      "description": "半導体メーカー"
-    },
-    {
-      "symbol": "AME",
-      "company_name": "アメテック",
-      "description": "電子機器 電気機械装置メーカー"
-    },
-    {
-      "symbol": "AMGN",
-      "company_name": "アムジェン",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "AMP",
-      "company_name": "アメリプライズ ファイナンシャル",
-      "description": "資産運用 金融サービス"
-    },
-    {
-      "symbol": "AMT",
-      "company_name": "アメリカン タワー",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "AMZN",
-      "company_name": "アマゾン ドット コム",
-      "description": "インターネットストア"
-    },
-    {
-      "symbol": "ANET",
-      "company_name": "アリスタ ネットワークス",
-      "description": "クラウド ネットワーク製品"
-    },
-    {
-      "symbol": "ANSS",
-      "company_name": "アンシス",
-      "description": "CAE解析ソフトウェア"
-    },
-    {
-      "symbol": "AON",
-      "company_name": "エーオン",
-      "description": "保険・再保険"
-    },
-    {
-      "symbol": "AOS",
-      "company_name": "A.O.スミス",
-      "description": "給湯器・ボイラー"
-    },
-    {
-      "symbol": "APA",
-      "company_name": "APA",
-      "description": "独立系石油 & ガス"
-    },
-    {
-      "symbol": "APD",
-      "company_name": "エアー プロダクツ アンド ケミカルズ",
-      "description": "産業用ガス・化学薬品"
-    },
-    {
-      "symbol": "APH",
-      "company_name": "アンフェノール",
-      "description": "インターコネクト 製品メーカー"
-    },
-    {
-      "symbol": "APTV",
-      "company_name": "アプティブ",
-      "description": "自動運転支援システム"
-    },
-    {
-      "symbol": "ARE",
-      "company_name": "アレクサンドリア リアル エステイト エクイティーズ",
-      "description": "REIT - オフィス"
-    },
-    {
-      "symbol": "ATO",
-      "company_name": "アトモス エナジー",
-      "description": "天然ガス"
-    },
-    {
-      "symbol": "AVB",
-      "company_name": "アバロンベイ コミュニティーズ",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "AVGO",
-      "company_name": "ブロードコム",
-      "description": "半導体 インフラソフトウェア"
-    },
-    {
-      "symbol": "AVY",
-      "company_name": "エイブリー デニソン",
-      "description": "感圧粘着ラベル"
-    },
-    {
-      "symbol": "AWK",
-      "company_name": "アメリカン ウォーター ワークス",
-      "description": "上下水道サービス"
-    },
-    {
-      "symbol": "AXON",
-      "company_name": "アクソン エンタープライズ",
-      "description": "テーザー銃"
-    },
-    {
-      "symbol": "AXP",
-      "company_name": "アメリカン エキスプレス",
-      "description": "クレジットカード"
-    },
-    {
-      "symbol": "AZO",
-      "company_name": "オートゾーン",
-      "description": "アフターマーケット 自動車部品販売"
-    }
-  ],
-  "b": [
-    {
-      "symbol": "BA",
-      "company_name": "ボーイング",
-      "description": "航空宇宙機器"
-    },
-    {
-      "symbol": "BAC",
-      "company_name": "バンク オブ アメリカ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "BALL",
-      "company_name": "ボール",
-      "description": "飲料・家庭用品向け アルミ包装"
-    },
-    {
-      "symbol": "BAX",
-      "company_name": "バクスター インターナショナル",
-      "description": "医薬品・医療機器"
-    },
-    {
-      "symbol": "BBWI",
-      "company_name": "バス アンド ボディ ワークス",
-      "description": "パーソナルケア 美容製品"
-    },
-    {
-      "symbol": "BBY",
-      "company_name": "ベスト バイ",
-      "description": "家電量販店"
-    },
-    {
-      "symbol": "BDX",
-      "company_name": "ベクトン ディッキンソン",
-      "description": "医療用 細菌検査用機器"
-    },
-    {
-      "symbol": "BEN",
-      "company_name": "フランクリン リソーシズ",
-      "description": "資産運用持株会社"
-    },
-    {
-      "symbol": "BG",
-      "company_name": "バンジ グローバル",
-      "description": "穀物・オイルシード"
-    },
-    {
-      "symbol": "BIIB",
-      "company_name": "バイオジェン",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "BIO",
-      "company_name": "バイオ ラッド ラボラトリーズ",
-      "description": "ライフサイエンス 臨床診断製品"
-    },
-    {
-      "symbol": "BK",
-      "company_name": "バンク オブ ニューヨーク メロン",
-      "description": "資産運用 カストディサービス"
-    },
-    {
-      "symbol": "BKNG",
-      "company_name": "ブッキング ホールディングス",
-      "description": "オンライン 旅行サービス"
-    },
-    {
-      "symbol": "BKR",
-      "company_name": "ベーカー ヒューズ",
-      "description": "油田設備・サービス"
-    },
-    {
-      "symbol": "BLDR",
-      "company_name": "ビルダーズ ファーストソース",
-      "description": "新築住宅向け 建築資材"
-    },
-    {
-      "symbol": "BLK",
-      "company_name": "ブラックロック",
-      "description": "資産運用"
-    },
-    {
-      "symbol": "BMY",
-      "company_name": "ブリストルマイヤーズ スクイブ",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "BR",
-      "company_name": "ブロードリッジ フィナンシャル ソリューションズ",
-      "description": "金融データ処理 ソリューション"
-    },
-    {
-      "symbol": "BRO",
-      "company_name": "ブラウン アンド ブラウン",
-      "description": "独立系保険仲介"
-    },
-    {
-      "symbol": "BSX",
-      "company_name": "ボストン サイエンティフィック",
-      "description": "医療機器メーカー"
-    },
-    {
-      "symbol": "BWA",
-      "company_name": "ボルグワーナー",
-      "description": "自動車部品メーカー"
-    },
-    {
-      "symbol": "BX",
-      "company_name": "ブラックストーン",
-      "description": "オルタナティブ 投資運用会社"
-    },
-    {
-      "symbol": "BXP",
-      "company_name": "ボストン プロパティーズ",
-      "description": "REIT - オフィス"
-    }
-  ],
-  "c": [
-    {
-      "symbol": "C",
-      "company_name": "シティグループ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "CAG",
-      "company_name": "コナグラ ブランズ",
-      "description": "パッケージ加工食品"
-    },
-    {
-      "symbol": "CAH",
-      "company_name": "カーディナル ヘルス",
-      "description": "医療サービス"
-    },
-    {
-      "symbol": "CARR",
-      "company_name": "キャリア グローバル",
-      "description": "暖房・換気・空調"
-    },
-    {
-      "symbol": "CAT",
-      "company_name": "キャタピラー",
-      "description": "建設機器・鉱山用機械"
-    },
-    {
-      "symbol": "CB",
-      "company_name": "チャブ",
-      "description": "損害保険"
-    },
-    {
-      "symbol": "CBOE",
-      "company_name": "Cboe グローバル マーケッツ",
-      "description": "デリバティブ取引所"
-    },
-    {
-      "symbol": "CBRE",
-      "company_name": "CBRE グループ",
-      "description": "事業用不動産サービス"
-    },
-    {
-      "symbol": "CCI",
-      "company_name": "クラウン キャッスル",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "CCL",
-      "company_name": "カーニバル",
-      "description": "クルーズ客船運航"
-    },
-    {
-      "symbol": "CDNS",
-      "company_name": "ケイデンス デザイン システムズ",
-      "description": "電子設計ソフトウェア"
-    },
-    {
-      "symbol": "CDW",
-      "company_name": "CDW",
-      "description": "IT機器・サービス"
-    },
-    {
-      "symbol": "CE",
-      "company_name": "セラニーズ",
-      "description": "石油化学製品 機能性材料"
-    },
-    {
-      "symbol": "CEG",
-      "company_name": "コンステレーション エナジー",
-      "description": "脱炭素エネルギー ソリューション"
-    },
-    {
-      "symbol": "CF",
-      "company_name": "CF インダストリーズ ホールディングス",
-      "description": "農業用肥料メーカー"
-    },
-    {
-      "symbol": "CFG",
-      "company_name": "シチズンズ ファイナンシャル グループ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "CHD",
-      "company_name": "チャーチ アンド ドワイト",
-      "description": "家庭用品メーカー"
-    },
-    {
-      "symbol": "CHRW",
-      "company_name": "C H ロビンソン ワールドワイド",
-      "description": "輸送サービス 物流ソリューション"
-    },
-    {
-      "symbol": "CHTR",
-      "company_name": "チャーター コミュニケーションズ",
-      "description": "ケーブルテレビ 通信サービス"
-    },
-    {
-      "symbol": "CI",
-      "company_name": "シグナ グループ",
-      "description": "医療・保険サービス"
-    },
-    {
-      "symbol": "CINF",
-      "company_name": "シンシナティ ファイナンシャル",
-      "description": "損害保険"
-    },
-    {
-      "symbol": "CL",
-      "company_name": "コルゲート パルモリーブ",
-      "description": "家庭用品メーカー"
-    },
-    {
-      "symbol": "CLX",
-      "company_name": "クロロックス",
-      "description": "漂白剤 クリーニング製品"
-    },
-    {
-      "symbol": "CMA",
-      "company_name": "コメリカ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "CMCSA",
-      "company_name": "コムキャスト",
-      "description": "ケーブルテレビ 通信サービス"
-    },
-    {
-      "symbol": "CME",
-      "company_name": "CME グループ",
-      "description": "先物オプション取引所"
-    },
-    {
-      "symbol": "CMG",
-      "company_name": "チポトレ メキシカン グリル",
-      "description": "メキシコ料理 レストランチェーン"
-    },
-    {
-      "symbol": "CMI",
-      "company_name": "カミンズ",
-      "description": "エンジンメーカー"
-    },
-    {
-      "symbol": "CMS",
-      "company_name": "CMS エナジー",
-      "description": "電気 & ガス"
-    },
-    {
-      "symbol": "CNC",
-      "company_name": "センティーン",
-      "description": "政府提供 医療プログラム"
-    },
-    {
-      "symbol": "CNP",
-      "company_name": "センターポイント エナジー",
-      "description": "電気 & ガス"
-    },
-    {
-      "symbol": "COF",
-      "company_name": "キャピタル ワン ファイナンシャル",
-      "description": "金融サービス"
-    },
-    {
-      "symbol": "COO",
-      "company_name": "クーパー",
-      "description": "医療機器"
-    },
-    {
-      "symbol": "COP",
-      "company_name": "コノコフィリップス",
-      "description": "石油 & ガス"
-    },
-    {
-      "symbol": "COR",
-      "company_name": "センコラ",
-      "description": "ヘルスケア ソリューション"
-    },
-    {
-      "symbol": "COST",
-      "company_name": "コストコ ホールセール",
-      "description": "会員制倉庫型 卸売・小売チェーン"
-    },
-    {
-      "symbol": "CPAY",
-      "company_name": "コーペイ",
-      "description": "B2B決済サービス"
-    },
-    {
-      "symbol": "CPB",
-      "company_name": "キャンベル スープ",
-      "description": "スープ缶 食品メーカー"
-    },
-    {
-      "symbol": "CPRT",
-      "company_name": "コパート",
-      "description": "オンライン 中古車オークション"
-    },
-    {
-      "symbol": "CPT",
-      "company_name": "カムデン プロパティ トラスト",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "CRL",
-      "company_name": "チャールズ リバー ラボラトリーズ インターナショナル",
-      "description": "医薬品開発 業務受託機関"
-    },
-    {
-      "symbol": "CRM",
-      "company_name": "セールスフォース",
-      "description": "クラウドベース 顧客関係管理システム"
-    },
-    {
-      "symbol": "CSCO",
-      "company_name": "シスコ システムズ",
-      "description": "コンピュータ ネットワーク機器"
-    },
-    {
-      "symbol": "CSGP",
-      "company_name": "コースター グループ",
-      "description": "商業用不動産 情報・分析サービス"
-    },
-    {
-      "symbol": "CSX",
-      "company_name": "CSX",
-      "description": "貨物鉄道輸送サービス"
-    },
-    {
-      "symbol": "CTAS",
-      "company_name": "シンタス",
-      "description": "ユニフォームレンタル"
-    },
-    {
-      "symbol": "CTLT",
-      "company_name": "キャタレント",
-      "description": "医薬品・健康食品 ソフトカプセル製剤"
-    },
-    {
-      "symbol": "CTRA",
-      "company_name": "コテラ エナジー",
-      "description": "石油・天然ガス"
-    },
-    {
-      "symbol": "CTSH",
-      "company_name": "コグニザント テクノロジー ソリューションズ",
-      "description": "デジタルITサービス"
-    },
-    {
-      "symbol": "CTVA",
-      "company_name": "コルテバ",
-      "description": "農薬・種子"
-    },
-    {
-      "symbol": "CVS",
-      "company_name": "CVS ヘルス",
-      "description": "ドラッグストア 薬剤給付管理サービス"
-    },
-    {
-      "symbol": "CVX",
-      "company_name": "シェブロン",
-      "description": "石油 & ガス"
-    },
-    {
-      "symbol": "CZR",
-      "company_name": "シーザーズ エンターテインメント",
-      "description": "カジノゲーム リゾート施設"
-    }
-  ],
-  "d": [
-    {
-      "symbol": "D",
-      "company_name": "ドミニオン エナジー",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "DAL",
-      "company_name": "デルタ エア ラインズ",
-      "description": "航空会社"
-    },
-    {
-      "symbol": "DAY",
-      "company_name": "デイフォース",
-      "description": "クラウド HCMソフトウェア"
-    },
-    {
-      "symbol": "DD",
-      "company_name": "デュポン ドゥ ヌムール",
-      "description": "総合化学メーカー"
-    },
-    {
-      "symbol": "DE",
-      "company_name": "ディアー",
-      "description": "農業 & 建設機械"
-    },
-    {
-      "symbol": "DECK",
-      "company_name": "デッカーズ アウトドア",
-      "description": "フットウェア アパレル"
-    },
-    {
-      "symbol": "DFS",
-      "company_name": "ディスカバー ファイナンシャル サービシズ",
-      "description": "クレジットカード"
-    },
-    {
-      "symbol": "DG",
-      "company_name": "ダラー ゼネラル",
-      "description": "ディスカウント 小売チェーン"
-    },
-    {
-      "symbol": "DGX",
-      "company_name": "クエスト ダイアグノスティクス",
-      "description": "診断情報サービス"
-    },
-    {
-      "symbol": "DHI",
-      "company_name": "DR ホートン",
-      "description": "住宅建設"
-    },
-    {
-      "symbol": "DHR",
-      "company_name": "ダナハー",
-      "description": "医療・歯科医療機器"
-    },
-    {
-      "symbol": "DIS",
-      "company_name": "ウォルト ディズニー",
-      "description": "エンターテインメント"
-    },
-    {
-      "symbol": "DLR",
-      "company_name": "デジタル リアルティ トラスト",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "DLTR",
-      "company_name": "ダラー ツリー",
-      "description": "ディスカウント 小売チェーン"
-    },
-    {
-      "symbol": "DOC",
-      "company_name": "ヘルスピーク プロパティーズ",
-      "description": "REIT - ヘルスケア施設"
-    },
-    {
-      "symbol": "DOV",
-      "company_name": "ドーバー",
-      "description": "特殊工業機械"
-    },
-    {
-      "symbol": "DOW",
-      "company_name": "ダウ",
-      "description": "総合化学メーカー"
-    },
-    {
-      "symbol": "DPZ",
-      "company_name": "ドミノ ピザ",
-      "description": "宅配ピザチェーン"
-    },
-    {
-      "symbol": "DRI",
-      "company_name": "ダーデン レストランツ",
-      "description": "フルサービス レストラン"
-    },
-    {
-      "symbol": "DTE",
-      "company_name": "DTE エナジー",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "DUK",
-      "company_name": "デューク エナジー",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "DVA",
-      "company_name": "ダヴィータ",
-      "description": "腎臓ケア透析サービス"
-    },
-    {
-      "symbol": "DVN",
-      "company_name": "デボン エナジー",
-      "description": "独立系石油 & ガス"
-    },
-    {
-      "symbol": "DXCM",
-      "company_name": "デクスコム",
-      "description": "糖尿病患者用 CGMシステム"
-    }
-  ],
-  "e": [
-    {
-      "symbol": "EA",
-      "company_name": "エレクトロニック アーツ",
-      "description": "ゲームソフト"
-    },
-    {
-      "symbol": "EBAY",
-      "company_name": "イーベイ",
-      "description": "インターネット オークション"
-    },
-    {
-      "symbol": "ECL",
-      "company_name": "エコラブ",
-      "description": "水・衛生・感染予防 ソリューション"
-    },
-    {
-      "symbol": "ED",
-      "company_name": "コンソリデイティッド エジソン",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "EFX",
-      "company_name": "エキファックス",
-      "description": "データ分析・信用情報 ソリューション"
-    },
-    {
-      "symbol": "EG",
-      "company_name": "エベレスト グループ",
-      "description": "再保険"
-    },
-    {
-      "symbol": "EIX",
-      "company_name": "エジソン インターナショナル",
-      "description": "電力持株会社"
-    },
-    {
-      "symbol": "EL",
-      "company_name": "エスティー ローダー",
-      "description": "化粧品 スキンケア・香水"
-    },
-    {
-      "symbol": "ELV",
-      "company_name": "エレヴァンス ヘルス",
-      "description": "健康福祉サービス"
-    },
-    {
-      "symbol": "EMN",
-      "company_name": "イーストマン ケミカル",
-      "description": "機能性・先進素材 特殊添加剤"
-    },
-    {
-      "symbol": "EMR",
-      "company_name": "エマーソン エレクトリック",
-      "description": "電気電子機器メーカー"
-    },
-    {
-      "symbol": "ENPH",
-      "company_name": "エンフェーズ エナジー",
-      "description": "太陽光発電 マイクロインバーター"
-    },
-    {
-      "symbol": "EOG",
-      "company_name": "EOG リソーシズ",
-      "description": "独立系石油 & ガス"
-    },
-    {
-      "symbol": "EPAM",
-      "company_name": "EPAM システムズ",
-      "description": "DXソフトウェア コンサルティング"
-    },
-    {
-      "symbol": "EQIX",
-      "company_name": "エクイニクス",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "EQR",
-      "company_name": "エクイティ レジデンシャル",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "EQT",
-      "company_name": "EQT",
-      "description": "独立系天然ガス"
-    },
-    {
-      "symbol": "ES",
-      "company_name": "エバーソース エナジー",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "ESS",
-      "company_name": "エセックス プロパティ トラスト",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "ETN",
-      "company_name": "イートン",
-      "description": "電力管理技術"
-    },
-    {
-      "symbol": "ETR",
-      "company_name": "エンタジー",
-      "description": "発電・配電"
-    },
-    {
-      "symbol": "ETSY",
-      "company_name": "エッツィ",
-      "description": "手工芸品 ECプラットフォーム"
-    },
-    {
-      "symbol": "EVRG",
-      "company_name": "エバジー",
-      "description": "発電・配電"
-    },
-    {
-      "symbol": "EW",
-      "company_name": "エドワーズ ライフサイエンシズ",
-      "description": "循環器疾患治療 モニタリング機器"
-    },
-    {
-      "symbol": "EXC",
-      "company_name": "エクセロン",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "EXPD",
-      "company_name": "エクスぺディターズ インターナショナル オブ ワシントン",
-      "description": "物流ソリューション"
-    },
-    {
-      "symbol": "EXPE",
-      "company_name": "エクスぺディア グループ",
-      "description": "オンライン 旅行サービス"
-    },
-    {
-      "symbol": "EXR",
-      "company_name": "エクストラ スペース ストレージ",
-      "description": "REIT - 産業"
-    }
-  ],
-  "f": [
-    {
-      "symbol": "F",
-      "company_name": "フォード モーター",
-      "description": "自動車メーカー"
-    },
-    {
-      "symbol": "FANG",
-      "company_name": "ダイヤモンドバック エナジー",
-      "description": "独立系石油 & ガス"
-    },
-    {
-      "symbol": "FAST",
-      "company_name": "ファステナル",
-      "description": "工業用品・建設資材"
-    },
-    {
-      "symbol": "FCX",
-      "company_name": "フリーポート マクモラン",
-      "description": "銅・金・モリブデン"
-    },
-    {
-      "symbol": "FDS",
-      "company_name": "ファクトセット リサーチ システムズ",
-      "description": "統合金融データ ソフトウェア"
-    },
-    {
-      "symbol": "FDX",
-      "company_name": "フェデックス",
-      "description": "物流サービス"
-    },
-    {
-      "symbol": "FE",
-      "company_name": "ファーストエナジー",
-      "description": "発電・配電"
-    },
-    {
-      "symbol": "FFIV",
-      "company_name": "F5",
-      "description": "アプリケーション サービス"
-    },
-    {
-      "symbol": "FI",
-      "company_name": "ファイザーブ",
-      "description": "金融決済 情報処理サービス"
-    },
-    {
-      "symbol": "FICO",
-      "company_name": "フェア アイザック",
-      "description": "クレジットスコア 分析的意思決定"
-    },
-    {
-      "symbol": "FIS",
-      "company_name": "フィディリティ ナショナル インフォメーション サービシズ",
-      "description": "金融決済 ソリューション"
-    },
-    {
-      "symbol": "FITB",
-      "company_name": "フィフス サード バンコープ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "FMC",
-      "company_name": "FMC",
-      "description": "殺虫・除草・殺菌剤"
-    },
-    {
-      "symbol": "FOX",
-      "company_name": "フォックス（クラスB / 議決権あり）",
-      "description": "エンターテインメント"
-    },
-    {
-      "symbol": "FOXA",
-      "company_name": "フォックス（クラスA / 議決権なし）",
-      "description": "エンターテインメント"
-    },
-    {
-      "symbol": "FRT",
-      "company_name": "フェデラル リアルティ インベストメント トラスト",
-      "description": "REIT - リテール"
-    },
-    {
-      "symbol": "FSLR",
-      "company_name": "ファースト ソーラー",
-      "description": "太陽電池 半導体薄膜技術"
-    },
-    {
-      "symbol": "FTNT",
-      "company_name": "フォーティネット",
-      "description": "ネットワーク セキュリティー"
-    },
-    {
-      "symbol": "FTV",
-      "company_name": "フォーティブ",
-      "description": "専門計器 ハイテク機器・部品"
-    }
-  ],
-  "g": [
-    {
-      "symbol": "GD",
-      "company_name": "ゼネラル ダイナミクス",
-      "description": "航空宇宙 & 防衛"
-    },
-    {
-      "symbol": "GE",
-      "company_name": "GE エアロスペース",
-      "description": "航空宇宙・防衛 エンジニアリング"
-    },
-    {
-      "symbol": "GEHC",
-      "company_name": "GE ヘルスケア テクノロジーズ",
-      "description": "医療機器・技術 診断薬・ヘルスケア"
-    },
-    {
-      "symbol": "GEN",
-      "company_name": "ジェン デジタル",
-      "description": "ウイルス・マルウェア 対策ソフトウェア"
-    },
-    {
-      "symbol": "GEV",
-      "company_name": "GE ベルノバ",
-      "description": "発電設備 タービン・原子炉"
-    },
-    {
-      "symbol": "GILD",
-      "company_name": "ギリアド サイエンシズ",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "GIS",
-      "company_name": "ゼネラル ミルズ",
-      "description": "消費者・ペット食品"
-    },
-    {
-      "symbol": "GL",
-      "company_name": "グローブ ライフ",
-      "description": "生命・健康保険"
-    },
-    {
-      "symbol": "GLW",
-      "company_name": "コーニング",
-      "description": "ガラス・セラミック 光学ソリューション"
-    },
-    {
-      "symbol": "GM",
-      "company_name": "ゼネラル モーターズ",
-      "description": "自動車メーカー"
-    },
-    {
-      "symbol": "GNRC",
-      "company_name": "ジェネラック ホールディングス",
-      "description": "発電機"
-    },
-    {
-      "symbol": "GOOG",
-      "company_name": "アルファベット（クラスC / 議決権なし）",
-      "description": "インターネット サービス"
-    },
-    {
-      "symbol": "GOOGL",
-      "company_name": "アルファベット（クラスA / 議決権あり）",
-      "description": "インターネット サービス"
-    },
-    {
-      "symbol": "GPC",
-      "company_name": "ジェニュイン パーツ",
-      "description": "自動車交換部品 産業用交換部品"
-    },
-    {
-      "symbol": "GPN",
-      "company_name": "グローバル ペイメンツ",
-      "description": "金融決済 技術サービス"
-    },
-    {
-      "symbol": "GRMN",
-      "company_name": "ガーミン",
-      "description": "GPS/GNSS 機器メーカー"
-    },
-    {
-      "symbol": "GS",
-      "company_name": "ゴールドマン サックス グループ",
-      "description": "投資銀行"
-    },
-    {
-      "symbol": "GWW",
-      "company_name": "W.W .グレインジャー",
-      "description": "メンテナンス 修理用品・消耗品"
-    }
-  ],
-  "h": [
-    {
-      "symbol": "HAL",
-      "company_name": "ハリバートン",
-      "description": "油田サービス"
-    },
-    {
-      "symbol": "HAS",
-      "company_name": "ハスブロ",
-      "description": "玩具 & ゲーム"
-    },
-    {
-      "symbol": "HBAN",
-      "company_name": "ハンチントン バンクシェアーズ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "HCA",
-      "company_name": "HCA ヘルスケア",
-      "description": "病院 医療サービス"
-    },
-    {
-      "symbol": "HD",
-      "company_name": "ホーム デポ",
-      "description": "ホームセンター"
-    },
-    {
-      "symbol": "HES",
-      "company_name": "ヘス",
-      "description": "独立系石油 & ガス"
-    },
-    {
-      "symbol": "HIG",
-      "company_name": "ハートフォード フィナンシャル サービシズ グループ",
-      "description": "損害保険"
-    },
-    {
-      "symbol": "HII",
-      "company_name": "ハンティントン インガルス インダストリーズ",
-      "description": "軍事造船会社"
-    },
-    {
-      "symbol": "HLT",
-      "company_name": "ヒルトン ワールドワイド ホールディングス",
-      "description": "ホテル・リゾート"
-    },
-    {
-      "symbol": "HOLX",
-      "company_name": "ホロジック",
-      "description": "女性疾患向け 診断・医療機器"
-    },
-    {
-      "symbol": "HON",
-      "company_name": "ハネウェル インターナショナル",
-      "description": "電子制御システム 自動化機器"
-    },
-    {
-      "symbol": "HPE",
-      "company_name": "ヒューレット パッカード エンタプライズ",
-      "description": "クラウド プラットフォーム"
-    },
-    {
-      "symbol": "HPQ",
-      "company_name": "HP",
-      "description": "PC・プリンター"
-    },
-    {
-      "symbol": "HRL",
-      "company_name": "ホーメル フーズ",
-      "description": "肉製品・食品加工"
-    },
-    {
-      "symbol": "HSIC",
-      "company_name": "ヘンリー シャイン",
-      "description": "歯科医療機器 歯科材料"
-    },
-    {
-      "symbol": "HST",
-      "company_name": "ホスト ホテルズ アンド リゾーツ",
-      "description": "REIT - ホテル&モーテル"
-    },
-    {
-      "symbol": "HSY",
-      "company_name": "ハーシー",
-      "description": "チョコレート 菓子メーカー"
-    },
-    {
-      "symbol": "HUBB",
-      "company_name": "ハベル",
-      "description": "電気・電子製品"
-    },
-    {
-      "symbol": "HUM",
-      "company_name": "ヒューマナ",
-      "description": "保険医療 ヘルスケア"
-    },
-    {
-      "symbol": "HWM",
-      "company_name": "ハウメット エアロスペース",
-      "description": "ジェットエンジン メタル製品・部品"
-    }
-  ],
-  "i": [
-    {
-      "symbol": "IBM",
-      "company_name": "IBM",
-      "description": "情報システムサービス"
-    },
-    {
-      "symbol": "ICE",
-      "company_name": "インターコンチネンタル エクスチェンジ",
-      "description": "デリバティブ 取引所グループ"
-    },
-    {
-      "symbol": "IDXX",
-      "company_name": "アイデックス ラボラトリーズ",
-      "description": "動物臨床検査 水中微生物検査"
-    },
-    {
-      "symbol": "IEX",
-      "company_name": "アイデックス",
-      "description": "ポンプ・流量計 流体システム"
-    },
-    {
-      "symbol": "IFF",
-      "company_name": "インターナショナル フレーバーズ アンド フレグランシーズ",
-      "description": "香料メーカー"
-    },
-    {
-      "symbol": "ILMN",
-      "company_name": "イルミナ",
-      "description": "遺伝子解析 統合システム"
-    },
-    {
-      "symbol": "INCY",
-      "company_name": "インサイト",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "INTC",
-      "company_name": "インテル",
-      "description": "半導体"
-    },
-    {
-      "symbol": "INTU",
-      "company_name": "イントゥイット",
-      "description": "会計・税務ソフト クラウドサービス"
-    },
-    {
-      "symbol": "INVH",
-      "company_name": "インビテーション ホームズ",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "IP",
-      "company_name": "インターナショナル ペーバー",
-      "description": "製紙 ライナー・パルプ"
-    },
-    {
-      "symbol": "IPG",
-      "company_name": "インターパブリック グループ オブ カンパニーズ",
-      "description": "広告 マーケティング"
-    },
-    {
-      "symbol": "IQV",
-      "company_name": "IQVIA ホールディングス",
-      "description": "医療データ分析 臨床試験サービス"
-    },
-    {
-      "symbol": "IR",
-      "company_name": "インガソール ランド",
-      "description": "コンプレッサー エアツールメーカー"
-    },
-    {
-      "symbol": "IRM",
-      "company_name": "アイアン マウンテン",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "ISRG",
-      "company_name": "インテューイティブ サージカル",
-      "description": "手術支援ロボット"
-    },
-    {
-      "symbol": "IT",
-      "company_name": "ガートナー",
-      "description": "調査・助言サービス"
-    },
-    {
-      "symbol": "ITW",
-      "company_name": "イリノイ ツール ワークス",
-      "description": "工業製品 設備メーカー"
-    },
-    {
-      "symbol": "IVZ",
-      "company_name": "インベスコ",
-      "description": "資産運用サービス"
-    }
-  ],
-  "j": [
-    {
-      "symbol": "J",
-      "company_name": "ジェイコブズ ソリューションズ",
-      "description": "専門技術 建設サービス"
-    },
-    {
-      "symbol": "JBHT",
-      "company_name": "J.B. ハント トランスポート サービシズ",
-      "description": "輸送・ロジスティクス"
-    },
-    {
-      "symbol": "JBL",
-      "company_name": "ジェイビル",
-      "description": "製造ソリューション"
-    },
-    {
-      "symbol": "JCI",
-      "company_name": "ジョンソン コントロールズ インターナショナル",
-      "description": "ビル設備 ソリューション"
-    },
-    {
-      "symbol": "JKHY",
-      "company_name": "ジャック ヘンリー アンド アソシエイツ",
-      "description": "金融機関向け 情報処理ソリューション"
-    },
-    {
-      "symbol": "JNJ",
-      "company_name": "ジョンソン エンド ジョンソン",
-      "description": "製薬・医療機器 ヘルスケア"
-    },
-    {
-      "symbol": "JNPR",
-      "company_name": "ジュニパー ネットワークス",
-      "description": "ネットワーク技術 ソリューション"
-    },
-    {
-      "symbol": "JPM",
-      "company_name": "JPモルガン チェース",
-      "description": "銀行"
-    }
-  ],
-  "k": [
-    {
-      "symbol": "K",
-      "company_name": "ケラノバ",
-      "description": "スナック菓子"
-    },
-    {
-      "symbol": "KDP",
-      "company_name": "キューリグ ドクター ペッパー",
-      "description": "コーヒー ソフトドリンク"
-    },
-    {
-      "symbol": "KEY",
-      "company_name": "キーコープ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "KEYS",
-      "company_name": "キーサイト テクノロジーズ",
-      "description": "電子計測 ソリューション"
-    },
-    {
-      "symbol": "KHC",
-      "company_name": "クラフト ハインツ",
-      "description": "食品 & 飲料"
-    },
-    {
-      "symbol": "KIM",
-      "company_name": "キムコ リアルティ",
-      "description": "REIT - リテール"
-    },
-    {
-      "symbol": "KLAC",
-      "company_name": "KLA",
-      "description": "半導体検査装置"
-    },
-    {
-      "symbol": "KMB",
-      "company_name": "キンバリークラーク",
-      "description": "衛生紙製品 パーソナルケア"
-    },
-    {
-      "symbol": "KMI",
-      "company_name": "キンダー モルガン",
-      "description": "パイプライン 貯蔵システム"
-    },
-    {
-      "symbol": "KMX",
-      "company_name": "カーマックス",
-      "description": "中古車小売"
-    },
-    {
-      "symbol": "KO",
-      "company_name": "コカ コーラ",
-      "description": "飲料 - 清涼飲料"
-    },
-    {
-      "symbol": "KR",
-      "company_name": "クローガー",
-      "description": "スーパーマーケット"
-    },
-    {
-      "symbol": "KVUE",
-      "company_name": "ケンビュー",
-      "description": "コンシューマー ヘルス"
-    }
-  ],
-  "l": [
-    {
-      "symbol": "L",
-      "company_name": "ロウズ",
-      "description": "複合持株会社"
-    },
-    {
-      "symbol": "LDOS",
-      "company_name": "レイドス ホールディングス",
-      "description": "国防諜報ITサービス"
-    },
-    {
-      "symbol": "LEN",
-      "company_name": "レナー",
-      "description": "住宅建設"
-    },
-    {
-      "symbol": "LH",
-      "company_name": "ラボラトリー コーポレーション オブ アメリカ ホールディングス",
-      "description": "臨床検査 医薬品開発サービス"
-    },
-    {
-      "symbol": "LHX",
-      "company_name": "L3ハリス テクノロジーズ",
-      "description": "防衛情報通信システム"
-    },
-    {
-      "symbol": "LIN",
-      "company_name": "リンデ",
-      "description": "産業ガス"
-    },
-    {
-      "symbol": "LKQ",
-      "company_name": "LKQ",
-      "description": "自動車修理交換部品"
-    },
-    {
-      "symbol": "LLY",
-      "company_name": "イーライリリー",
-      "description": "製薬"
-    },
-    {
-      "symbol": "LMT",
-      "company_name": "ロッキード マーティン",
-      "description": "戦闘機・ヘリコプター ミサイル防衛"
-    },
-    {
-      "symbol": "LNT",
-      "company_name": "アライアント エナジー",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "LOW",
-      "company_name": "ロウズ",
-      "description": "ホームセンター"
-    },
-    {
-      "symbol": "LRCX",
-      "company_name": "ラム リサーチ",
-      "description": "半導体製造装置 メーカー"
-    },
-    {
-      "symbol": "LULU",
-      "company_name": "ルルレモン アスレティカ",
-      "description": "スポーツ アパレル小売"
-    },
-    {
-      "symbol": "LUV",
-      "company_name": "サウスウェスト エアラインズ",
-      "description": "航空会社"
-    },
-    {
-      "symbol": "LVS",
-      "company_name": "ラス ベガス サンズ",
-      "description": "統合型リゾート"
-    },
-    {
-      "symbol": "LW",
-      "company_name": "ラム ウェストン ホールディングス",
-      "description": "冷凍ポテト"
-    },
-    {
-      "symbol": "LYB",
-      "company_name": "ライオンデルバゼル インダストリーズ",
-      "description": "プラスチック 化学薬品"
-    },
-    {
-      "symbol": "LYV",
-      "company_name": "ライブ ネーション エンターテインメント",
-      "description": "ライブ エンターテインメント"
-    }
-  ],
-  "m": [
-    {
-      "symbol": "MA",
-      "company_name": "マスターカード",
-      "description": "クレジットカード"
-    },
-    {
-      "symbol": "MAA",
-      "company_name": "ミッドアメリカ アパートメント コミュニティーズ",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "MAR",
-      "company_name": "マリオット インターナショナル",
-      "description": "ホテルチェーン"
-    },
-    {
-      "symbol": "MAS",
-      "company_name": "マスコ",
-      "description": "住宅修繕・建築用品"
-    },
-    {
-      "symbol": "MCD",
-      "company_name": "マクドナルド",
-      "description": "ファーストフード チェーン"
-    },
-    {
-      "symbol": "MCHP",
-      "company_name": "マイクロチップ テクノロジー",
-      "description": "特殊半導体メーカー"
-    },
-    {
-      "symbol": "MCK",
-      "company_name": "マケッソン",
-      "description": "医薬品・医療製品 医療サービス"
-    },
-    {
-      "symbol": "MCO",
-      "company_name": "ムーディーズ",
-      "description": "信用格付け会社"
-    },
-    {
-      "symbol": "MDLZ",
-      "company_name": "モンデリーズ インターナショナル",
-      "description": "食品 & 飲料"
-    },
-    {
-      "symbol": "MDT",
-      "company_name": "メドトロニック",
-      "description": "心臓ペースメーカー 医療機器"
-    },
-    {
-      "symbol": "MET",
-      "company_name": "メットライフ",
-      "description": "生命保険"
-    },
-    {
-      "symbol": "META",
-      "company_name": "メタ プラットフォームズ",
-      "description": "メタバース"
-    },
-    {
-      "symbol": "MGM",
-      "company_name": "MGM リゾーツ インターナショナル",
-      "description": "統合型リゾート"
-    },
-    {
-      "symbol": "MHK",
-      "company_name": "モホーク･インダストリーズ ",
-      "description": "フローリング メーカー"
-    },
-    {
-      "symbol": "MKC",
-      "company_name": "マコーミック",
-      "description": "スパイス・調味料"
-    },
-    {
-      "symbol": "MKTX",
-      "company_name": "マーケットアクセス ホールディングス",
-      "description": "電子取引 プラットフォーム"
-    },
-    {
-      "symbol": "MLM",
-      "company_name": "マーチン マリエッタ マテリアルズ",
-      "description": "建設用骨材メーカー"
-    },
-    {
-      "symbol": "MMC",
-      "company_name": "マシュー アンド マクレナン",
-      "description": "リスクマネジメント 保険関連サービス"
-    },
-    {
-      "symbol": "MMM",
-      "company_name": "スリーエム",
-      "description": "化学・電気素材 メーカー"
-    },
-    {
-      "symbol": "MNST",
-      "company_name": "モンスター･ビバレッジ",
-      "description": "エネルギードリンク"
-    },
-    {
-      "symbol": "MO",
-      "company_name": "アルトリア グループ",
-      "description": "タバコ"
-    },
-    {
-      "symbol": "MOH",
-      "company_name": "モリーナ ヘルスケア",
-      "description": "公的医療保険 ヘルスケア"
-    },
-    {
-      "symbol": "MOS",
-      "company_name": "モザイク",
-      "description": "リン酸塩・カリウム"
-    },
-    {
-      "symbol": "MPC",
-      "company_name": "マラソン ペトロリアム",
-      "description": "石油精製 ガソリンスタンド"
-    },
-    {
-      "symbol": "MPWR",
-      "company_name": "モノリシック パワー システムズ",
-      "description": "アナログ半導体 電力ソリューション"
-    },
-    {
-      "symbol": "MRK",
-      "company_name": "メルク",
-      "description": "製薬"
-    },
-    {
-      "symbol": "MRNA",
-      "company_name": "モデルナ",
-      "description": "メッセンジャーRNA 治療薬・ワクチン開発"
-    },
-    {
-      "symbol": "MRO",
-      "company_name": "マラソン オイル",
-      "description": "独立系石油 & ガス"
-    },
-    {
-      "symbol": "MS",
-      "company_name": "モルガン スタンレー",
-      "description": "投資銀行"
-    },
-    {
-      "symbol": "MSCI",
-      "company_name": "MSCI",
-      "description": "株価指数算出 ポートフォリオ分析"
-    },
-    {
-      "symbol": "MSFT",
-      "company_name": "マイクロソフト",
-      "description": "アプリケーション ソフトウェア"
-    },
-    {
-      "symbol": "MSI",
-      "company_name": "モトローラ ソリューションズ",
-      "description": "無線機器 ソリューション"
-    },
-    {
-      "symbol": "MTB",
-      "company_name": "M&T バンク",
-      "description": "銀行"
-    },
-    {
-      "symbol": "MTCH",
-      "company_name": "マッチ グループ",
-      "description": "出会い系アプリ"
-    },
-    {
-      "symbol": "MTD",
-      "company_name": "メトラートレド インターナショナル",
-      "description": "精密機器・計量器"
-    },
-    {
-      "symbol": "MU",
-      "company_name": "マイクロン テクノロジー",
-      "description": "半導体 ソリューション"
-    }
-  ],
-  "n": [
-    {
-      "symbol": "NCLH",
-      "company_name": "ノルウェージャン クルーズ ライン ホールディングス",
-      "description": "クルーズ客船運航"
-    },
-    {
-      "symbol": "NDAQ",
-      "company_name": "ナスダック",
-      "description": "証券取引所"
-    },
-    {
-      "symbol": "NDSN",
-      "company_name": "ノードソン",
-      "description": "接着剤塗布機器 ソリューション"
-    },
-    {
-      "symbol": "NEE",
-      "company_name": "ネクステラ エナジー",
-      "description": "再生可能エネルギー"
-    },
-    {
-      "symbol": "NEM",
-      "company_name": "ニューモント",
-      "description": "金・銅・銀・亜鉛・鉛"
-    },
-    {
-      "symbol": "NFLX",
-      "company_name": "ネットフリックス",
-      "description": "動画配信サービス"
-    },
-    {
-      "symbol": "NI",
-      "company_name": "ナイソース",
-      "description": "天然ガス・電力"
-    },
-    {
-      "symbol": "NKE",
-      "company_name": "ナイキ",
-      "description": "スポーツ用品"
-    },
-    {
-      "symbol": "NOC",
-      "company_name": "ノースロップ グラマン",
-      "description": "軍需メーカー"
-    },
-    {
-      "symbol": "NOW",
-      "company_name": "サービスナウ",
-      "description": "クラウドベース ITワークフロー"
-    },
-    {
-      "symbol": "NRG",
-      "company_name": "NRG エナジー",
-      "description": "発電・小売サービス"
-    },
-    {
-      "symbol": "NSC",
-      "company_name": "ノーフォーク サザン",
-      "description": "鉄道"
-    },
-    {
-      "symbol": "NTAP",
-      "company_name": "ネットアップ",
-      "description": "クラウドストレージ"
-    },
-    {
-      "symbol": "NTRS",
-      "company_name": "ノーザン トラスト",
-      "description": "資産運用"
-    },
-    {
-      "symbol": "NUE",
-      "company_name": "ニューコア",
-      "description": "鉄鋼メーカー"
-    },
-    {
-      "symbol": "NVDA",
-      "company_name": "エヌビディア",
-      "description": "GPU 半導体メーカー"
-    },
-    {
-      "symbol": "NVR",
-      "company_name": "NVR",
-      "description": "住宅建設"
-    },
-    {
-      "symbol": "NWS",
-      "company_name": "ニューズ（クラスB / 議決権あり）",
-      "description": "メディア 情報サービス"
-    },
-    {
-      "symbol": "NWSA",
-      "company_name": "ニューズ（クラスA / 議決権なし）",
-      "description": "メディア 情報サービス"
-    },
-    {
-      "symbol": "NXPI",
-      "company_name": "NXP セミコンダクターズ",
-      "description": "半導体メーカー"
-    }
-  ],
-  "o": [
-    {
-      "symbol": "O",
-      "company_name": "リアルティ インカム",
-      "description": "REIT - リテール"
-    },
-    {
-      "symbol": "ODFL",
-      "company_name": "オールド ドミニオン フレイト ライン",
-      "description": "小口トラック 輸送サービス"
-    },
-    {
-      "symbol": "OKE",
-      "company_name": "ONEOK",
-      "description": "天然ガス"
-    },
-    {
-      "symbol": "OMC",
-      "company_name": "オムニコム グループ",
-      "description": "広告 マーケティング"
-    },
-    {
-      "symbol": "ON",
-      "company_name": "オン セミコンダクター",
-      "description": "半導体メーカー"
-    },
-    {
-      "symbol": "ORCL",
-      "company_name": "オラクル",
-      "description": "クラウドインフラ ソフトウェア"
-    },
-    {
-      "symbol": "ORLY",
-      "company_name": "オライリー オートモーティブ",
-      "description": "アフターマーケット 自動車部品販売"
-    },
-    {
-      "symbol": "OTIS",
-      "company_name": "オーチス ワールドワイド",
-      "description": "エレベーター エスカレーター"
-    },
-    {
-      "symbol": "OXY",
-      "company_name": "オクシデンタル ペトロリアム",
-      "description": "独立系石油 & ガス"
-    }
-  ],
-  "p": [
-    {
-      "symbol": "PANW",
-      "company_name": "パロ アルト ネットワークス",
-      "description": "サイバーセキュリティ"
-    },
-    {
-      "symbol": "PARA",
-      "company_name": "パラマウント グローバル",
-      "description": "メディア エンターテインメント"
-    },
-    {
-      "symbol": "PAYC",
-      "company_name": "ペイコム ソフトウェア",
-      "description": "クラウドベース HCMソフトウェア"
-    },
-    {
-      "symbol": "PAYX",
-      "company_name": "ペイチェックス",
-      "description": "HCMソリューション"
-    },
-    {
-      "symbol": "PCAR",
-      "company_name": "パッカー",
-      "description": "トラックメーカー"
-    },
-    {
-      "symbol": "PCG",
-      "company_name": "PG&E",
-      "description": "天然ガス・電力"
-    },
-    {
-      "symbol": "PEG",
-      "company_name": "パブリック サービス エンタプライズ グループ",
-      "description": "電力 & 天然ガス"
-    },
-    {
-      "symbol": "PEP",
-      "company_name": "ペプシコ",
-      "description": "清涼飲料"
-    },
-    {
-      "symbol": "PFE",
-      "company_name": "ファイザー",
-      "description": "製薬"
-    },
-    {
-      "symbol": "PFG",
-      "company_name": "プリンシパル ファイナンシャル グループ",
-      "description": "資産運用"
-    },
-    {
-      "symbol": "PG",
-      "company_name": "P&G",
-      "description": "一般消費財メーカー"
-    },
-    {
-      "symbol": "PGR",
-      "company_name": "プログレッシブ",
-      "description": "自動車・損害保険"
-    },
-    {
-      "symbol": "PH",
-      "company_name": "パーカーハネフィン",
-      "description": "モーション制御技術"
-    },
-    {
-      "symbol": "PHM",
-      "company_name": "パルトグループ",
-      "description": "住宅建設"
-    },
-    {
-      "symbol": "PKG",
-      "company_name": "パッケージング コーポレーション オブ アメリカ",
-      "description": "段ボール製品メーカー"
-    },
-    {
-      "symbol": "PLD",
-      "company_name": "プロロジス",
-      "description": "REIT - 産業"
-    },
-    {
-      "symbol": "PM",
-      "company_name": "フィリップ モリス インターナショナル",
-      "description": "タバコ"
-    },
-    {
-      "symbol": "PNC",
-      "company_name": "PNC ファイナンシャル サービシズ グループ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "PNR",
-      "company_name": "ペンテア",
-      "description": "水処理ソリューション"
-    },
-    {
-      "symbol": "PNW",
-      "company_name": "ピナクル ウエスト キャピタル",
-      "description": "電力持株会社"
-    },
-    {
-      "symbol": "PODD",
-      "company_name": "インシュレット",
-      "description": "医療機器 インスリン投与"
-    },
-    {
-      "symbol": "POOL",
-      "company_name": "プール",
-      "description": "スイミングプール用品"
-    },
-    {
-      "symbol": "PPG",
-      "company_name": "PPG インダストリーズ",
-      "description": "コーティング 特殊材料"
-    },
-    {
-      "symbol": "PPL",
-      "company_name": "PPL",
-      "description": "電力 & 天然ガス"
-    },
-    {
-      "symbol": "PRU",
-      "company_name": "プルデンシャル ファイナンシャル",
-      "description": "生命保険"
-    },
-    {
-      "symbol": "PSA",
-      "company_name": "パブリック ストレージ",
-      "description": "REIT - 産業"
-    },
-    {
-      "symbol": "PSX",
-      "company_name": "フィリップス 66",
-      "description": "石油精製・製品販売"
-    },
-    {
-      "symbol": "PTC",
-      "company_name": "PTC",
-      "description": "DXソリューション インダストリアルIoT"
-    },
-    {
-      "symbol": "PWR",
-      "company_name": "クアンタ サービシズ",
-      "description": "インフラ ソリューション"
-    },
-    {
-      "symbol": "PYPL",
-      "company_name": "ペイパル ホールディングス",
-      "description": "デジタル 決済プラットフォーム"
-    }
-  ],
-  "q": [
-    {
-      "symbol": "QCOM",
-      "company_name": "クアルコム",
-      "description": "無線テクノロジー アプリケーション"
-    },
-    {
-      "symbol": "QRVO",
-      "company_name": "コルボ",
-      "description": "無線周波数 ソリューション"
-    }
-  ],
-  "r": [
-    {
-      "symbol": "RCL",
-      "company_name": "ロイヤル カリビアン クルーズ",
-      "description": "クルーズ客船運航"
-    },
-    {
-      "symbol": "REG",
-      "company_name": "リージェンシー センターズ",
-      "description": "REIT - リテール"
-    },
-    {
-      "symbol": "REGN",
-      "company_name": "リジェネロン ファーマスーティカルズ",
-      "description": "バイオ医療品"
-    },
-    {
-      "symbol": "RF",
-      "company_name": "リージョンズ フィナンシャル",
-      "description": "銀行"
-    },
-    {
-      "symbol": "RHI",
-      "company_name": "ロバート ハーフ",
-      "description": "人材派遣 コンサルティング"
-    },
-    {
-      "symbol": "RJF",
-      "company_name": "レイモンド ジェームズ ファイナンシャル",
-      "description": "総合証券会社"
-    },
-    {
-      "symbol": "RL",
-      "company_name": "ラルフ ローレン",
-      "description": "ブランド衣料品"
-    },
-    {
-      "symbol": "RMD",
-      "company_name": "レスメド",
-      "description": "医療機器メーカー"
-    },
-    {
-      "symbol": "ROK",
-      "company_name": "ロックウェル オートメーション",
-      "description": "産業用 オートメーション"
-    },
-    {
-      "symbol": "ROL",
-      "company_name": "ローリンズ",
-      "description": "害虫・シロアリ 防除サービス"
-    },
-    {
-      "symbol": "ROP",
-      "company_name": "ローパー テクノロジーズ",
-      "description": "ソフトウェア 産業技術・制御"
-    },
-    {
-      "symbol": "ROST",
-      "company_name": "ロス ストアーズ",
-      "description": "オフプライス アパレル・雑貨"
-    },
-    {
-      "symbol": "RSG",
-      "company_name": "リパブリック サービシズ",
-      "description": "廃棄物処理サービス"
-    },
-    {
-      "symbol": "RTX",
-      "company_name": "RTX",
-      "description": "軍需メーカー"
-    },
-    {
-      "symbol": "RVTY",
-      "company_name": "レヴィティ",
-      "description": "研究開発（R&D） 臨床 ・診断"
-    }
-  ],
-  "s": [
-    {
-      "symbol": "SBAC",
-      "company_name": "SBA コミュニケーションズ",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "SBUX",
-      "company_name": "スターバックス",
-      "description": "自社ブランド コーヒーチェーン"
-    },
-    {
-      "symbol": "SCHW",
-      "company_name": "チャールズ シュワブ",
-      "description": "証券会社"
-    },
-    {
-      "symbol": "SHW",
-      "company_name": "シャーウィンウィリアムズ",
-      "description": "塗料・コーティング"
-    },
-    {
-      "symbol": "SJM",
-      "company_name": "J.M. スマッカー",
-      "description": "食品・飲料 ペットフード"
-    },
-    {
-      "symbol": "SLB",
-      "company_name": "SLB（シュルンベルジェ）",
-      "description": "油田探査・計測機器"
-    },
-    {
-      "symbol": "SMCI",
-      "company_name": "スーパー マイクロ コンピューター",
-      "description": "サーバー・ストレージ ソリューション"
-    },
-    {
-      "symbol": "SNA",
-      "company_name": "スナップオン",
-      "description": "診断・修理 工具メーカー"
-    },
-    {
-      "symbol": "SNPS",
-      "company_name": "シノプシス",
-      "description": "電子設計 自動化ソフトウェア"
-    },
-    {
-      "symbol": "SO",
-      "company_name": "サザン",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "SOLV",
-      "company_name": "ソルベンタム",
-      "description": "ヘルスケア"
-    },
-    {
-      "symbol": "SPG",
-      "company_name": "サイモン プロパティ グループ",
-      "description": "REIT - リテール"
-    },
-    {
-      "symbol": "SPGI",
-      "company_name": "S&P グローバル",
-      "description": "信用格付け 金融情報サービス"
-    },
-    {
-      "symbol": "SRE",
-      "company_name": "センプラ",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "STE",
-      "company_name": "ステリス",
-      "description": "医療機器 感染防止製品"
-    },
-    {
-      "symbol": "STLD",
-      "company_name": "スチール ダイナミクス",
-      "description": "鉄鋼"
-    },
-    {
-      "symbol": "STT",
-      "company_name": "ステート ストリート",
-      "description": "資産運用"
-    },
-    {
-      "symbol": "STX",
-      "company_name": "シーゲイト テクノロジー ホールディングス",
-      "description": "HDD・SSD ストレージ管理"
-    },
-    {
-      "symbol": "STZ",
-      "company_name": "コンステレーション ブランズ",
-      "description": "アルコール飲料"
-    },
-    {
-      "symbol": "SWK",
-      "company_name": "スタンレー ブラック アンド デッカー",
-      "description": "電動工具 電子セキュリティ"
-    },
-    {
-      "symbol": "SWKS",
-      "company_name": "スカイワークス ソリューションズ",
-      "description": "ワイヤレス 半導体メーカー"
-    },
-    {
-      "symbol": "SYF",
-      "company_name": "シンクロニー ファイナンシャル",
-      "description": "消費者金融サービス"
-    },
-    {
-      "symbol": "SYK",
-      "company_name": "ストライカー",
-      "description": "医療機器メーカー"
-    },
-    {
-      "symbol": "SYY",
-      "company_name": "シスコ",
-      "description": "食品サービス ホスピタリティ"
-    },
-    {
-      "symbol": "N/A",
-      "company_name": "",
-      "description": ""
-    }
-  ],
-  "t": [
-    {
-      "symbol": "T",
-      "company_name": "AT&T",
-      "description": "統合ネットワーク ソリューション"
-    },
-    {
-      "symbol": "TAP",
-      "company_name": "モルソン クアーズ ビバレッジ",
-      "description": "ビール醸造"
-    },
-    {
-      "symbol": "TDG",
-      "company_name": "トランスダイム グループ",
-      "description": "航空機部品 システム"
-    },
-    {
-      "symbol": "TDY",
-      "company_name": "テレダイン テクノロジーズ",
-      "description": "計装・デジタル画像 電子・通信機器"
-    },
-    {
-      "symbol": "TECH",
-      "company_name": "バイオテク二",
-      "description": "試薬・GMP製品 機器・テストサービス"
-    },
-    {
-      "symbol": "TEL",
-      "company_name": "TE コネクティビティ",
-      "description": "コネクティビティ ソリューション"
-    },
-    {
-      "symbol": "TER",
-      "company_name": "テラダイン",
-      "description": "自動試験装置メーカー"
-    },
-    {
-      "symbol": "TFC",
-      "company_name": "トゥルイスト ファイナンシャル",
-      "description": "銀行"
-    },
-    {
-      "symbol": "TFX",
-      "company_name": "テレフレックス",
-      "description": "医療機器メーカー"
-    },
-    {
-      "symbol": "TGT",
-      "company_name": "ターゲット",
-      "description": "ディスカウント 小売チェーン"
-    },
-    {
-      "symbol": "TJX",
-      "company_name": "TJX",
-      "description": "オフプライス アパレル・雑貨"
-    },
-    {
-      "symbol": "TMO",
-      "company_name": "サーモ フィッシャー サイエンティフィック",
-      "description": "試薬・分析機器 特殊診断・ラボ製品"
-    },
-    {
-      "symbol": "TMUS",
-      "company_name": "TモバイルUS",
-      "description": "携帯電話"
-    },
-    {
-      "symbol": "TPR",
-      "company_name": "タペストリー",
-      "description": "高級アクセサリー ファッション"
-    },
-    {
-      "symbol": "TRGP",
-      "company_name": "タルガ リソーシズ",
-      "description": "天然ガス・天然ガス液"
-    },
-    {
-      "symbol": "TRMB",
-      "company_name": "トリンブル",
-      "description": "モバイル端末 業務ソリューション"
-    },
-    {
-      "symbol": "TROW",
-      "company_name": "T ロウ プライス グループ",
-      "description": "資産運用"
-    },
-    {
-      "symbol": "TRV",
-      "company_name": "トラベラーズ",
-      "description": "損害保険"
-    },
-    {
-      "symbol": "TSCO",
-      "company_name": "トラクター サプライ",
-      "description": "農業・牧場用品 販売チェーン"
-    },
-    {
-      "symbol": "TSLA",
-      "company_name": "テスラ",
-      "description": "電気自動車 ソーラーパネル"
-    },
-    {
-      "symbol": "TSN",
-      "company_name": "タイソン フーズ",
-      "description": "食肉加工食品"
-    },
-    {
-      "symbol": "TT",
-      "company_name": "トレイン テクノロジーズ",
-      "description": "空調製品 エネルギー制御"
-    },
-    {
-      "symbol": "TTWO",
-      "company_name": "テイクツー インタラクティブ ソフトウェア",
-      "description": "ゲームソフト 周辺機器メーカー"
-    },
-    {
-      "symbol": "TXN",
-      "company_name": "テキサス インスツルメンツ",
-      "description": "アナログ 組込み半導体"
-    },
-    {
-      "symbol": "TXT",
-      "company_name": "テクストロン",
-      "description": "軍需メーカー"
-    },
-    {
-      "symbol": "TYL",
-      "company_name": "タイラー テクノロジーズ",
-      "description": "統合情報管理 ソリューション"
-    }
-  ],
-  "u": [
-    {
-      "symbol": "UAL",
-      "company_name": "ユナイテッド エアラインズ ホールディングス",
-      "description": "航空会社"
-    },
-    {
-      "symbol": "UBER",
-      "company_name": "ウーバー テクノロジーズ",
-      "description": "配車携帯アプリ"
-    },
-    {
-      "symbol": "UDR",
-      "company_name": "UDR",
-      "description": "REIT - 住宅"
-    },
-    {
-      "symbol": "UHS",
-      "company_name": "ユニバーサル ヘルス サービシズ",
-      "description": "病院 ヘルスケアサービス"
-    },
-    {
-      "symbol": "ULTA",
-      "company_name": "アルタ ビューティー",
-      "description": "美容小売 サロンサービス"
-    },
-    {
-      "symbol": "UNH",
-      "company_name": "ユナイテッドヘルス グループ",
-      "description": "医療保険 医療サービス"
-    },
-    {
-      "symbol": "UNP",
-      "company_name": "ユニオン パシフィック",
-      "description": "鉄道"
-    },
-    {
-      "symbol": "UPS",
-      "company_name": "ユナイテッド パーセル サービス",
-      "description": "小口貨物 輸送サービス"
-    },
-    {
-      "symbol": "URI",
-      "company_name": "ユナイテッド レンタルズ",
-      "description": "機器レンタル サービス"
-    },
-    {
-      "symbol": "USB",
-      "company_name": "U.S. バンコープ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "N/A",
-      "company_name": "",
-      "description": ""
-    }
-  ],
-  "v": [
-    {
-      "symbol": "V",
-      "company_name": "ビザ",
-      "description": "クレジットカード"
-    },
-    {
-      "symbol": "VICI",
-      "company_name": "VICI プロパティーズ",
-      "description": "REIT - 分散型"
-    },
-    {
-      "symbol": "VLO",
-      "company_name": "バレロ エナジー",
-      "description": "独立系石油精製・販売"
-    },
-    {
-      "symbol": "VLTO",
-      "company_name": "ベラルト",
-      "description": "水資源・品質 保護ソリューション"
-    },
-    {
-      "symbol": "VMC",
-      "company_name": "バルカン マテリアルズ",
-      "description": "砕石・砂利・砂 建築骨材メーカー"
-    },
-    {
-      "symbol": "VRSK",
-      "company_name": "ベリスク アナリティックス",
-      "description": "損害予測・リスク分析 ソリューション"
-    },
-    {
-      "symbol": "VRSN",
-      "company_name": "ベリサイン",
-      "description": "レジストリサービス セキュリティー"
-    },
-    {
-      "symbol": "VRTX",
-      "company_name": "バーテックス ファーマスーティカルズ",
-      "description": "バイオ医薬品"
-    },
-    {
-      "symbol": "VTR",
-      "company_name": "ベンタス",
-      "description": "REIT - ヘルスケア施設"
-    },
-    {
-      "symbol": "VTRS",
-      "company_name": "バイアトリス",
-      "description": "ジェネリック医薬品"
-    },
-    {
-      "symbol": "VZ",
-      "company_name": "ベライゾン コミュニケーションズ",
-      "description": "通信技術 ソリューション"
-    }
-  ],
-  "w": [
-    {
-      "symbol": "WAB",
-      "company_name": "ウェスティングハウス エア ブレーキ テクノロジーズ",
-      "description": "貨物車・機関車 輸送部品・サービス"
-    },
-    {
-      "symbol": "WAT",
-      "company_name": "ウォーターズ",
-      "description": "分析機器メーカー"
-    },
-    {
-      "symbol": "WBA",
-      "company_name": "ウォルグリーン ブーツ アライアンス",
-      "description": "ドラッグストア 健康サービス"
-    },
-    {
-      "symbol": "WBD",
-      "company_name": "ワーナー ブラザース ディスカバリー",
-      "description": "メディア エンターテインメント"
-    },
-    {
-      "symbol": "WDC",
-      "company_name": "ウエスタン デジタル",
-      "description": "HDD フラッシュSSD"
-    },
-    {
-      "symbol": "WEC",
-      "company_name": "WEC エナジー グループ",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "WELL",
-      "company_name": "ウェルタワー",
-      "description": "REIT - ヘルスケア施設"
-    },
-    {
-      "symbol": "WFC",
-      "company_name": "ウェルズ ファーゴ",
-      "description": "銀行"
-    },
-    {
-      "symbol": "WM",
-      "company_name": "ウェイスト マネジメント",
-      "description": "廃棄物処理サービス"
-    },
-    {
-      "symbol": "WMB",
-      "company_name": "ウィリアムズ",
-      "description": "天然ガスパイプライン 収集・処理サービス"
-    },
-    {
-      "symbol": "WMT",
-      "company_name": "ウォルマート",
-      "description": "ディスカウントストア チェーン"
-    },
-    {
-      "symbol": "WRB",
-      "company_name": "WRバークレー",
-      "description": "損害保険・再保険"
-    },
-    {
-      "symbol": "WST",
-      "company_name": "ウェスト ファーマシューティカル サービシーズ",
-      "description": "注射剤・医薬品包装 送達システム"
-    },
-    {
-      "symbol": "WTW",
-      "company_name": "ウィリス タワーズ ワトソン",
-      "description": "保険仲介 コンサルティング"
-    },
-    {
-      "symbol": "WY",
-      "company_name": "ウェアーハウザー",
-      "description": "REIT - 特殊"
-    },
-    {
-      "symbol": "WYNN",
-      "company_name": "ウィン リゾーツ",
-      "description": "統合型リゾート"
-    }
-  ],
-  "x": [
-    {
-      "symbol": "XEL",
-      "company_name": "エクセル エナジー",
-      "description": "電力 & ガス持株会社"
-    },
-    {
-      "symbol": "XOM",
-      "company_name": "エクソン モービル",
-      "description": "石油 & ガス"
-    },
-    {
-      "symbol": "XYL",
-      "company_name": "ザイレム",
-      "description": "水計測・分析技術 ソリューション"
-    }
-  ],
-  "y": [
-    {
-      "symbol": "YUM",
-      "company_name": "ヤム ブランズ",
-      "description": "ファーストフード チェーン"
-    }
-  ],
-  "z": [
-    {
-      "symbol": "ZBH",
-      "company_name": "ジンマー バイオメット ホールディングス",
-      "description": "整形外科向け 医療機器"
-    },
-    {
-      "symbol": "ZBRA",
-      "company_name": "ゼブラ テクノロジーズ",
-      "description": "自動識別 AIDC製品"
-    },
-    {
-      "symbol": "ZTS",
-      "company_name": "ゾエティス",
-      "description": "ペット・家畜用 医薬品・ワクチン"
-    }
-  ]
+    "a": [
+        {
+            "symbol": "A",
+            "company_name": "アジレント・テクノロジー Agilent Technologies, Inc.",
+            "description": "化学分析 電子計測機器"
+        },
+        {
+            "symbol": "AAL",
+            "company_name": "アメリカン・エアラインズ・グループ American Airlines Group Inc.",
+            "description": "航空会社"
+        },
+        {
+            "symbol": "AAPL",
+            "company_name": "アップル Apple Inc.",
+            "description": "インターネット デジタル家電製品"
+        },
+        {
+            "symbol": "ABBV",
+            "company_name": "アッヴィ AbbVie Inc.",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "ABNB",
+            "company_name": "エアビーアンドビー Airbnb, Inc.",
+            "description": "民宿仲介サービス"
+        },
+        {
+            "symbol": "ABT",
+            "company_name": "アボット・ラボラトリーズ Abbott Laboratories",
+            "description": "製薬"
+        },
+        {
+            "symbol": "ACGL",
+            "company_name": "アーチ・キャピタル・グループ Arch Capital Group Ltd.",
+            "description": "保険・再保険 住宅ローン保険"
+        },
+        {
+            "symbol": "ACN",
+            "company_name": "アクセンチュア Accenture plc",
+            "description": "コンサルティング サービス"
+        },
+        {
+            "symbol": "ADBE",
+            "company_name": "アドビ Adobe Inc.",
+            "description": "ソフトウェア クラウドサービス"
+        },
+        {
+            "symbol": "ADI",
+            "company_name": "アナログ・デバイセズ Analog Devices, Inc.",
+            "description": "半導体 デバイスメーカー"
+        },
+        {
+            "symbol": "ADM",
+            "company_name": "アーチャー・ダニエルズ・ミッドランド Archer-Daniels-Midland Company",
+            "description": "農産物加工 食品原料メーカー"
+        },
+        {
+            "symbol": "ADP",
+            "company_name": "オートマチック・データ・プロセシング Automatic Data Processing, Inc.",
+            "description": "人事管理ソフトウェア サービス"
+        },
+        {
+            "symbol": "ADSK",
+            "company_name": "オートデスク Autodesk, Inc.",
+            "description": "3D図面作成 ソフトウェア"
+        },
+        {
+            "symbol": "AEE",
+            "company_name": "アメレン Ameren Corporation",
+            "description": "電力 & ガス"
+        },
+        {
+            "symbol": "AEP",
+            "company_name": "アメリカン・エレクトリック・パワー American Electric Power Company, Inc.",
+            "description": "電力持株会社"
+        },
+        {
+            "symbol": "AES",
+            "company_name": "AES The AES Corporation",
+            "description": "電力持株会社"
+        },
+        {
+            "symbol": "AFL",
+            "company_name": "アフラック Aflac Incorporated",
+            "description": "がん・医療・生命保険"
+        },
+        {
+            "symbol": "AIG",
+            "company_name": "アメリカン・インターナショナル・グループ American International Group, Inc.",
+            "description": "損害・生命保険"
+        },
+        {
+            "symbol": "AIZ",
+            "company_name": "アシュラント Assurant, Inc.",
+            "description": "損害保険"
+        },
+        {
+            "symbol": "AJG",
+            "company_name": "アーサー・J・ギャラガー Arthur J. Gallagher & Co.",
+            "description": "保険仲介 コンサルサービス"
+        },
+        {
+            "symbol": "AKAM",
+            "company_name": "アカマイ・テクノロジーズ Akamai Technologies, Inc.",
+            "description": "CDN クラウドセキュリティー"
+        },
+        {
+            "symbol": "ALB",
+            "company_name": "アルベマール Albemarle Corporation",
+            "description": "リチウム・臭素 精製用触媒"
+        },
+        {
+            "symbol": "ALGN",
+            "company_name": "アライン・テクノロジー Align Technology, Inc.",
+            "description": "歯列矯正システム マウスピース"
+        },
+        {
+            "symbol": "ALL",
+            "company_name": "オールステート The Allstate Corporation",
+            "description": "損害保険"
+        },
+        {
+            "symbol": "ALLE",
+            "company_name": "アレジオン Allegion plc",
+            "description": "ドアセキュリティー"
+        },
+        {
+            "symbol": "AMAT",
+            "company_name": "アプライド・マテリアルズ Applied Materials, Inc.",
+            "description": "半導体 製造装置メーカー"
+        },
+        {
+            "symbol": "AMCR",
+            "company_name": "アムコア Amcor plc",
+            "description": "包装資材メ ーカー"
+        },
+        {
+            "symbol": "AMD",
+            "company_name": "アドバンスト・マイクロ・デバイセズ Advanced Micro Devices, Inc.",
+            "description": "半導体メーカー"
+        },
+        {
+            "symbol": "AME",
+            "company_name": "アメテック AMETEK, Inc.",
+            "description": "電子機器 電気機械装置メーカー"
+        },
+        {
+            "symbol": "AMGN",
+            "company_name": "アムジェン Amgen Inc.",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "AMP",
+            "company_name": "アメリプライズ・ファイナンシャル Ameriprise Financial, Inc.",
+            "description": "資産運用 金融サービス"
+        },
+        {
+            "symbol": "AMT",
+            "company_name": "アメリカン・タワー American Tower Corporation",
+            "description": "REIT - 特殊"
+        },
+        {
+            "symbol": "AMZN",
+            "company_name": "アマゾン・ドット・コム Amazon.com, Inc.",
+            "description": "インターネットストア"
+        },
+        {
+            "symbol": "ANET",
+            "company_name": "アリスタ・ネットワークス Arista Networks, Inc.",
+            "description": "クラウド ネットワーク製品"
+        },
+        {
+            "symbol": "ANSS",
+            "company_name": "アンシス ANSYS, Inc.",
+            "description": "CAE解析ソフトウェア"
+        },
+        {
+            "symbol": "AON",
+            "company_name": "エーオン Aon plc",
+            "description": "保険・再保険"
+        },
+        {
+            "symbol": "AOS",
+            "company_name": "A.O.スミス A. O. Smith Corporation",
+            "description": "給湯器・ボイラー"
+        },
+        {
+            "symbol": "APA",
+            "company_name": "APA APA Corporation",
+            "description": "独立系石油 & ガス"
+        },
+        {
+            "symbol": "APD",
+            "company_name": "エアー・プロダクツ・アンド・ケミカルズ Air Products and Chemicals, Inc.",
+            "description": "産業用ガス・化学薬品"
+        },
+        {
+            "symbol": "APH",
+            "company_name": "アンフェノール Amphenol Corporation",
+            "description": "インターコネクト 製品メーカー"
+        },
+        {
+            "symbol": "APTV",
+            "company_name": "アプティブ Aptiv plc",
+            "description": "自動運転支援システム"
+        },
+        {
+            "symbol": "ATO",
+            "company_name": "アトモス・エナジー Atmos Energy Corporation",
+            "description": "天然ガス"
+        },
+        {
+            "symbol": "AVGO",
+            "company_name": "ブロードコム Broadcom Inc.",
+            "description": "半導体 インフラソフトウェア"
+        },
+        {
+            "symbol": "AVY",
+            "company_name": "エイブリー・デニソン Avery Dennison Corporation",
+            "description": "感圧粘着ラベル"
+        },
+        {
+            "symbol": "AWK",
+            "company_name": "アメリカン・ウォーター・ワークス American Water Works Company, Inc.",
+            "description": "上下水道サービス"
+        },
+        {
+            "symbol": "AXON",
+            "company_name": "アクソン・エンタープライズ Axon Enterprise, Inc.",
+            "description": "テーザー銃"
+        },
+        {
+            "symbol": "AXP",
+            "company_name": "アメリカン・エキスプレス American Express Company",
+            "description": "クレジットカード"
+        },
+        {
+            "symbol": "AZO",
+            "company_name": "オートゾーン AutoZone, Inc.",
+            "description": "アフターマーケット 自動車部品販売"
+        }
+    ],
+    "b": [
+        {
+            "symbol": "BA",
+            "company_name": "ボーイング The Boeing Company",
+            "description": "航空宇宙機器"
+        },
+        {
+            "symbol": "BAC",
+            "company_name": "バンク・オブ・アメリカ Bank of America Corporation",
+            "description": "銀行"
+        },
+        {
+            "symbol": "BALL",
+            "company_name": "ボール Ball Corporation",
+            "description": "飲料・家庭用品向け アルミ包装"
+        },
+        {
+            "symbol": "BAX",
+            "company_name": "バクスター・インターナショナル Baxter International Inc.",
+            "description": "医薬品・医療機器"
+        },
+        {
+            "symbol": "BBWI",
+            "company_name": "バス・アンド・ボディ・ワークス Bath & Body Works, Inc.",
+            "description": "パーソナルケア 美容製品"
+        },
+        {
+            "symbol": "BBY",
+            "company_name": "ベスト・バイ Best Buy Co., Inc.",
+            "description": "家電量販店"
+        },
+        {
+            "symbol": "BDX",
+            "company_name": "ベクトン・ディッキンソン Becton, Dickinson and Company",
+            "description": "医療用 細菌検査用機器"
+        },
+        {
+            "symbol": "BEN",
+            "company_name": "フランクリン・リソーシズ Franklin Resources, Inc.",
+            "description": "資産運用持株会社"
+        },
+        {
+            "symbol": "BG",
+            "company_name": "バンジ・グローバル Bunge Global SA",
+            "description": "穀物・オイルシード"
+        },
+        {
+            "symbol": "BIIB",
+            "company_name": "バイオジェン Biogen Inc.",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "BIO",
+            "company_name": "バイオ・ラッド・ラボラトリーズ Bio-Rad Laboratories, Inc.",
+            "description": "ライフサイエンス 臨床診断製品"
+        },
+        {
+            "symbol": "BK",
+            "company_name": "バンク・オブ・ニューヨーク・メロン The Bank of New York Mellon Corporation",
+            "description": "資産運用 カストディサービス"
+        },
+        {
+            "symbol": "BKNG",
+            "company_name": "ブッキング・ホールディングス Booking Holdings Inc.",
+            "description": "オンライン 旅行サービス"
+        },
+        {
+            "symbol": "BKR",
+            "company_name": "ベーカー・ヒューズ Baker Hughes Company",
+            "description": "油田設備・サービス"
+        },
+        {
+            "symbol": "BLDR",
+            "company_name": "ビルダーズ・ファーストソース Builders FirstSource, Inc.",
+            "description": "新築住宅向け 建築資材"
+        },
+        {
+            "symbol": "BLK",
+            "company_name": "ブラックロック BlackRock, Inc.",
+            "description": "資産運用"
+        },
+        {
+            "symbol": "BMY",
+            "company_name": "ブリストルマイヤーズ・スクイブ Bristol-Myers Squibb Company",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "BR",
+            "company_name": "ブロードリッジ・フィナンシャル・ソリューションズ Broadridge Financial Solutions, Inc.",
+            "description": "金融データ処理 ソリューション"
+        },
+        {
+            "symbol": "BRO",
+            "company_name": "ブラウン・アンド・ブラウン Brown & Brown, Inc.",
+            "description": "独立系保険仲介"
+        },
+        {
+            "symbol": "BSX",
+            "company_name": "ボストン・サイエンティフィック Boston Scientific Corporation",
+            "description": "医療機器メーカー"
+        },
+        {
+            "symbol": "BWA",
+            "company_name": "ボルグワーナー BorgWarner Inc.",
+            "description": "自動車部品メーカー"
+        },
+        {
+            "symbol": "BX",
+            "company_name": "ブラックストーン Blackstone Inc.",
+            "description": "オルタナティブ 投資運用会社"
+        },
+        {
+            "symbol": "BXP",
+            "company_name": "BXP BXP, Inc.",
+            "description": "REIT - オフィス"
+        }
+    ],
+    "c": [
+        {
+            "symbol": "C",
+            "company_name": "シティグループ Citigroup Inc.",
+            "description": "銀行"
+        },
+        {
+            "symbol": "CAG",
+            "company_name": "コナグラ・ブランズ Conagra Brands, Inc.",
+            "description": "パッケージ加工食品"
+        },
+        {
+            "symbol": "CAH",
+            "company_name": "カーディナル・ヘルス Cardinal Health, Inc.",
+            "description": "医療サービス"
+        },
+        {
+            "symbol": "CARR",
+            "company_name": "キャリア・グローバル Carrier Global Corporation",
+            "description": "暖房・換気・空調"
+        },
+        {
+            "symbol": "CAT",
+            "company_name": "キャタピラー Caterpillar Inc.",
+            "description": "建設機器・鉱山用機械"
+        },
+        {
+            "symbol": "CB",
+            "company_name": "チャブ Chubb Limited",
+            "description": "損害保険"
+        },
+        {
+            "symbol": "CBRE",
+            "company_name": "CBRE・グループ CBRE Group, Inc.",
+            "description": "事業用不動産サービス"
+        },
+        {
+            "symbol": "CCL",
+            "company_name": "カーニバル Carnival Corporation & plc",
+            "description": "クルーズ客船運航"
+        },
+        {
+            "symbol": "CDNS",
+            "company_name": "ケイデンス・デザイン・システムズ Cadence Design Systems, Inc.",
+            "description": "電子設計ソフトウェア"
+        },
+        {
+            "symbol": "CDW",
+            "company_name": "CDW CDW Corporation",
+            "description": "IT機器・サービス"
+        },
+        {
+            "symbol": "CE",
+            "company_name": "セラニーズ Celanese Corporation",
+            "description": "石油化学製品 機能性材料"
+        },
+        {
+            "symbol": "CEG",
+            "company_name": "コンステレーション・エナジー Constellation Energy Corporation",
+            "description": "脱炭素エネルギー ソリューション"
+        },
+        {
+            "symbol": "CF",
+            "company_name": "CF・インダストリーズ・ホールディングス CF Industries Holdings, Inc.",
+            "description": "農業用肥料メーカー"
+        },
+        {
+            "symbol": "CFG",
+            "company_name": "シチズンズ・ファイナンシャル・グループ Citizens Financial Group, Inc.",
+            "description": "銀行"
+        },
+        {
+            "symbol": "CHD",
+            "company_name": "チャーチ・アンド・ドワイト Church & Dwight Co., Inc.",
+            "description": "家庭用品メーカー"
+        },
+        {
+            "symbol": "CHRW",
+            "company_name": "C・H・ロビンソン・ワールドワイド C.H. Robinson Worldwide, Inc.",
+            "description": "輸送サービス 物流ソリューション"
+        },
+        {
+            "symbol": "CHTR",
+            "company_name": "チャーター・コミュニケーションズ Charter Communications, Inc.",
+            "description": "ケーブルテレビ 通信サービス"
+        },
+        {
+            "symbol": "CI",
+            "company_name": "シグナ・グループ The Cigna Group",
+            "description": "医療・保険サービス"
+        },
+        {
+            "symbol": "CINF",
+            "company_name": "シンシナティ・ファイナンシャル Cincinnati Financial Corporation",
+            "description": "損害保険"
+        },
+        {
+            "symbol": "CL",
+            "company_name": "コルゲート・パルモリーブ Colgate-Palmolive Company",
+            "description": "家庭用品メーカー"
+        },
+        {
+            "symbol": "CLX",
+            "company_name": "クロロックス The Clorox Company",
+            "description": "漂白剤 クリーニング製品"
+        },
+        {
+            "symbol": "CMCSA",
+            "company_name": "コムキャスト Comcast Corporation",
+            "description": "ケーブルテレビ 通信サービス"
+        },
+        {
+            "symbol": "CME",
+            "company_name": "CME・グループ CME Group Inc.",
+            "description": "先物オプション取引所"
+        },
+        {
+            "symbol": "CMG",
+            "company_name": "チポトレ・メキシカン・グリル Chipotle Mexican Grill, Inc.",
+            "description": "メキシコ料理 レストランチェーン"
+        },
+        {
+            "symbol": "CMI",
+            "company_name": "カミンズ Cummins Inc.",
+            "description": "エンジンメーカー"
+        },
+        {
+            "symbol": "CMS",
+            "company_name": "CMS・エナジー CMS Energy Corporation",
+            "description": "電気 & ガス"
+        },
+        {
+            "symbol": "CNC",
+            "company_name": "センティーン Centene Corporation",
+            "description": "政府提供 医療プログラム"
+        },
+        {
+            "symbol": "CNP",
+            "company_name": "センターポイント・エナジー CenterPoint Energy, Inc.",
+            "description": "電気 & ガス"
+        },
+        {
+            "symbol": "COF",
+            "company_name": "キャピタル・ワン・ファイナンシャル Capital One Financial Corporation",
+            "description": "金融サービス"
+        },
+        {
+            "symbol": "COO",
+            "company_name": "クーパー The Cooper Companies, Inc.",
+            "description": "医療機器"
+        },
+        {
+            "symbol": "COP",
+            "company_name": "コノコフィリップス ConocoPhillips",
+            "description": "石油 & ガス"
+        },
+        {
+            "symbol": "COR",
+            "company_name": "センコラ Cencora, Inc.",
+            "description": "ヘルスケア ソリューション"
+        },
+        {
+            "symbol": "COST",
+            "company_name": "コストコ・ホールセール Costco Wholesale Corporation",
+            "description": "会員制倉庫型 卸売・小売チェーン"
+        },
+        {
+            "symbol": "CPAY",
+            "company_name": "コーペイ Corpay, Inc.",
+            "description": "B2B決済サービス"
+        },
+        {
+            "symbol": "CPB",
+            "company_name": "キャンベル・スープ Campbell Soup Company",
+            "description": "スープ缶 食品メーカー"
+        },
+        {
+            "symbol": "CPRT",
+            "company_name": "コパート Copart, Inc.",
+            "description": "オンライン 中古車オークション"
+        },
+        {
+            "symbol": "CRL",
+            "company_name": "チャールズ・リバー・ラボラトリーズ・インターナショナル Charles River Laboratories International, Inc.",
+            "description": "医薬品開発 業務受託機関"
+        },
+        {
+            "symbol": "CRM",
+            "company_name": "セールスフォース Salesforce, Inc.",
+            "description": "クラウドベース 顧客関係管理システム"
+        },
+        {
+            "symbol": "CRWD",
+            "company_name": "クラウドストライク・ホールディングス CrowdStrike Holdings, Inc.",
+            "description": "サイバーセキュリティ"
+        },
+        {
+            "symbol": "CSCO",
+            "company_name": "シスコ・システムズ Cisco Systems, Inc.",
+            "description": "コンピュータ ネットワーク機器"
+        },
+        {
+            "symbol": "CSGP",
+            "company_name": "コースター・グループ CoStar Group, Inc.",
+            "description": "商業用不動産 情報・分析サービス"
+        },
+        {
+            "symbol": "CSX",
+            "company_name": "CSX CSX Corporation",
+            "description": "貨物鉄道輸送サービス"
+        },
+        {
+            "symbol": "CTAS",
+            "company_name": "シンタス Cintas Corporation",
+            "description": "ユニフォームレンタル"
+        },
+        {
+            "symbol": "CTLT",
+            "company_name": "キャタレント Catalent, Inc.",
+            "description": "医薬品・健康食品 ソフトカプセル製剤"
+        },
+        {
+            "symbol": "CTRA",
+            "company_name": "コテラ・エナジー Coterra Energy Inc.",
+            "description": "石油・天然ガス"
+        },
+        {
+            "symbol": "CTSH",
+            "company_name": "コグニザント・テクノロジー・ソリューションズ Cognizant Technology Solutions Corporation",
+            "description": "デジタルITサービス"
+        },
+        {
+            "symbol": "CTVA",
+            "company_name": "コルテバ Corteva, Inc.",
+            "description": "農薬・種子"
+        },
+        {
+            "symbol": "CVS",
+            "company_name": "CVS・ヘルス CVS Health Corporation",
+            "description": "ドラッグストア 薬剤給付管理サービス"
+        },
+        {
+            "symbol": "CVX",
+            "company_name": "シェブロン Chevron Corporation",
+            "description": "石油 & ガス"
+        },
+        {
+            "symbol": "CZR",
+            "company_name": "シーザーズ・エンターテインメント Caesars Entertainment, Inc.",
+            "description": "カジノゲーム リゾート施設"
+        }
+    ],
+    "d": [
+        {
+            "symbol": "D",
+            "company_name": "ドミニオン・エナジー Dominion Energy, Inc.",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "DAL",
+            "company_name": "デルタ・エア・ラインズ Delta Air Lines, Inc.",
+            "description": "航空会社"
+        },
+        {
+            "symbol": "DAY",
+            "company_name": "デイフォース Dayforce Inc.",
+            "description": "クラウド HCMソフトウェア"
+        },
+        {
+            "symbol": "DD",
+            "company_name": "デュポン・ドゥ・ヌムール DuPont de Nemours, Inc.",
+            "description": "総合化学メーカー"
+        },
+        {
+            "symbol": "DE",
+            "company_name": "ディアー Deere & Company",
+            "description": "農業 & 建設機械"
+        },
+        {
+            "symbol": "DECK",
+            "company_name": "デッカーズ・アウトドア Deckers Outdoor Corporation",
+            "description": "フットウェア アパレル"
+        },
+        {
+            "symbol": "DFS",
+            "company_name": "ディスカバー・ファイナンシャル・サービシズ Discover Financial Services",
+            "description": "クレジットカード"
+        },
+        {
+            "symbol": "DG",
+            "company_name": "ダラー・ゼネラル Dollar General Corporation",
+            "description": "ディスカウント 小売チェーン"
+        },
+        {
+            "symbol": "DGX",
+            "company_name": "クエスト・ダイアグノスティクス Quest Diagnostics Incorporated",
+            "description": "診断情報サービス"
+        },
+        {
+            "symbol": "DHI",
+            "company_name": "DR・ホートン D.R. Horton, Inc.",
+            "description": "住宅建設"
+        },
+        {
+            "symbol": "DHR",
+            "company_name": "ダナハー Danaher Corporation",
+            "description": "医療・歯科医療機器"
+        },
+        {
+            "symbol": "DIS",
+            "company_name": "ウォルト・ディズニー The Walt Disney Company",
+            "description": "エンターテインメント"
+        },
+        {
+            "symbol": "DLTR",
+            "company_name": "ダラー・ツリー Dollar Tree, Inc.",
+            "description": "ディスカウント 小売チェーン"
+        },
+        {
+            "symbol": "DOC",
+            "company_name": "ヘルスピーク・プロパティーズ Healthpeak Properties, Inc.",
+            "description": "REIT - ヘルスケア施設"
+        },
+        {
+            "symbol": "DOV",
+            "company_name": "ドーバー Dover Corporation",
+            "description": "特殊工業機械"
+        },
+        {
+            "symbol": "DOW",
+            "company_name": "ダウ Dow Inc.",
+            "description": "総合化学メーカー"
+        },
+        {
+            "symbol": "DPZ",
+            "company_name": "ドミノ・ピザ Domino's Pizza, Inc.",
+            "description": "宅配ピザチェーン"
+        },
+        {
+            "symbol": "DRI",
+            "company_name": "ダーデン・レストランツ Darden Restaurants, Inc.",
+            "description": "フルサービス レストラン"
+        },
+        {
+            "symbol": "DTE",
+            "company_name": "DTE・エナジー DTE Energy Company",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "DUK",
+            "company_name": "デューク・エナジー Duke Energy Corporation",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "DVA",
+            "company_name": "ダヴィータ DaVita Inc.",
+            "description": "腎臓ケア透析サービス"
+        },
+        {
+            "symbol": "DVN",
+            "company_name": "デボン・エナジー Devon Energy Corporation",
+            "description": "独立系石油 & ガス"
+        },
+        {
+            "symbol": "DXCM",
+            "company_name": "デクスコム DexCom, Inc.",
+            "description": "糖尿病患者用 CGMシステム"
+        }
+    ],
+    "e": [
+        {
+            "symbol": "EA",
+            "company_name": "エレクトロニック・アーツ Electronic Arts Inc.",
+            "description": "ゲームソフト"
+        },
+        {
+            "symbol": "EBAY",
+            "company_name": "イーベイ eBay Inc.",
+            "description": "インターネット オークション"
+        },
+        {
+            "symbol": "ECL",
+            "company_name": "エコラブ Ecolab Inc.",
+            "description": "水・衛生・感染予防 ソリューション"
+        },
+        {
+            "symbol": "ED",
+            "company_name": "コンソリデイティッド・エジソン Consolidated Edison, Inc.",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "EFX",
+            "company_name": "エキファックス Equifax Inc.",
+            "description": "データ分析・信用情報 ソリューション"
+        },
+        {
+            "symbol": "EG",
+            "company_name": "エベレスト・グループ Everest Group, Ltd.",
+            "description": "再保険"
+        },
+        {
+            "symbol": "EIX",
+            "company_name": "エジソン・インターナショナル Edison International",
+            "description": "電力持株会社"
+        },
+        {
+            "symbol": "EL",
+            "company_name": "エスティー・ローダー The Estée Lauder Companies Inc.",
+            "description": "化粧品 スキンケア・香水"
+        },
+        {
+            "symbol": "ELV",
+            "company_name": "エレヴァンス・ヘルス Elevance Health, Inc.",
+            "description": "健康福祉サービス"
+        },
+        {
+            "symbol": "EMN",
+            "company_name": "イーストマン・ケミカル Eastman Chemical Company",
+            "description": "機能性・先進素材 特殊添加剤"
+        },
+        {
+            "symbol": "EMR",
+            "company_name": "エマーソン・エレクトリック Emerson Electric Co.",
+            "description": "電気電子機器メーカー"
+        },
+        {
+            "symbol": "ENPH",
+            "company_name": "エンフェーズ・エナジー Enphase Energy, Inc.",
+            "description": "太陽光発電 マイクロインバーター"
+        },
+        {
+            "symbol": "EOG",
+            "company_name": "EOG・リソーシズ EOG Resources, Inc.",
+            "description": "独立系石油 & ガス"
+        },
+        {
+            "symbol": "EPAM",
+            "company_name": "EPAM・システムズ EPAM Systems, Inc.",
+            "description": "DXソフトウェア コンサルティング"
+        },
+        {
+            "symbol": "EQT",
+            "company_name": "EQT EQT Corporation",
+            "description": "独立系天然ガス"
+        },
+        {
+            "symbol": "ES",
+            "company_name": "エバーソース・エナジー Eversource Energy",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "ETN",
+            "company_name": "イートン Eaton Corporation plc",
+            "description": "電力管理技術"
+        },
+        {
+            "symbol": "ETR",
+            "company_name": "エンタジー Entergy Corporation",
+            "description": "発電・配電"
+        },
+        {
+            "symbol": "ETSY",
+            "company_name": "エッツィ Etsy, Inc.",
+            "description": "手工芸品 ECプラットフォーム"
+        },
+        {
+            "symbol": "EVRG",
+            "company_name": "エバジー Evergy, Inc.",
+            "description": "発電・配電"
+        },
+        {
+            "symbol": "EW",
+            "company_name": "エドワーズ・ライフサイエンシズ Edwards Lifesciences Corporation",
+            "description": "循環器疾患治療 モニタリング機器"
+        },
+        {
+            "symbol": "EXC",
+            "company_name": "エクセロン Exelon Corporation",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "EXPD",
+            "company_name": "エクスぺディターズ・インターナショナル・オブ・ワシントン Expeditors International of Washington, Inc.",
+            "description": "物流ソリューション"
+        },
+        {
+            "symbol": "EXPE",
+            "company_name": "エクスぺディア・グループ Expedia Group, Inc.",
+            "description": "オンライン 旅行サービス"
+        }
+    ],
+    "f": [
+        {
+            "symbol": "F",
+            "company_name": "フォード・モーター Ford Motor Company",
+            "description": "自動車メーカー"
+        },
+        {
+            "symbol": "FANG",
+            "company_name": "ダイヤモンドバック・エナジー Diamondback Energy, Inc.",
+            "description": "独立系石油 & ガス"
+        },
+        {
+            "symbol": "FAST",
+            "company_name": "ファステナル Fastenal Company",
+            "description": "工業用品・建設資材"
+        },
+        {
+            "symbol": "FCX",
+            "company_name": "フリーポート・マクモラン Freeport-McMoRan Inc.",
+            "description": "銅・金・モリブデン"
+        },
+        {
+            "symbol": "FDS",
+            "company_name": "ファクトセット・リサーチ・システムズ FactSet Research Systems Inc.",
+            "description": "統合金融データ ソフトウェア"
+        },
+        {
+            "symbol": "FDX",
+            "company_name": "フェデックス FedEx Corporation",
+            "description": "物流サービス"
+        },
+        {
+            "symbol": "FE",
+            "company_name": "ファーストエナジー FirstEnergy Corp.",
+            "description": "発電・配電"
+        },
+        {
+            "symbol": "FFIV",
+            "company_name": "F5 F5, Inc.",
+            "description": "アプリケーション サービス"
+        },
+        {
+            "symbol": "FI",
+            "company_name": "ファイザーブ Fiserv, Inc.",
+            "description": "金融決済 情報処理サービス"
+        },
+        {
+            "symbol": "FICO",
+            "company_name": "フェア・アイザック Fair Isaac Corporation",
+            "description": "クレジットスコア 分析的意思決定"
+        },
+        {
+            "symbol": "FIS",
+            "company_name": "フィディリティ・ナショナル・インフォメーション・サービシズ Fidelity National Information Services, Inc.",
+            "description": "金融決済 ソリューション"
+        },
+        {
+            "symbol": "FITB",
+            "company_name": "フィフス・サード・バンコープ Fifth Third Bancorp",
+            "description": "銀行"
+        },
+        {
+            "symbol": "FMC",
+            "company_name": "FMC FMC Corporation",
+            "description": "殺虫・除草・殺菌剤"
+        },
+        {
+            "symbol": "FOX",
+            "company_name": "フォックス（クラスB / 議決権あり） Fox Corporation (Class B)",
+            "description": "エンターテインメント"
+        },
+        {
+            "symbol": "FOXA",
+            "company_name": "フォックス（クラスA / 議決権なし） Fox Corporation (Class A)",
+            "description": "エンターテインメント"
+        },
+        {
+            "symbol": "FSLR",
+            "company_name": "ファースト・ソーラー First Solar, Inc.",
+            "description": "太陽電池 半導体薄膜技術"
+        },
+        {
+            "symbol": "FTNT",
+            "company_name": "フォーティネット Fortinet, Inc.",
+            "description": "ネットワーク セキュリティー"
+        },
+        {
+            "symbol": "FTV",
+            "company_name": "フォーティブ Fortive Corporation",
+            "description": "専門計器 ハイテク機器・部品"
+        }
+    ],
+    "g": [
+        {
+            "symbol": "GD",
+            "company_name": "ゼネラル・ダイナミクス General Dynamics Corporation",
+            "description": "航空宇宙 & 防衛"
+        },
+        {
+            "symbol": "GDDY",
+            "company_name": "ゴーダディ GoDaddy Inc.",
+            "description": "ドメイン レンタルサーバー"
+        },
+        {
+            "symbol": "GE",
+            "company_name": "GE・エアロスペース GE Aerospace",
+            "description": "航空宇宙・防衛 エンジニアリング"
+        },
+        {
+            "symbol": "GEHC",
+            "company_name": "GE・ヘルスケア・テクノロジーズ GE HealthCare Technologies Inc.",
+            "description": "医療機器・技術 診断薬・ヘルスケア"
+        },
+        {
+            "symbol": "GEN",
+            "company_name": "ジェン・デジタル Gen Digital Inc.",
+            "description": "ウイルス・マルウェア 対策ソフトウェア"
+        },
+        {
+            "symbol": "GEV",
+            "company_name": "GE・ベルノバ GE Vernova Inc.",
+            "description": "発電設備 タービン・原子炉"
+        },
+        {
+            "symbol": "GILD",
+            "company_name": "ギリアド・サイエンシズ Gilead Sciences, Inc.",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "GIS",
+            "company_name": "ゼネラル・ミルズ General Mills, Inc.",
+            "description": "消費者・ペット食品"
+        },
+        {
+            "symbol": "GL",
+            "company_name": "グローブ・ライフ Globe Life Inc.",
+            "description": "生命・健康保険"
+        },
+        {
+            "symbol": "GLW",
+            "company_name": "コーニング Corning Incorporated",
+            "description": "ガラス・セラミック 光学ソリューション"
+        },
+        {
+            "symbol": "GM",
+            "company_name": "ゼネラル・モーターズ General Motors Company",
+            "description": "自動車メーカー"
+        },
+        {
+            "symbol": "GNRC",
+            "company_name": "ジェネラック・ホールディングス Generac Holdings Inc.",
+            "description": "発電機"
+        },
+        {
+            "symbol": "GOOG",
+            "company_name": "アルファベット（クラスC / 議決権なし） Alphabet Inc. (Class C)",
+            "description": "インターネット サービス"
+        },
+        {
+            "symbol": "GOOGL",
+            "company_name": "アルファベット（クラスA / 議決権あり） Alphabet Inc. (Class A)",
+            "description": "インターネット サービス"
+        },
+        {
+            "symbol": "GPC",
+            "company_name": "ジェニュイン・パーツ Genuine Parts Company",
+            "description": "自動車交換部品 産業用交換部品"
+        },
+        {
+            "symbol": "GPN",
+            "company_name": "グローバル・ペイメンツ Global Payments Inc.",
+            "description": "金融決済 技術サービス"
+        },
+        {
+            "symbol": "GRMN",
+            "company_name": "ガーミン Garmin Ltd.",
+            "description": "GPS/GNSS 機器メーカー"
+        },
+        {
+            "symbol": "GS",
+            "company_name": "ゴールドマン・サックス・グループ The Goldman Sachs Group, Inc.",
+            "description": "投資銀行"
+        },
+        {
+            "symbol": "GWW",
+            "company_name": "W.W .グレインジャー W.W. Grainger, Inc.",
+            "description": "メンテナンス 修理用品・消耗品"
+        }
+    ],
+    "h": [
+        {
+            "symbol": "HAL",
+            "company_name": "ハリバートン Halliburton Company",
+            "description": "油田サービス"
+        },
+        {
+            "symbol": "HAS",
+            "company_name": "ハスブロ Hasbro, Inc.",
+            "description": "玩具 & ゲーム"
+        },
+        {
+            "symbol": "HBAN",
+            "company_name": "ハンチントン・バンクシェアーズ Huntington Bancshares Incorporated",
+            "description": "銀行"
+        },
+        {
+            "symbol": "HCA",
+            "company_name": "HCA・ヘルスケア HCA Healthcare, Inc.",
+            "description": "病院 医療サービス"
+        },
+        {
+            "symbol": "HD",
+            "company_name": "ホーム・デポ The Home Depot, Inc.",
+            "description": "ホームセンター"
+        },
+        {
+            "symbol": "HES",
+            "company_name": "ヘス Hess Corporation",
+            "description": "独立系石油 & ガス"
+        },
+        {
+            "symbol": "HIG",
+            "company_name": "ハートフォード・フィナンシャル・サービシズ・グループ The Hartford Financial Services Group, Inc.",
+            "description": "損害保険"
+        },
+        {
+            "symbol": "HII",
+            "company_name": "ハンティントン・インガルス・インダストリーズ Huntington Ingalls Industries, Inc.",
+            "description": "軍事造船会社"
+        },
+        {
+            "symbol": "HLT",
+            "company_name": "ヒルトン・ワールドワイド・ホールディングス Hilton Worldwide Holdings Inc.",
+            "description": "ホテル・リゾート"
+        },
+        {
+            "symbol": "HOLX",
+            "company_name": "ホロジック Hologic, Inc.",
+            "description": "女性疾患向け 診断・医療機器"
+        },
+        {
+            "symbol": "HON",
+            "company_name": "ハネウェル・インターナショナル Honeywell International Inc.",
+            "description": "電子制御システム 自動化機器"
+        },
+        {
+            "symbol": "HPE",
+            "company_name": "ヒューレット・パッカード・エンタプライズ Hewlett Packard Enterprise Company",
+            "description": "クラウド プラットフォーム"
+        },
+        {
+            "symbol": "HPQ",
+            "company_name": "HP HP Inc.",
+            "description": "PC・プリンター"
+        },
+        {
+            "symbol": "HRL",
+            "company_name": "ホーメル・フーズ Hormel Foods Corporation",
+            "description": "肉製品・食品加工"
+        },
+        {
+            "symbol": "HSIC",
+            "company_name": "ヘンリー・シャイン Henry Schein, Inc.",
+            "description": "歯科医療機器 歯科材料"
+        },
+        {
+            "symbol": "HST",
+            "company_name": "ホスト・ホテルズ・アンド・リゾーツ Host Hotels & Resorts, Inc.",
+            "description": "REIT - ホテル&モーテル"
+        },
+        {
+            "symbol": "HSY",
+            "company_name": "ハーシー The Hershey Company",
+            "description": "チョコレート 菓子メーカー"
+        },
+        {
+            "symbol": "HUBB",
+            "company_name": "ハベル Hubbell Incorporated",
+            "description": "電気・電子製品"
+        },
+        {
+            "symbol": "HUM",
+            "company_name": "ヒューマナ Humana Inc.",
+            "description": "保険医療 ヘルスケア"
+        },
+        {
+            "symbol": "HWM",
+            "company_name": "ハウメット・エアロスペース Howmet Aerospace Inc.",
+            "description": "ジェットエンジン メタル製品・部品"
+        }
+    ],
+    "i": [
+        {
+            "symbol": "IBM",
+            "company_name": "IBM International Business Machines Corporation",
+            "description": "情報システムサービス"
+        },
+        {
+            "symbol": "ICE",
+            "company_name": "インターコンチネンタル・エクスチェンジ Intercontinental Exchange, Inc.",
+            "description": "デリバティブ 取引所グループ"
+        },
+        {
+            "symbol": "IDXX",
+            "company_name": "アイデックス・ラボラトリーズ IDEXX Laboratories, Inc.",
+            "description": "動物臨床検査 水中微生物検査"
+        },
+        {
+            "symbol": "IEX",
+            "company_name": "アイデックス IDEX Corporation",
+            "description": "ポンプ・流量計 流体システム"
+        },
+        {
+            "symbol": "IFF",
+            "company_name": "インターナショナル・フレーバーズ・アンド・フレグランシーズ International Flavors & Fragrances Inc.",
+            "description": "香料メーカー"
+        },
+        {
+            "symbol": "INCY",
+            "company_name": "インサイト Incyte Corporation",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "INTC",
+            "company_name": "インテル Intel Corporation",
+            "description": "半導体"
+        },
+        {
+            "symbol": "INTU",
+            "company_name": "イントゥイット Intuit Inc.",
+            "description": "会計・税務ソフト クラウドサービス"
+        },
+        {
+            "symbol": "IP",
+            "company_name": "インターナショナル・ペーバー International Paper Company",
+            "description": "製紙 ライナー・パルプ"
+        },
+        {
+            "symbol": "IPG",
+            "company_name": "インターパブリック・グループ・オブ・カンパニーズ The Interpublic Group of Companies, Inc.",
+            "description": "広告 マーケティング"
+        },
+        {
+            "symbol": "IQV",
+            "company_name": "IQVIA・ホールディングス IQVIA Holdings Inc.",
+            "description": "医療データ分析 臨床試験サービス"
+        },
+        {
+            "symbol": "IR",
+            "company_name": "インガソール・ランド Ingersoll Rand Inc.",
+            "description": "コンプレッサー エアツールメーカー"
+        },
+        {
+            "symbol": "ISRG",
+            "company_name": "インテューイティブ・サージカル Intuitive Surgical, Inc.",
+            "description": "手術支援ロボット"
+        },
+        {
+            "symbol": "IT",
+            "company_name": "ガートナー Gartner, Inc.",
+            "description": "調査・助言サービス"
+        },
+        {
+            "symbol": "ITW",
+            "company_name": "イリノイ・ツール・ワークス Illinois Tool Works Inc.",
+            "description": "工業製品 設備メーカー"
+        },
+        {
+            "symbol": "IVZ",
+            "company_name": "インベスコ Invesco Ltd.",
+            "description": "資産運用サービス"
+        }
+    ],
+    "j": [
+        {
+            "symbol": "J",
+            "company_name": "ジェイコブズ・ソリューションズ Jacobs Solutions Inc.",
+            "description": "専門技術 建設サービス"
+        },
+        {
+            "symbol": "JBHT",
+            "company_name": "J.B. ハント・トランスポート・サービシズ J.B. Hunt Transport Services, Inc.",
+            "description": "輸送・ロジスティクス"
+        },
+        {
+            "symbol": "JBL",
+            "company_name": "ジェイビル Jabil Inc.",
+            "description": "製造ソリューション"
+        },
+        {
+            "symbol": "JCI",
+            "company_name": "ジョンソン・コントロールズ・インターナショナル Johnson Controls International plc",
+            "description": "ビル設備 ソリューション"
+        },
+        {
+            "symbol": "JKHY",
+            "company_name": "ジャック・ヘンリー・アンド・アソシエイツ Jack Henry & Associates, Inc.",
+            "description": "金融機関向け 情報処理ソリューション"
+        },
+        {
+            "symbol": "JNJ",
+            "company_name": "ジョンソン・エンド・ジョンソン Johnson & Johnson",
+            "description": "製薬・医療機器 ヘルスケア"
+        },
+        {
+            "symbol": "JNPR",
+            "company_name": "ジュニパー・ネットワークス Juniper Networks, Inc.",
+            "description": "ネットワーク技術 ソリューション"
+        },
+        {
+            "symbol": "JPM",
+            "company_name": "JPモルガン・チェース JPMorgan Chase & Co.",
+            "description": "銀行"
+        }
+    ],
+    "k": [
+        {
+            "symbol": "K",
+            "company_name": "ケラノバ Kellanova",
+            "description": "スナック菓子"
+        },
+        {
+            "symbol": "KDP",
+            "company_name": "キューリグ・ドクター・ペッパー Keurig Dr Pepper Inc.",
+            "description": "コーヒー ソフトドリンク"
+        },
+        {
+            "symbol": "KEY",
+            "company_name": "キーコープ KeyCorp",
+            "description": "銀行"
+        },
+        {
+            "symbol": "KEYS",
+            "company_name": "キーサイト・テクノロジーズ Keysight Technologies, Inc.",
+            "description": "電子計測 ソリューション"
+        },
+        {
+            "symbol": "KHC",
+            "company_name": "クラフト・ハインツ The Kraft Heinz Company",
+            "description": "食品 & 飲料"
+        },
+        {
+            "symbol": "KLAC",
+            "company_name": "KLA KLA Corporation",
+            "description": "半導体検査装置"
+        },
+        {
+            "symbol": "KMB",
+            "company_name": "キンバリークラーク Kimberly-Clark Corporation",
+            "description": "衛生紙製品 パーソナルケア"
+        },
+        {
+            "symbol": "KMI",
+            "company_name": "キンダー・モルガン Kinder Morgan, Inc.",
+            "description": "パイプライン 貯蔵システム"
+        },
+        {
+            "symbol": "KMX",
+            "company_name": "カーマックス CarMax, Inc.",
+            "description": "中古車小売"
+        },
+        {
+            "symbol": "KO",
+            "company_name": "コカ・コーラ The Coca-Cola Company",
+            "description": "飲料 - 清涼飲料"
+        },
+        {
+            "symbol": "KR",
+            "company_name": "クローガー The Kroger Co.",
+            "description": "スーパーマーケット"
+        },
+        {
+            "symbol": "KVUE",
+            "company_name": "ケンビュー Kenvue Inc.",
+            "description": "コンシューマー ヘルス"
+        }
+    ],
+    "l": [
+        {
+            "symbol": "L",
+            "company_name": "ロウズ Loews Corporation",
+            "description": "複合持株会社"
+        },
+        {
+            "symbol": "LDOS",
+            "company_name": "レイドス・ホールディングス Leidos Holdings, Inc.",
+            "description": "国防諜報ITサービス"
+        },
+        {
+            "symbol": "LEN",
+            "company_name": "レナー Lennar Corporation",
+            "description": "住宅建設"
+        },
+        {
+            "symbol": "LH",
+            "company_name": "ラブコープ・ホールディングス Labcorp Holdings Inc.",
+            "description": "臨床検査 医薬品開発サービス"
+        },
+        {
+            "symbol": "LHX",
+            "company_name": "L3ハリス・テクノロジーズ L3Harris Technologies, Inc.",
+            "description": "防衛情報通信システム"
+        },
+        {
+            "symbol": "LIN",
+            "company_name": "リンデ Linde plc",
+            "description": "産業ガス"
+        },
+        {
+            "symbol": "LKQ",
+            "company_name": "LKQ LKQ Corporation",
+            "description": "自動車修理交換部品"
+        },
+        {
+            "symbol": "LLY",
+            "company_name": "イーライリリー Eli Lilly and Company",
+            "description": "製薬"
+        },
+        {
+            "symbol": "LMT",
+            "company_name": "ロッキード・マーティン Lockheed Martin Corporation",
+            "description": "戦闘機・ヘリコプター ミサイル防衛"
+        },
+        {
+            "symbol": "LNT",
+            "company_name": "アライアント・エナジー Alliant Energy Corporation",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "LOW",
+            "company_name": "ロウズ Lowe's Companies, Inc.",
+            "description": "ホームセンター"
+        },
+        {
+            "symbol": "LRCX",
+            "company_name": "ラム・リサーチ Lam Research Corporation",
+            "description": "半導体製造装置 メーカー"
+        },
+        {
+            "symbol": "LULU",
+            "company_name": "ルルレモン・アスレティカ Lululemon Athletica Inc.",
+            "description": "スポーツ アパレル小売"
+        },
+        {
+            "symbol": "LUV",
+            "company_name": "サウスウェスト・エアラインズ Southwest Airlines Co.",
+            "description": "航空会社"
+        },
+        {
+            "symbol": "LVS",
+            "company_name": "ラス・ベガス・サンズ Las Vegas Sands Corp.",
+            "description": "統合型リゾート"
+        },
+        {
+            "symbol": "LW",
+            "company_name": "ラム・ウェストン・ホールディングス Lamb Weston Holdings, Inc.",
+            "description": "冷凍ポテト"
+        },
+        {
+            "symbol": "LYB",
+            "company_name": "ライオンデルバゼル・インダストリーズ LyondellBasell Industries N.V.",
+            "description": "プラスチック 化学薬品"
+        },
+        {
+            "symbol": "LYV",
+            "company_name": "ライブ・ネーション・エンターテインメント Live Nation Entertainment, Inc.",
+            "description": "ライブ エンターテインメント"
+        }
+    ],
+    "m": [
+        {
+            "symbol": "MA",
+            "company_name": "マスターカード Mastercard Incorporated",
+            "description": "クレジットカード"
+        },
+        {
+            "symbol": "MAR",
+            "company_name": "マリオット・インターナショナル Marriott International, Inc.",
+            "description": "ホテルチェーン"
+        },
+        {
+            "symbol": "MAS",
+            "company_name": "マスコ Masco Corporation",
+            "description": "住宅修繕・建築用品"
+        },
+        {
+            "symbol": "MCD",
+            "company_name": "マクドナルド McDonald's Corporation",
+            "description": "ファーストフード チェーン"
+        },
+        {
+            "symbol": "MCHP",
+            "company_name": "マイクロチップ・テクノロジー Microchip Technology Incorporated",
+            "description": "特殊半導体メーカー"
+        },
+        {
+            "symbol": "MCK",
+            "company_name": "マケッソン McKesson Corporation",
+            "description": "医薬品・医療製品 医療サービス"
+        },
+        {
+            "symbol": "MCO",
+            "company_name": "ムーディーズ Moody's Corporation",
+            "description": "信用格付け会社"
+        },
+        {
+            "symbol": "MDLZ",
+            "company_name": "モンデリーズ・インターナショナル Mondelez International, Inc.",
+            "description": "食品 & 飲料"
+        },
+        {
+            "symbol": "MDT",
+            "company_name": "メドトロニック Medtronic plc",
+            "description": "心臓ペースメーカー 医療機器"
+        },
+        {
+            "symbol": "MET",
+            "company_name": "メットライフ MetLife, Inc.",
+            "description": "生命保険"
+        },
+        {
+            "symbol": "META",
+            "company_name": "メタ・プラットフォームズ Meta Platforms, Inc.",
+            "description": "メタバース"
+        },
+        {
+            "symbol": "MGM",
+            "company_name": "MGM・リゾーツ・インターナショナル MGM Resorts International",
+            "description": "統合型リゾート"
+        },
+        {
+            "symbol": "MHK",
+            "company_name": "モホーク･インダストリーズMohawk Industries, Inc.",
+            "description": "フローリング メーカー"
+        },
+        {
+            "symbol": "MKC",
+            "company_name": "マコーミック McCormick & Company, Incorporated",
+            "description": "スパイス・調味料"
+        },
+        {
+            "symbol": "MKTX",
+            "company_name": "マーケットアクセス・ホールディングス MarketAxess Holdings Inc.",
+            "description": "電子取引 プラットフォーム"
+        },
+        {
+            "symbol": "MLM",
+            "company_name": "マーチン・マリエッタ・マテリアルズ Martin Marietta Materials, Inc.",
+            "description": "建設用骨材メーカー"
+        },
+        {
+            "symbol": "MMC",
+            "company_name": "マシュー・アンド・マクレナン Marsh & McLennan Companies, Inc.",
+            "description": "リスクマネジメント 保険関連サービス"
+        },
+        {
+            "symbol": "MMM",
+            "company_name": "スリーエム 3M Company",
+            "description": "化学・電気素材 メーカー"
+        },
+        {
+            "symbol": "MNST",
+            "company_name": "モンスター･ビバレッジ Monster Beverage Corporation",
+            "description": "エネルギードリンク"
+        },
+        {
+            "symbol": "MO",
+            "company_name": "アルトリア・グループ Altria Group, Inc.",
+            "description": "タバコ"
+        },
+        {
+            "symbol": "MOH",
+            "company_name": "モリーナ・ヘルスケア Molina Healthcare, Inc.",
+            "description": "公的医療保険 ヘルスケア"
+        },
+        {
+            "symbol": "MOS",
+            "company_name": "モザイク The Mosaic Company",
+            "description": "リン酸塩・カリウム"
+        },
+        {
+            "symbol": "MPC",
+            "company_name": "マラソン・ペトロリアム Marathon Petroleum Corporation",
+            "description": "石油精製 ガソリンスタンド"
+        },
+        {
+            "symbol": "MPWR",
+            "company_name": "モノリシック・パワー・システムズ Monolithic Power Systems, Inc.",
+            "description": "アナログ半導体 電力ソリューション"
+        },
+        {
+            "symbol": "MRK",
+            "company_name": "メルク Merck & Co., Inc.",
+            "description": "製薬"
+        },
+        {
+            "symbol": "MRNA",
+            "company_name": "モデルナ Moderna, Inc.",
+            "description": "メッセンジャーRNA 治療薬・ワクチン開発"
+        },
+        {
+            "symbol": "MRO",
+            "company_name": "マラソン・オイル Marathon Oil Corporation",
+            "description": "独立系石油 & ガス"
+        },
+        {
+            "symbol": "MS",
+            "company_name": "モルガン・スタンレー Morgan Stanley",
+            "description": "投資銀行"
+        },
+        {
+            "symbol": "MSCI",
+            "company_name": "MSCI MSCI Inc.",
+            "description": "株価指数算出 ポートフォリオ分析"
+        },
+        {
+            "symbol": "MSFT",
+            "company_name": "マイクロソフト Microsoft Corporation",
+            "description": "アプリケーション ソフトウェア"
+        },
+        {
+            "symbol": "MSI",
+            "company_name": "モトローラ・ソリューションズ Motorola Solutions, Inc.",
+            "description": "無線機器 ソリューション"
+        },
+        {
+            "symbol": "MTB",
+            "company_name": "M&T・バンク M&T Bank Corporation",
+            "description": "銀行"
+        },
+        {
+            "symbol": "MTCH",
+            "company_name": "マッチ・グループ Match Group, Inc.",
+            "description": "出会い系アプリ"
+        },
+        {
+            "symbol": "MTD",
+            "company_name": "メトラートレド・インターナショナル Mettler-Toledo International Inc.",
+            "description": "精密機器・計量器"
+        },
+        {
+            "symbol": "MU",
+            "company_name": "マイクロン・テクノロジー Micron Technology, Inc.",
+            "description": "半導体 ソリューション"
+        }
+    ],
+    "n": [
+        {
+            "symbol": "NCLH",
+            "company_name": "ノルウェージャン・クルーズ・ライン・ホールディングス Norwegian Cruise Line Holdings Ltd.",
+            "description": "クルーズ客船運航"
+        },
+        {
+            "symbol": "NDAQ",
+            "company_name": "ナスダック Nasdaq, Inc.",
+            "description": "証券取引所"
+        },
+        {
+            "symbol": "NDSN",
+            "company_name": "ノードソン Nordson Corporation",
+            "description": "接着剤塗布機器 ソリューション"
+        },
+        {
+            "symbol": "NEE",
+            "company_name": "ネクステラ・エナジー NextEra Energy, Inc.",
+            "description": "再生可能エネルギー"
+        },
+        {
+            "symbol": "NEM",
+            "company_name": "ニューモント Newmont Corporation",
+            "description": "金・銅・銀・亜鉛・鉛"
+        },
+        {
+            "symbol": "NFLX",
+            "company_name": "ネットフリックス Netflix, Inc.",
+            "description": "動画配信サービス"
+        },
+        {
+            "symbol": "NI",
+            "company_name": "ナイソース NiSource Inc.",
+            "description": "天然ガス・電力"
+        },
+        {
+            "symbol": "NKE",
+            "company_name": "ナイキ NIKE, Inc.",
+            "description": "スポーツ用品"
+        },
+        {
+            "symbol": "NOC",
+            "company_name": "ノースロップ・グラマン Northrop Grumman Corporation",
+            "description": "軍需メーカー"
+        },
+        {
+            "symbol": "NOW",
+            "company_name": "サービスナウ ServiceNow, Inc.",
+            "description": "クラウドベース ITワークフロー"
+        },
+        {
+            "symbol": "NRG",
+            "company_name": "NRG・エナジー NRG Energy, Inc.",
+            "description": "発電・小売サービス"
+        },
+        {
+            "symbol": "NSC",
+            "company_name": "ノーフォーク・サザン Norfolk Southern Corporation",
+            "description": "鉄道"
+        },
+        {
+            "symbol": "NTAP",
+            "company_name": "ネットアップ NetApp, Inc.",
+            "description": "クラウドストレージ"
+        },
+        {
+            "symbol": "NTRS",
+            "company_name": "ノーザン・トラスト Northern Trust Corporation",
+            "description": "資産運用"
+        },
+        {
+            "symbol": "NUE",
+            "company_name": "ニューコア Nucor Corporation",
+            "description": "鉄鋼メーカー"
+        },
+        {
+            "symbol": "NVDA",
+            "company_name": "エヌビディア NVIDIA Corporation",
+            "description": "GPU 半導体メーカー"
+        },
+        {
+            "symbol": "NVR",
+            "company_name": "NVR NVR, Inc.",
+            "description": "住宅建設"
+        },
+        {
+            "symbol": "NWS",
+            "company_name": "ニューズ（クラスB / 議決権あり） News Corporation (Class B)",
+            "description": "メディア 情報サービス"
+        },
+        {
+            "symbol": "NWSA",
+            "company_name": "ニューズ（クラスA / 議決権なし） News Corporation (Class A)",
+            "description": "メディア 情報サービス"
+        },
+        {
+            "symbol": "NXPI",
+            "company_name": "NXP・セミコンダクターズ NXP Semiconductors N.V.",
+            "description": "半導体メーカー"
+        }
+    ],
+    "o": [
+        {
+            "symbol": "ODFL",
+            "company_name": "オールド・ドミニオン・フレイト・ライン Old Dominion Freight Line, Inc.",
+            "description": "小口トラック 輸送サービス"
+        },
+        {
+            "symbol": "OKE",
+            "company_name": "ONEOK ONEOK, Inc.",
+            "description": "天然ガス"
+        },
+        {
+            "symbol": "OMC",
+            "company_name": "オムニコム・グループ Omnicom Group Inc.",
+            "description": "広告 マーケティング"
+        },
+        {
+            "symbol": "ON",
+            "company_name": "オン・セミコンダクター ON Semiconductor Corporation",
+            "description": "半導体メーカー"
+        },
+        {
+            "symbol": "ORCL",
+            "company_name": "オラクル Oracle Corporation",
+            "description": "クラウドインフラ ソフトウェア"
+        },
+        {
+            "symbol": "ORLY",
+            "company_name": "オライリー・オートモーティブ O'Reilly Automotive, Inc.",
+            "description": "アフターマーケット 自動車部品販売"
+        },
+        {
+            "symbol": "OTIS",
+            "company_name": "オーチス・ワールドワイド Otis Worldwide Corporation",
+            "description": "エレベーター エスカレーター"
+        },
+        {
+            "symbol": "OXY",
+            "company_name": "オクシデンタル・ペトロリアム Occidental Petroleum Corporation",
+            "description": "独立系石油 & ガス"
+        }
+    ],
+    "p": [
+        {
+            "symbol": "PANW",
+            "company_name": "パロ・アルト・ネットワークス Palo Alto Networks, Inc.",
+            "description": "サイバーセキュリティ"
+        },
+        {
+            "symbol": "PARA",
+            "company_name": "パラマウント・グローバル Paramount Global",
+            "description": "メディア エンターテインメント"
+        },
+        {
+            "symbol": "PAYC",
+            "company_name": "ペイコム・ソフトウェア Paycom Software, Inc.",
+            "description": "クラウドベース HCMソフトウェア"
+        },
+        {
+            "symbol": "PAYX",
+            "company_name": "ペイチェックス Paychex, Inc.",
+            "description": "HCMソリューション"
+        },
+        {
+            "symbol": "PCAR",
+            "company_name": "パッカー PACCAR Inc.",
+            "description": "トラックメーカー"
+        },
+        {
+            "symbol": "PCG",
+            "company_name": "PG&E PG&E Corporation",
+            "description": "天然ガス・電力"
+        },
+        {
+            "symbol": "PEG",
+            "company_name": "パブリック・サービス・エンタプライズ・グループ Public Service Enterprise Group Incorporated",
+            "description": "電力 & 天然ガス"
+        },
+        {
+            "symbol": "PEP",
+            "company_name": "ペプシコ PepsiCo, Inc.",
+            "description": "清涼飲料"
+        },
+        {
+            "symbol": "PFE",
+            "company_name": "ファイザー Pfizer Inc.",
+            "description": "製薬"
+        },
+        {
+            "symbol": "PFG",
+            "company_name": "プリンシパル・ファイナンシャル・グループ Principal Financial Group, Inc.",
+            "description": "資産運用"
+        },
+        {
+            "symbol": "PG",
+            "company_name": "P&G The Procter & Gamble Company",
+            "description": "一般消費財メーカー"
+        },
+        {
+            "symbol": "PGR",
+            "company_name": "プログレッシブ The Progressive Corporation",
+            "description": "自動車・損害保険"
+        },
+        {
+            "symbol": "PH",
+            "company_name": "パーカーハネフィン Parker-Hannifin Corporation",
+            "description": "モーション制御技術"
+        },
+        {
+            "symbol": "PHM",
+            "company_name": "パルトグループ PulteGroup, Inc.",
+            "description": "住宅建設"
+        },
+        {
+            "symbol": "PKG",
+            "company_name": "パッケージング・コーポレーション・オブ・アメリカ Packaging Corporation of America",
+            "description": "段ボール製品メーカー"
+        },
+        {
+            "symbol": "PLD",
+            "company_name": "プロロジス Prologis, Inc.",
+            "description": "REIT - 産業"
+        },
+        {
+            "symbol": "PM",
+            "company_name": "フィリップ・モリス・インターナショナル Philip Morris International Inc.",
+            "description": "タバコ"
+        },
+        {
+            "symbol": "PNC",
+            "company_name": "PNC・ファイナンシャル・サービシズ・グループ The PNC Financial Services Group, Inc.",
+            "description": "銀行"
+        },
+        {
+            "symbol": "PNR",
+            "company_name": "ペンテア Pentair plc",
+            "description": "水処理ソリューション"
+        },
+        {
+            "symbol": "PNW",
+            "company_name": "ピナクル・ウエスト・キャピタル Pinnacle West Capital Corporation",
+            "description": "電力持株会社"
+        },
+        {
+            "symbol": "PODD",
+            "company_name": "インシュレット Insulet Corporation",
+            "description": "医療機器 インスリン投与"
+        },
+        {
+            "symbol": "POOL",
+            "company_name": "プール Pool Corporation",
+            "description": "スイミングプール用品"
+        },
+        {
+            "symbol": "PPG",
+            "company_name": "PPG・インダストリーズ PPG Industries, Inc.",
+            "description": "コーティング 特殊材料"
+        },
+        {
+            "symbol": "PPL",
+            "company_name": "PPL PPL Corporation",
+            "description": "電力 & 天然ガス"
+        },
+        {
+            "symbol": "PRU",
+            "company_name": "プルデンシャル・ファイナンシャル Prudential Financial, Inc.",
+            "description": "生命保険"
+        },
+        {
+            "symbol": "PSX",
+            "company_name": "フィリップス・66 Phillips 66",
+            "description": "石油精製・製品販売"
+        },
+        {
+            "symbol": "PTC",
+            "company_name": "PTC PTC Inc.",
+            "description": "DXソリューション インダストリアルIoT"
+        },
+        {
+            "symbol": "PWR",
+            "company_name": "クアンタ・サービシズ Quanta Services, Inc.",
+            "description": "インフラ ソリューション"
+        },
+        {
+            "symbol": "PYPL",
+            "company_name": "ペイパル・ホールディングス PayPal Holdings, Inc.",
+            "description": "デジタル 決済プラットフォーム"
+        }
+    ],
+    "q": [
+        {
+            "symbol": "QCOM",
+            "company_name": "クアルコム QUALCOMM Incorporated",
+            "description": "無線テクノロジー アプリケーション"
+        },
+        {
+            "symbol": "QRVO",
+            "company_name": "コルボ Qorvo, Inc.",
+            "description": "無線周波数 ソリューション"
+        }
+    ],
+    "r": [
+        {
+            "symbol": "RCL",
+            "company_name": "ロイヤル・カリビアン・クルーズ Royal Caribbean Cruises Ltd.",
+            "description": "クルーズ客船運航"
+        },
+        {
+            "symbol": "REGN",
+            "company_name": "リジェネロン・ファーマスーティカルズ Regeneron Pharmaceuticals, Inc.",
+            "description": "バイオ医療品"
+        },
+        {
+            "symbol": "RF",
+            "company_name": "リージョンズ・フィナンシャル Regions Financial Corporation",
+            "description": "銀行"
+        },
+        {
+            "symbol": "RJF",
+            "company_name": "レイモンド・ジェームズ・ファイナンシャル Raymond James Financial, Inc.",
+            "description": "総合証券会社"
+        },
+        {
+            "symbol": "RL",
+            "company_name": "ラルフ・ローレン Ralph Lauren Corporation",
+            "description": "ブランド衣料品"
+        },
+        {
+            "symbol": "RMD",
+            "company_name": "レスメド ResMed Inc.",
+            "description": "医療機器メーカー"
+        },
+        {
+            "symbol": "ROK",
+            "company_name": "ロックウェル・オートメーション Rockwell Automation, Inc.",
+            "description": "産業用 オートメーション"
+        },
+        {
+            "symbol": "ROL",
+            "company_name": "ローリンズ Rollins, Inc.",
+            "description": "害虫・シロアリ 防除サービス"
+        },
+        {
+            "symbol": "ROP",
+            "company_name": "ローパー・テクノロジーズ Roper Technologies, Inc.",
+            "description": "ソフトウェア 産業技術・制御"
+        },
+        {
+            "symbol": "ROST",
+            "company_name": "ロス・ストアーズ Ross Stores, Inc.",
+            "description": "オフプライス アパレル・雑貨"
+        },
+        {
+            "symbol": "RSG",
+            "company_name": "リパブリック・サービシズ Republic Services, Inc.",
+            "description": "廃棄物処理サービス"
+        },
+        {
+            "symbol": "RTX",
+            "company_name": "RTX RTX Corporation",
+            "description": "軍需メーカー"
+        },
+        {
+            "symbol": "RVTY",
+            "company_name": "レヴィティ Revvity, Inc.",
+            "description": "研究開発（R&D） 臨床 ・診断"
+        }
+    ],
+    "s": [
+        {
+            "symbol": "SBAC",
+            "company_name": "SBA・コミュニケーションズ SBA Communications Corporation",
+            "description": "REIT - 特殊"
+        },
+        {
+            "symbol": "SBUX",
+            "company_name": "スターバックス Starbucks Corporation",
+            "description": "自社ブランド コーヒーチェーン"
+        },
+        {
+            "symbol": "SCHW",
+            "company_name": "チャールズ・シュワブ The Charles Schwab Corporation",
+            "description": "証券会社"
+        },
+        {
+            "symbol": "SHW",
+            "company_name": "シャーウィンウィリアムズ The Sherwin-Williams Company",
+            "description": "塗料・コーティング"
+        },
+        {
+            "symbol": "SJM",
+            "company_name": "J.M.・スマッカー The J.M. Smucker Company",
+            "description": "食品・飲料 ペットフード"
+        },
+        {
+            "symbol": "SLB",
+            "company_name": "SLB（シュルンベルジェ） SLB (Schlumberger N.V.)",
+            "description": "油田探査・計測機器"
+        },
+        {
+            "symbol": "SMCI",
+            "company_name": "スーパー・マイクロ・コンピューター Super Micro Computer, Inc.",
+            "description": "サーバー・ストレージ ソリューション"
+        },
+        {
+            "symbol": "SNA",
+            "company_name": "スナップオン Snap-on Incorporated",
+            "description": "診断・修理 工具メーカー"
+        },
+        {
+            "symbol": "SNPS",
+            "company_name": "シノプシス Synopsys, Inc.",
+            "description": "電子設計 自動化ソフトウェア"
+        },
+        {
+            "symbol": "SO",
+            "company_name": "サザン The Southern Company",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "SOLV",
+            "company_name": "ソルベンタム Solventum Corporation",
+            "description": "ヘルスケア"
+        },
+        {
+            "symbol": "SPGI",
+            "company_name": "S&P・グローバル S&P Global Inc.",
+            "description": "信用格付け 金融情報サービス"
+        },
+        {
+            "symbol": "SRE",
+            "company_name": "センプラ Sempra",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "STE",
+            "company_name": "ステリス STERIS plc",
+            "description": "医療機器 感染防止製品"
+        },
+        {
+            "symbol": "STLD",
+            "company_name": "スチール・ダイナミクス Steel Dynamics, Inc.",
+            "description": "鉄鋼"
+        },
+        {
+            "symbol": "STT",
+            "company_name": "ステート・ストリート State Street Corporation",
+            "description": "資産運用"
+        },
+        {
+            "symbol": "STX",
+            "company_name": "シーゲイト・テクノロジー・ホールディングス Seagate Technology Holdings plc",
+            "description": "HDD・SSD ストレージ管理"
+        },
+        {
+            "symbol": "STZ",
+            "company_name": "コンステレーション・ブランズ Constellation Brands, Inc.",
+            "description": "アルコール飲料"
+        },
+        {
+            "symbol": "SWK",
+            "company_name": "スタンレー・ブラック・アンド・デッカー Stanley Black & Decker, Inc.",
+            "description": "電動工具 電子セキュリティ"
+        },
+        {
+            "symbol": "SWKS",
+            "company_name": "スカイワークス・ソリューションズ Skyworks Solutions, Inc.",
+            "description": "ワイヤレス 半導体メーカー"
+        },
+        {
+            "symbol": "SYF",
+            "company_name": "シンクロニー・ファイナンシャル Synchrony Financial",
+            "description": "消費者金融サービス"
+        },
+        {
+            "symbol": "SYK",
+            "company_name": "ストライカー Stryker Corporation",
+            "description": "医療機器メーカー"
+        },
+        {
+            "symbol": "SYY",
+            "company_name": "シスコ Sysco Corporation",
+            "description": "食品サービス ホスピタリティ"
+        }
+    ],
+    "t": [
+        {
+            "symbol": "T",
+            "company_name": "AT&T AT&T Inc.",
+            "description": "統合ネットワーク ソリューション"
+        },
+        {
+            "symbol": "TAP",
+            "company_name": "モルソン・クアーズ・ビバレッジ Molson Coors Beverage Company",
+            "description": "ビール醸造"
+        },
+        {
+            "symbol": "TDG",
+            "company_name": "トランスダイム・グループ TransDigm Group Incorporated",
+            "description": "航空機部品 システム"
+        },
+        {
+            "symbol": "TDY",
+            "company_name": "テレダイン・テクノロジーズ Teledyne Technologies Incorporated",
+            "description": "計装・デジタル画像 電子・通信機器"
+        },
+        {
+            "symbol": "TECH",
+            "company_name": "バイオテク二 Bio-Techne Corporation",
+            "description": "試薬・GMP製品 機器・テストサービス"
+        },
+        {
+            "symbol": "TEL",
+            "company_name": "TE・コネクティビティ TE Connectivity Ltd.",
+            "description": "コネクティビティ ソリューション"
+        },
+        {
+            "symbol": "TER",
+            "company_name": "テラダイン Teradyne, Inc.",
+            "description": "自動試験装置メーカー"
+        },
+        {
+            "symbol": "TFC",
+            "company_name": "トゥルイスト・ファイナンシャル Truist Financial Corporation",
+            "description": "銀行"
+        },
+        {
+            "symbol": "TFX",
+            "company_name": "テレフレックス Teleflex Incorporated",
+            "description": "医療機器メーカー"
+        },
+        {
+            "symbol": "TGT",
+            "company_name": "ターゲット Target Corporation",
+            "description": "ディスカウント 小売チェーン"
+        },
+        {
+            "symbol": "TJX",
+            "company_name": "TJX The TJX Companies, Inc.",
+            "description": "オフプライス アパレル・雑貨"
+        },
+        {
+            "symbol": "TMO",
+            "company_name": "サーモ・フィッシャー・サイエンティフィック Thermo Fisher Scientific Inc.",
+            "description": "試薬・分析機器 特殊診断・ラボ製品"
+        },
+        {
+            "symbol": "TMUS",
+            "company_name": "TモバイルUS T-Mobile US, Inc.",
+            "description": "携帯電話"
+        },
+        {
+            "symbol": "TPR",
+            "company_name": "タペストリー Tapestry, Inc.",
+            "description": "高級アクセサリー ファッション"
+        },
+        {
+            "symbol": "TRGP",
+            "company_name": "タルガ・リソーシズ Targa Resources Corp.",
+            "description": "天然ガス・天然ガス液"
+        },
+        {
+            "symbol": "TRMB",
+            "company_name": "トリンブル Trimble Inc.",
+            "description": "モバイル端末 業務ソリューション"
+        },
+        {
+            "symbol": "TROW",
+            "company_name": "T・ロウ・プライス・グループ T. Rowe Price Group, Inc.",
+            "description": "資産運用"
+        },
+        {
+            "symbol": "TRV",
+            "company_name": "トラベラーズ The Travelers Companies, Inc.",
+            "description": "損害保険"
+        },
+        {
+            "symbol": "TSCO",
+            "company_name": "トラクター・サプライ Tractor Supply Company",
+            "description": "農業・牧場用品 販売チェーン"
+        },
+        {
+            "symbol": "TSLA",
+            "company_name": "テスラ Tesla, Inc.",
+            "description": "電気自動車 ソーラーパネル"
+        },
+        {
+            "symbol": "TSN",
+            "company_name": "タイソン・フーズ Tyson Foods, Inc.",
+            "description": "食肉加工食品"
+        },
+        {
+            "symbol": "TT",
+            "company_name": "トレイン・テクノロジーズ Trane Technologies plc",
+            "description": "空調製品 エネルギー制御"
+        },
+        {
+            "symbol": "TTWO",
+            "company_name": "テイクツー・インタラクティブ・ソフトウェア Take-Two Interactive Software, Inc.",
+            "description": "ゲームソフト 周辺機器メーカー"
+        },
+        {
+            "symbol": "TXN",
+            "company_name": "テキサス・インスツルメンツ Texas Instruments Incorporated",
+            "description": "アナログ 組込み半導体"
+        },
+        {
+            "symbol": "TXT",
+            "company_name": "テクストロン Textron Inc.",
+            "description": "軍需メーカー"
+        },
+        {
+            "symbol": "TYL",
+            "company_name": "タイラー・テクノロジーズ Tyler Technologies, Inc.",
+            "description": "統合情報管理 ソリューション"
+        }
+    ],
+    "u": [
+        {
+            "symbol": "UAL",
+            "company_name": "ユナイテッド・エアラインズ・ホールディングス United Airlines Holdings, Inc.",
+            "description": "航空会社"
+        },
+        {
+            "symbol": "UBER",
+            "company_name": "ウーバー・テクノロジーズ Uber Technologies, Inc.",
+            "description": "配車携帯アプリ"
+        },
+        {
+            "symbol": "UHS",
+            "company_name": "ユニバーサル・ヘルス・サービシズ Universal Health Services, Inc.",
+            "description": "病院 ヘルスケアサービス"
+        },
+        {
+            "symbol": "ULTA",
+            "company_name": "アルタ・ビューティー Ulta Beauty, Inc.",
+            "description": "美容小売 サロンサービス"
+        },
+        {
+            "symbol": "UNH",
+            "company_name": "ユナイテッドヘルス・グループ UnitedHealth Group Incorporated",
+            "description": "医療保険 医療サービス"
+        },
+        {
+            "symbol": "UNP",
+            "company_name": "ユニオン・パシフィック Union Pacific Corporation",
+            "description": "鉄道"
+        },
+        {
+            "symbol": "UPS",
+            "company_name": "ユナイテッド・パーセル・サービス United Parcel Service, Inc.",
+            "description": "小口貨物 輸送サービス"
+        },
+        {
+            "symbol": "URI",
+            "company_name": "ユナイテッド・レンタルズ United Rentals, Inc.",
+            "description": "機器レンタル サービス"
+        },
+        {
+            "symbol": "USB",
+            "company_name": "U.S. バンコープ U.S. Bancorp",
+            "description": "銀行"
+        }
+    ],
+    "v": [
+        {
+            "symbol": "V",
+            "company_name": "ビザ Visa Inc.",
+            "description": "クレジットカード"
+        },
+        {
+            "symbol": "VLO",
+            "company_name": "バレロ・エナジー Valero Energy Corporation",
+            "description": "独立系石油精製・販売"
+        },
+        {
+            "symbol": "VLTO",
+            "company_name": "ベラルト Veralto Corporation",
+            "description": "水資源・品質 保護ソリューション"
+        },
+        {
+            "symbol": "VMC",
+            "company_name": "バルカン・マテリアルズ Vulcan Materials Company",
+            "description": "砕石・砂利・砂 建築骨材メーカー"
+        },
+        {
+            "symbol": "VRSK",
+            "company_name": "ベリスク・アナリティックス Verisk Analytics, Inc.",
+            "description": "損害予測・リスク分析 ソリューション"
+        },
+        {
+            "symbol": "VRSN",
+            "company_name": "ベリサイン VeriSign, Inc.",
+            "description": "レジストリサービス セキュリティー"
+        },
+        {
+            "symbol": "VRTX",
+            "company_name": "バーテックス・ファーマスーティカルズ Vertex Pharmaceuticals Incorporated",
+            "description": "バイオ医薬品"
+        },
+        {
+            "symbol": "VST",
+            "company_name": "ヴィストラ Vistra Corp.",
+            "description": "電力小売・発電"
+        },
+        {
+            "symbol": "VTRS",
+            "company_name": "バイアトリス Viatris Inc.",
+            "description": "ジェネリック医薬品"
+        },
+        {
+            "symbol": "VZ",
+            "company_name": "ベライゾン・コミュニケーションズ Verizon Communications Inc.",
+            "description": "通信技術 ソリューション"
+        }
+    ],
+    "w": [
+        {
+            "symbol": "WAB",
+            "company_name": "ウェスティングハウス・エア・ブレーキ・テクノロジーズ Westinghouse Air Brake Technologies Corporation",
+            "description": "貨物車・機関車 輸送部品・サービス"
+        },
+        {
+            "symbol": "WAT",
+            "company_name": "ウォーターズ Waters Corporation",
+            "description": "分析機器メーカー"
+        },
+        {
+            "symbol": "WBA",
+            "company_name": "ウォルグリーン・ブーツ・アライアンス Walgreens Boots Alliance, Inc.",
+            "description": "ドラッグストア 健康サービス"
+        },
+        {
+            "symbol": "WBD",
+            "company_name": "ワーナー・ブラザース・ディスカバリー Warner Bros. Discovery Inc.",
+            "description": "メディア エンターテインメント"
+        },
+        {
+            "symbol": "WDC",
+            "company_name": "ウエスタン・デジタル Western Digital Corporation",
+            "description": "HDD フラッシュSSD"
+        },
+        {
+            "symbol": "WEC",
+            "company_name": "WEC・エナジー・グループ WEC Energy Group, Inc.",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "WELL",
+            "company_name": "ウェルタワー Welltower Inc.",
+            "description": "REIT - ヘルスケア施設"
+        },
+        {
+            "symbol": "WFC",
+            "company_name": "ウェルズ・ファーゴ Wells Fargo & Company",
+            "description": "銀行"
+        },
+        {
+            "symbol": "WM",
+            "company_name": "ウェイスト・マネジメント Waste Management, Inc.",
+            "description": "廃棄物処理サービス"
+        },
+        {
+            "symbol": "WMB",
+            "company_name": "ウィリアムズ The Williams Companies, Inc.",
+            "description": "天然ガスパイプライン 収集・処理サービス"
+        },
+        {
+            "symbol": "WMT",
+            "company_name": "ウォルマート Walmart Inc.",
+            "description": "ディスカウントストア チェーン"
+        },
+        {
+            "symbol": "WRB",
+            "company_name": "WRバークレー W. R. Berkley Corporation",
+            "description": "損害保険・再保険"
+        },
+        {
+            "symbol": "WST",
+            "company_name": "ウェスト・ファーマシューティカル・サービシーズ West Pharmaceutical Services, Inc.",
+            "description": "注射剤・医薬品包装 送達システム"
+        },
+        {
+            "symbol": "WTW",
+            "company_name": "ウィリス・タワーズ・ワトソン Willis Towers Watson plc",
+            "description": "保険仲介 コンサルティング"
+        },
+        {
+            "symbol": "WYNN",
+            "company_name": "ウィン・リゾーツ Wynn Resorts, Limited",
+            "description": "統合型リゾート"
+        }
+    ],
+    "x": [
+        {
+            "symbol": "XEL",
+            "company_name": "エクセル・エナジー Xcel Energy Inc.",
+            "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "XOM",
+            "company_name": "エクソン・モービル Exxon Mobil Corporation",
+            "description": "石油 & ガス"
+        },
+        {
+            "symbol": "XYL",
+            "company_name": "ザイレム Xylem Inc.",
+            "description": "水計測・分析技術 ソリューション"
+        }
+    ],
+    "y": [
+        {
+            "symbol": "YUM",
+            "company_name": "ヤム・ブランズ Yum! Brands, Inc.",
+            "description": "ファーストフード チェーン"
+        }
+    ],
+    "z": [
+        {
+            "symbol": "ZBH",
+            "company_name": "ジンマー・バイオメット・ホールディングス Zimmer Biomet Holdings, Inc.",
+            "description": "整形外科向け 医療機器"
+        },
+        {
+            "symbol": "ZBRA",
+            "company_name": "ゼブラ・テクノロジーズ Zebra Technologies Corporation",
+            "description": "自動識別 AIDC製品"
+        },
+        {
+            "symbol": "ZTS",
+            "company_name": "ゾエティス Zoetis Inc.",
+            "description": "ペット・家畜用 医薬品・ワクチン"
+        }
+    ]
 }

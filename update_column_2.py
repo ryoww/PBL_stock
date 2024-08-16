@@ -8,7 +8,7 @@ with open('stocks_values.json', 'r') as file:
 BASE_URL = 'http://192.168.1.222:8999'
 
 def test_get_days(stock_code):
-    url = f'{BASE_URL}/getdays/{stock_code}'
+    url = f'{BASE_URL}/getdays/{stock_code}?null=true'
     response = requests.get(url)
     days = response.json()
     dates = list(set(entry['date'] for entry in days))
