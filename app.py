@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 # Marshmallow Schemas
 class PostRowDataSchema(ma.Schema):
     class Meta:
-        fields = ("stock_name", "stock_code", "datetime", "content")
+        fields = ("stock_name", "stock_code", "datetime", "headline", "content")
 
 class PostMLDataSchema(ma.Schema):
     class Meta:
@@ -92,22 +92,22 @@ def add_row_data():
     logger.info(f"Adding data: {data}")
 
     try:
-        datetime_obj = datetime.strptime(data['datetime'], "%Y-%m-%d %H:%M:%S")
+        datetime_obj = datetime.strptime(data['datetime'], "%Y-%m-%d %H:%M")
         date = datetime_obj.date()
         time = datetime_obj.time()
     except ValueError:
         return make_response("Invalid datetime format", 400)
 
     query = """
-    INSERT INTO stock_dataset (stock_name, stock_code, date, time, content)
-    VALUES (%s, %s, %s, %s, %s)
+    INSERT INTO stock_dataset (stock_name, stock_code, date, time, headline, content)
+    VALUES (%s, %s, %s, %s, %s, %s)
     """
 
     connection = get_db_connection()
     cursor = connection.cursor()
 
     try:
-        cursor.execute(query, (data['stock_name'], data['stock_code'], date, time, data['content']))
+        cursor.execute(query, (data['stock_name'], data['stock_code'], date, time, data['headline'], data['content']))
         connection.commit()
         print("Executed query:", cursor.statement)
         return make_response("Data added successfully", 201)
@@ -287,14 +287,21 @@ def update_column():
 
 @app.route("/getdays/<string:stock_code>", methods=["GET"])
 def get_days(stock_code):
-    logger.info(f"Fetching datetime for stock_code: {stock_code}")
+    # nullパラメータをクエリパラメータから取得
+    null_param = request.args.get('null', 'false').lower() == 'true'
 
+    logger.info(f"Fetching datetime for stock_code: {stock_code} with null condition: {null_param}")
+
+    # 基本のクエリ
     query = """
     SELECT date, time
     FROM stock_dataset
     WHERE stock_code = %s
-    AND value IS NULL
     """
+
+    # null_paramがTrueの場合、AND value IS NULLをクエリに追加
+    if null_param:
+        query += " AND value IS NULL"
 
     connection = get_db_connection()
     cursor = connection.cursor(dictionary=True)
@@ -417,3 +424,4 @@ def get_column_data(column_name):
 # Run the server
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8999)
+
