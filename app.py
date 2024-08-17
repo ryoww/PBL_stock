@@ -421,6 +421,43 @@ def get_column_data(column_name):
         cursor.close()
         connection.close()
 
+@app.route("/null_values/<string:stock_code>", methods=["GET"])
+def get_null_values(stock_code):
+    logger.info(f"Fetching null value IDs for stock_code: {stock_code}")
+
+    query = """
+    SELECT id, date
+    FROM stock_dataset
+    WHERE stock_code = %s AND value IS NULL
+    """
+
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    try:
+        cursor.execute(query, (stock_code,))
+        print("Executed query:", cursor.statement)
+        rows = cursor.fetchall()
+        print("Fetched rows:", rows)
+        
+        # 日付をキーとしてIDのリストを値とする辞書を作成
+        result = {}
+        for row in rows:
+            date_str = row['date'].isoformat()
+            if date_str not in result:
+                result[date_str] = []
+            result[date_str].append(row['id'])
+
+        return jsonify(result)
+    except Error as e:
+        logger.error(f"Error fetching null values: {e}")
+        print("Error message:", e)
+        return make_response("Failed to fetch null values", 500)
+    finally:
+        cursor.close()
+        connection.close()
+
+
 # Run the server
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8999)
