@@ -6,17 +6,22 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from bs4 import BeautifulSoup
 import pandas as pd
 
+import email
+import imaplib
+from email.header import decode_header
+import quopri
+import re
+
 import requests
 
 import time
 from datetime import datetime
 import json
-from key import sbi_id, sbi_pass
+from key import sbi_id, sbi_pass, email_user, email_password
 
 BASE_URL = 'http://192.168.1.222:8999'
 
 # get stock_name.json
-
 def req(s):
     # Construct the URL for the given suffix 's'
     url = f"https://www.180.co.jp/world_etf_adr/s&p500/{s}.htm"
@@ -95,6 +100,65 @@ pass_input = driver.find_element(By.NAME, "user_password")
 pass_input.send_keys(sbi_pass)
 
 driver.find_element(By.NAME, "ACT_login").click()
+
+time.sleep(30)
+imap_url = 'imap.gmail.com'
+
+# IMAP接続
+my_email = imaplib.IMAP4_SSL(imap_url)
+my_email.login(email_user, email_password)
+
+# 受信トレイ選択
+my_email.select('Inbox')
+
+# メール検索
+key = 'FROM'
+value = 'info@sbisec.co.jp'
+typ, data = my_email.search(None, key, value)
+
+# メールIDリストを取得（すべて）
+mail_id_list = data[0].split()
+
+# 最新のメールを取得
+for mail_id in mail_id_list[-1:]:
+    typ, msg_data = my_email.fetch(mail_id, '(RFC822)')
+    for response_part in msg_data:
+        if isinstance(response_part, tuple):
+            # print('__________________________')
+            # メールの内容を取得
+            my_msg = email.message_from_bytes(response_part[1])
+
+            # 件名のデコード
+            subject, encoding = decode_header(my_msg['subject'])[0]
+            if isinstance(subject, bytes):
+                if encoding:
+                    subject = subject.decode(encoding)
+                else:
+                    subject = subject.decode('iso-2022-jp')  # 文字化け防止のためデコード
+
+            # 差出人
+            from_ = my_msg['from']
+
+            # 送信日時の取得
+            date = my_msg['Date']
+
+            # メール本文の取得
+            for part in my_msg.walk():
+                if part.get_content_type() == 'text/plain':
+                    body = part.get_payload(decode=True)
+                    # Quoted-printableデコード
+                    body = quopri.decodestring(body).decode('iso-2022-jp')
+
+                    # 認証コードの抽出と表示
+                    auth_codes = re.findall(r"認証コード\s*([A-Z0-9]+)", body)
+                    for code in auth_codes:
+                        print(f"認証コード: {code}")
+
+device_code = driver.find_element(By.XPATH, r'/html/body/div[5]/form/div/div/input[1]')
+device_code.send_keys(code)
+time.sleep(0.3)
+
+driver.find_element(By.XPATH, r'/html/body/div[5]/form/div/div/input[2]').click()
 
 print("Please input Enter")
 input("")

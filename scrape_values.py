@@ -1,10 +1,9 @@
-import aiohttp
-import asyncio
-import json
 import requests
+import json
 from datetime import datetime, timedelta
 
 BASE_URL = 'http://192.168.1.222:8999'
+post_url = f'{BASE_URL}/spot_update'
 today = datetime.today().strftime('%Y-%m-%d')
 
 values_data = {}
@@ -19,18 +18,10 @@ with open('./stock_name.json', 'r', encoding="utf-8") as file:
 
 def convert_date(date_str):
     date_obj = datetime.strptime(date_str, '%m/%d/%Y')
+
     conved_date = date_obj.strftime('%Y-%m-%d')
+
     return conved_date
-
-def remove_symbol_from_json(symbol):
-    with open('./stock_name.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-
-    for category in data:
-        data[category] = [company for company in data[category] if company["symbol"] != symbol]
-
-    with open('./stock_name.json', 'w', encoding="utf-8") as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
 
 for category in stockData:
     for company in stockData[category]:
@@ -44,7 +35,9 @@ for category in stockData:
         print(response)
 
         if response.status_code == 200:
+            # レスポンスから必要なデータを抽出（例：response.json()から 'rows' 部分を抽出）
             stock_data = response.json()["data"]["tradesTable"]["rows"]
+            # 必要なフィールドのみ抽出して辞書に追加
             values_data[stock_code] = [{"date": convert_date(row["date"]), "close": row["close"].replace('$', '')} for row in stock_data]
         else:
             print(f"Failed to retrieve data for {stock_code}")
@@ -54,105 +47,79 @@ with open('./stocks_values.json', 'w') as json_file:
 
 print("saved stocks_values.json")
 
-def get_days(stock_code):
-    url = f'{BASE_URL}/getdays/{stock_code}?null=true'
-    response = requests.get(url)
-    days = response.json()
-    dates = list(set(entry['date'] for entry in days))
-    return dates
 
-def find_previous_value(stock_symbol, date_str, json_days, entries, max_depth=1000):
-    # 再帰の深さを制限する
-    if max_depth <= 0:
-        raise RecursionError(f"Max recursion depth reached for {stock_symbol}")
+# update_values
 
+def find_previous_value(stock_symbol, date_str, json_days, entries):
+    # 再帰的に1日ずつ前にさかのぼる
     date_obj = datetime.strptime(date_str, "%Y-%m-%d") - timedelta(days=1)
     previous_date_str = date_obj.strftime("%Y-%m-%d")
 
+    # エントリーに前日の日付が存在するか確認
     for entry in entries:
         if entry['date'] == previous_date_str:
-            return entry['close']
+            return entry['close']  # 存在すればその値を返す
 
-    # さらに1日さかのぼる
-    return find_previous_value(stock_symbol, previous_date_str, json_days, entries, max_depth - 1)
+    # 存在しなければさらに1日さかのぼる
+    return find_previous_value(stock_symbol, previous_date_str, json_days, entries)
 
-async def post_data(session, url, data):
-    async with sem:  # セマフォで同時実行数を制限
-        async with session.post(url, json=data) as response:
-            status = response.status
-            response_text = await response.text()
-            print(f"POST to {url} with data {data} returned status {status}: {response_text}")
-            return status
-
-async def main():
-    with open('stocks_values.json', 'r') as file:
+def remove_symbol_from_json(symbol):
+    with open('./stock_name.json', 'r', encoding="utf-8") as file:
         data = json.load(file)
 
-    tasks = []
-    async with aiohttp.ClientSession() as session:
-        for stock_symbol, entries in data.items():
-            print(f'Stock Symbol: {stock_symbol}')
+    for category in data:
+        data[category] = [company for company in data[category] if company["symbol"] != symbol]
 
-            try:
-                days = get_days(stock_symbol)
-                print(days)
+    with open('./stock_name.json', 'w', encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
 
-                data_to_send = []
 
-                json_days = list(set(entry['date'] for entry in entries))
+with open('stocks_values.json', 'r') as file:
+    data = json.load(file)
 
-                for date in days:
-                    if date not in json_days:
-                        update_value = find_previous_value(stock_symbol, date, json_days, entries)
-                        if update_value is None:
-                            print(f"Warning: Unable to find a previous value for date: {date}")
-                            continue  # 値が見つからなければ次のループへ
 
-                        print(f'Missing date: {date}, filling with previous value: {update_value}')
+for stock_symbol, entries in data.items():
+    print(f'Stock Symbol: {stock_symbol}')
 
-                        data = {
-                            'date': date,
-                            'column_name': 'value',
-                            'update_value': update_value.replace(',', ''),
-                            'stock_code': stock_symbol
-                        }
-                        data_to_send.append(data)
-                    else:
-                        for entry in entries:
-                            if entry['date'] == date:
-                                update_value = entry['close']
-                                print(f"Date: {date}, Close: {update_value}")
+    days_url = f'{BASE_URL}/null_values/{stock_symbol}'
+    days = requests.get(days_url).json()
 
-                                data = {
-                                    'date': date,
-                                    'column_name': 'value',
-                                    'update_value': update_value.replace(',', ''),
-                                    'stock_code': stock_symbol
-                                }
-                                data_to_send.append(data)
-                                break
+    json_days = list(set(entry['date'] for entry in entries))
 
-                for data in data_to_send:
-                    task = post_data(session, f"{BASE_URL}/update_column", data)
-                    tasks.append(task)
+    try:
+        for date, id_list in days.items():
+            if date not in json_days:
+                update_value = find_previous_value(stock_symbol, date, json_days, entries)
+                print(f'Missing date: {date}, filling with previous value: {update_value}')
 
-            except RecursionError as e:
-                print(f"Error: {e}")
-                remove_symbol_from_json(stock_symbol)
-            except Exception as e:
-                print(f"Unexpected error with {stock_symbol}: {e}")
-                remove_symbol_from_json(stock_symbol)
+                for id in id_list:
+                    data = {
+                        'id' : id,
+                        'column_name' : 'value',
+                        'update_value' : update_value
+                    }
+                    print(data)
 
-        statuses = await asyncio.gather(*tasks)
+                    response = requests.post(post_url, json=data)
+                    print(response)
 
-        # エラーハンドリング
-        if all(status == 200 for status in statuses):
-            print("All requests were successful!")
-        else:
-            print("Some requests failed.")
+            else:
+                for entry in entries:
+                    if entry['date'] == date:
+                        update_value = entry['close']
+                        print(f"Date: {date}, Close: {update_value}")
 
-# セマフォの設定（同時に5つまで）
-sem = asyncio.Semaphore(5)
+                        for id in id_list:
+                            data = {
+                                'id' : id,
+                                'column_name' : 'value',
+                                'update_value' : update_value
+                            }
+                            print(data)
 
-# 非同期関数を実行
-asyncio.run(main())
+                            response = requests.post(post_url, json=data)
+                            print(response)
+
+    except Exception as e:
+        print(f'Error: {e}')
+        remove_symbol_from_json(stock_symbol)

@@ -206,9 +206,19 @@
             "description": "自動運転支援システム"
         },
         {
+            "symbol": "ARE",
+            "company_name": "アレクサンドリア・リアル・エステイト・エクイティーズ Alexandria Real Estate Equities, Inc.",
+            "description": "REIT - オフィス"
+        },
+        {
             "symbol": "ATO",
             "company_name": "アトモス・エナジー Atmos Energy Corporation",
             "description": "天然ガス"
+        },
+        {
+            "symbol": "AVB",
+            "company_name": "アバロンベイ・コミュニティーズ AvalonBay Communities, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "AVGO",
@@ -283,6 +293,11 @@
             "description": "資産運用持株会社"
         },
         {
+            "symbol": "BF-B",
+            "company_name": "ブラウンフォーマン Brown-Forman Corporation",
+            "description": "スピリッツ・ワイン"
+        },
+        {
             "symbol": "BG",
             "company_name": "バンジ・グローバル Bunge Global SA",
             "description": "穀物・オイルシード"
@@ -331,6 +346,11 @@
             "symbol": "BR",
             "company_name": "ブロードリッジ・フィナンシャル・ソリューションズ Broadridge Financial Solutions, Inc.",
             "description": "金融データ処理 ソリューション"
+        },
+        {
+            "symbol": "BRK-B",
+            "company_name": "バークシャー・ハサウェイ（クラスB） Berkshire Hathaway Inc. (Class B)",
+            "description": "投資持株会社"
         },
         {
             "symbol": "BRO",
@@ -390,9 +410,19 @@
             "description": "損害保険"
         },
         {
+            "symbol": "CBOE",
+            "company_name": "Cboe・グローバル・マーケッツ Cboe Global Markets, Inc.",
+            "description": "デリバティブ取引所"
+        },
+        {
             "symbol": "CBRE",
             "company_name": "CBRE・グループ CBRE Group, Inc.",
             "description": "事業用不動産サービス"
+        },
+        {
+            "symbol": "CCI",
+            "company_name": "クラウン・キャッスル Crown Castle Inc.",
+            "description": "REIT - 特殊"
         },
         {
             "symbol": "CCL",
@@ -540,6 +570,11 @@
             "description": "オンライン 中古車オークション"
         },
         {
+            "symbol": "CPT",
+            "company_name": "カムデン・プロパティ・トラスト Camden Property Trust",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "CRL",
             "company_name": "チャールズ・リバー・ラボラトリーズ・インターナショナル Charles River Laboratories International, Inc.",
             "description": "医薬品開発 業務受託機関"
@@ -672,6 +707,11 @@
             "description": "エンターテインメント"
         },
         {
+            "symbol": "DLR",
+            "company_name": "デジタル・リアルティ・トラスト Digital Realty Trust, Inc.",
+            "description": "REIT - 特殊"
+        },
+        {
             "symbol": "DLTR",
             "company_name": "ダラー・ツリー Dollar Tree, Inc.",
             "description": "ディスカウント 小売チェーン"
@@ -799,6 +839,16 @@
             "description": "DXソフトウェア コンサルティング"
         },
         {
+            "symbol": "EQIX",
+            "company_name": "エクイニクス Equinix, Inc.",
+            "description": "REIT - 特殊"
+        },
+        {
+            "symbol": "EQR",
+            "company_name": "エクイティ・レジデンシャル Equity Residential",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "EQT",
             "company_name": "EQT EQT Corporation",
             "description": "独立系天然ガス"
@@ -807,6 +857,11 @@
             "symbol": "ES",
             "company_name": "エバーソース・エナジー Eversource Energy",
             "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "ESS",
+            "company_name": "エセックス・プロパティ・トラスト Essex Property Trust, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "ETN",
@@ -847,6 +902,11 @@
             "symbol": "EXPE",
             "company_name": "エクスぺディア・グループ Expedia Group, Inc.",
             "description": "オンライン 旅行サービス"
+        },
+        {
+            "symbol": "EXR",
+            "company_name": "エクストラ・スペース・ストレージ Extra Space Storage Inc.",
+            "description": "REIT - 産業"
         }
     ],
     "f": [
@@ -924,6 +984,11 @@
             "symbol": "FOXA",
             "company_name": "フォックス（クラスA / 議決権なし） Fox Corporation (Class A)",
             "description": "エンターテインメント"
+        },
+        {
+            "symbol": "FRT",
+            "company_name": "フェデラル・リアルティ・インベストメント・トラスト Federal Realty Investment Trust",
+            "description": "REIT - リテール"
         },
         {
             "symbol": "FSLR",
@@ -1182,6 +1247,11 @@
             "description": "会計・税務ソフト クラウドサービス"
         },
         {
+            "symbol": "INVH",
+            "company_name": "インビテーション・ホームズ Invitation Homes Inc.",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "IP",
             "company_name": "インターナショナル・ペーバー International Paper Company",
             "description": "製紙 ライナー・パルプ"
@@ -1200,6 +1270,11 @@
             "symbol": "IR",
             "company_name": "インガソール・ランド Ingersoll Rand Inc.",
             "description": "コンプレッサー エアツールメーカー"
+        },
+        {
+            "symbol": "IRM",
+            "company_name": "アイアン・マウンテン Iron Mountain Incorporated",
+            "description": "REIT - 特殊"
         },
         {
             "symbol": "ISRG",
@@ -1289,6 +1364,16 @@
             "symbol": "KHC",
             "company_name": "クラフト・ハインツ The Kraft Heinz Company",
             "description": "食品 & 飲料"
+        },
+        {
+            "symbol": "KIM",
+            "company_name": "キムコ・リアルティ Kimco Realty Corporation",
+            "description": "REIT - リテール"
+        },
+        {
+            "symbol": "KKR",
+            "company_name": "コールバーグ・クラビス・ロバーツ KKR & Co. Inc.",
+            "description": "投資会社"
         },
         {
             "symbol": "KLAC",
@@ -1423,6 +1508,11 @@
             "symbol": "MA",
             "company_name": "マスターカード Mastercard Incorporated",
             "description": "クレジットカード"
+        },
+        {
+            "symbol": "MAA",
+            "company_name": "ミッドアメリカ・アパートメント・コミュニティーズ Mid-America Apartment Communities, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "MAR",
@@ -1699,6 +1789,11 @@
     ],
     "o": [
         {
+            "symbol": "O",
+            "company_name": "リアルティ・インカム Realty Income Corporation",
+            "description": "REIT - リテール"
+        },
+        {
             "symbol": "ODFL",
             "company_name": "オールド・ドミニオン・フレイト・ライン Old Dominion Freight Line, Inc.",
             "description": "小口トラック 輸送サービス"
@@ -1866,6 +1961,11 @@
             "description": "生命保険"
         },
         {
+            "symbol": "PSA",
+            "company_name": "パブリック・ストレージ Public Storage",
+            "description": "REIT - 産業"
+        },
+        {
             "symbol": "PSX",
             "company_name": "フィリップス・66 Phillips 66",
             "description": "石油精製・製品販売"
@@ -1903,6 +2003,11 @@
             "symbol": "RCL",
             "company_name": "ロイヤル・カリビアン・クルーズ Royal Caribbean Cruises Ltd.",
             "description": "クルーズ客船運航"
+        },
+        {
+            "symbol": "REG",
+            "company_name": "リージェンシー・センターズ Regency Centers Corporation",
+            "description": "REIT - リテール"
         },
         {
             "symbol": "REGN",
@@ -2022,6 +2127,11 @@
             "description": "ヘルスケア"
         },
         {
+            "symbol": "SPG",
+            "company_name": "サイモン・プロパティ・グループ Simon Property Group, Inc.",
+            "description": "REIT - リテール"
+        },
+        {
             "symbol": "SPGI",
             "company_name": "S&P・グローバル S&P Global Inc.",
             "description": "信用格付け 金融情報サービス"
@@ -2057,6 +2167,11 @@
             "description": "アルコール飲料"
         },
         {
+            "symbol": "SW",
+            "company_name": "スマーフィット・ウェストロック Smurfit WestRock plc",
+            "description": "段ボール包装 梱包ソリューション"
+        },
+        {
             "symbol": "SWK",
             "company_name": "スタンレー・ブラック・アンド・デッカー Stanley Black & Decker, Inc.",
             "description": "電動工具 電子セキュリティ"
@@ -2080,6 +2195,11 @@
             "symbol": "SYY",
             "company_name": "シスコ Sysco Corporation",
             "description": "食品サービス ホスピタリティ"
+        },
+        {
+            "symbol": "N/A",
+            "company_name": "",
+            "description": ""
         }
     ],
     "t": [
@@ -2226,6 +2346,11 @@
             "description": "配車携帯アプリ"
         },
         {
+            "symbol": "UDR",
+            "company_name": "UDR UDR, Inc.",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "UHS",
             "company_name": "ユニバーサル・ヘルス・サービシズ Universal Health Services, Inc.",
             "description": "病院 ヘルスケアサービス"
@@ -2259,6 +2384,11 @@
             "symbol": "USB",
             "company_name": "U.S. バンコープ U.S. Bancorp",
             "description": "銀行"
+        },
+        {
+            "symbol": "N/A",
+            "company_name": "",
+            "description": ""
         }
     ],
     "v": [
@@ -2266,6 +2396,11 @@
             "symbol": "V",
             "company_name": "ビザ Visa Inc.",
             "description": "クレジットカード"
+        },
+        {
+            "symbol": "VICI",
+            "company_name": "VICI・プロパティーズ VICI Properties Inc.",
+            "description": "REIT - 分散型"
         },
         {
             "symbol": "VLO",
@@ -2301,6 +2436,11 @@
             "symbol": "VST",
             "company_name": "ヴィストラ Vistra Corp.",
             "description": "電力小売・発電"
+        },
+        {
+            "symbol": "VTR",
+            "company_name": "ベンタス Ventas, Inc.",
+            "description": "REIT - ヘルスケア施設"
         },
         {
             "symbol": "VTRS",
@@ -2383,6 +2523,11 @@
             "symbol": "WTW",
             "company_name": "ウィリス・タワーズ・ワトソン Willis Towers Watson plc",
             "description": "保険仲介 コンサルティング"
+        },
+        {
+            "symbol": "WY",
+            "company_name": "ウェアーハウザー Weyerhaeuser Company",
+            "description": "REIT - 特殊"
         },
         {
             "symbol": "WYNN",
