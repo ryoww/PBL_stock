@@ -1,8 +1,9 @@
 import requests
 import json
 from datetime import datetime, timedelta
+from key import BASE_URL
 
-BASE_URL = 'http://192.168.1.222:8999'
+# BASE_URL = 'http://192.168.1.222:8999'
 post_url = f'{BASE_URL}/spot_update'
 today = datetime.today().strftime('%Y-%m-%d')
 
@@ -113,7 +114,7 @@ for stock_symbol, entries in data.items():
                             data = {
                                 'id' : id,
                                 'column_name' : 'value',
-                                'update_value' : update_value
+                                'update_value' : update_value.replace(',', '')
                             }
                             print(data)
 
