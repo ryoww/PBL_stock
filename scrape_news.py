@@ -1,7 +1,9 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver import ChromeOptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+import chromedriver_binary
 
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -17,9 +19,8 @@ import requests
 import time
 from datetime import datetime
 import json
-from key import sbi_id, sbi_pass, email_user, email_password
+from key import sbi_id, sbi_pass, email_user, email_password, BASE_URL
 
-BASE_URL = 'http://192.168.1.222:8999'
 
 # get stock_name.json
 def req(s):
@@ -85,7 +86,8 @@ def remove_symbol_from_json(symbol):
 caps = DesiredCapabilities.CHROME
 caps['goog:loggingPrefs'] = {'performance': 'ALL'}
 
-options = Options()
+options = ChromeOptions()
+options.add_argument('--headless')
 options.add_experimental_option("detach", True)
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/58.0.3029.110 Safari/537.36")
 
@@ -160,8 +162,6 @@ time.sleep(0.3)
 
 driver.find_element(By.XPATH, r'/html/body/div[5]/form/div/div/input[2]').click()
 
-print("Please input Enter")
-input("")
 
 driver.get("https://global.sbisec.co.jp/home")
 time.sleep(0.3)
