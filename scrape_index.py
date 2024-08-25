@@ -118,6 +118,10 @@ for index_code in index_codes:
 
     options.add_experimental_option("detach", True)
 
+    options.add_argument("--no-sandbox")
+
+    options.add_argument("--headless")
+
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")
 
     driver = webdriver.Chrome(options=options)
@@ -142,12 +146,20 @@ for index_code in index_codes:
     headers = {}
     post_data = None
 
+    if index_code == 'INDEXNASDAQ: .IXIC':
+        index_code = '.IXIC%3AINDEXNASDAQ'
+    if index_code == 'INDEXSP: .INX':
+        index_code = '.INX%3AINDEXSP'
+    if index_code == 'INDEXDJX: .DJI':
+        index_code = '.DJI%3A'
+
 
     for entry in logs:
         log = json.loads(entry['message'])['message']
         try:
             if 'Network.requestWillBeSent' in log['method']:
                 request_url = log['params']['request']['url']
+                # print(request_url)
                 if f'https://www.google.com/finance/_/GoogleFinanceUi/data/batchexecute?rpcids=AiCwsd&source-path=%2Ffinance%2Fquote%2F{index_code}' in request_url:
                     batch_request_urls.append(request_url)
                     headers = log['params']['request']['headers']
@@ -157,17 +169,27 @@ for index_code in index_codes:
             continue
 
     print(batch_request_urls)
+    if index_code == '.IXIC:INDEXNASDAQ':
+        index_code = r'.IXIC\",\"INDEXNASDAQ'
+
+    if index_code == 'INDEXSP: .INX':
+        index_code = r'.INX\",\"INDEXSP'
+
+    if index_code == '.DJI%3AINDEXDJX':
+        index_code = r'.DJI\",\"INDEXDJX'
 
     target_string = fr'[["wrb.fr","AiCwsd","[[[[\"{index_code}\",'
 
     print(type(batch_request_urls))
 
     response = requests.post(batch_request_urls[0], headers=headers, data=post_data)
-    print(response.text)
+    # print(response.text)
 
     values_array.append(index_values(response.text))
 
     driver.close()
+
+
 
 for index_name, index_value in zip(index_names, values_array):
     index_for(index_value, index_name)
