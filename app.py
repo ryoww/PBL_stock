@@ -8,12 +8,11 @@ import logging
 
 # Load environment variables
 load_dotenv()
-DATABASE_URL = os.getenv("DATABASE_URL")
 DB_CONFIG = {
-    'host': os.getenv("DB_HOST", "localhost"),
-    'user': os.getenv("DB_USER", "stock"),
-    'password': os.getenv("DB_PASSWORD", "ryotaro1212"),
-    'database': os.getenv("DB_NAME", "stock")
+    'host': os.getenv("DB_HOST"),
+    'user': os.getenv("DB_USER"),
+    'password': os.getenv("DB_PASSWORD"),
+    'database': os.getenv("DB_NAME")
 }
 
 # Create connection pool
