@@ -249,3 +249,4 @@ for category in data:
             remove_symbol_from_json(stock_code)
             print(f"Removed {stock_code} from stock_name.json")
 
+driver.close()

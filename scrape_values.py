@@ -24,24 +24,41 @@ def convert_date(date_str):
 
     return conved_date
 
+
+def remove_symbol_from_json(symbol):
+    with open('./stock_name.json', 'r', encoding="utf-8") as file:
+        data = json.load(file)
+
+    for category in data:
+        data[category] = [company for company in data[category] if company["symbol"] != symbol]
+
+    with open('./stock_name.json', 'w', encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
+
 for category in stockData:
-    for company in stockData[category]:
-        stock_code = company["symbol"]
+    try:
+        for company in stockData[category]:
+            stock_code = company["symbol"]
 
-        url = f'https://api.nasdaq.com/api/quote/{stock_code}/historical?assetclass=stocks&fromdate=2024-01-01&limit=9999&todate={today}'
+            url = f'https://api.nasdaq.com/api/quote/{stock_code}/historical?assetclass=stocks&fromdate=2024-01-01&limit=9999&todate={today}'
 
-        response = requests.get(url, headers=headers)
+            response = requests.get(url, headers=headers)
 
-        print(stock_code)
-        print(response)
+            print(stock_code)
+            print(response)
 
-        if response.status_code == 200:
-            # レスポンスから必要なデータを抽出（例：response.json()から 'rows' 部分を抽出）
-            stock_data = response.json()["data"]["tradesTable"]["rows"]
-            # 必要なフィールドのみ抽出して辞書に追加
-            values_data[stock_code] = [{"date": convert_date(row["date"]), "close": row["close"].replace('$', '')} for row in stock_data]
-        else:
-            print(f"Failed to retrieve data for {stock_code}")
+            if response.status_code == 200:
+                # レスポンスから必要なデータを抽出（例：response.json()から 'rows' 部分を抽出）
+                stock_data = response.json()["data"]["tradesTable"]["rows"]
+                # 必要なフィールドのみ抽出して辞書に追加
+                values_data[stock_code] = [{"date": convert_date(row["date"]), "close": row["close"].replace('$', '')} for row in stock_data]
+            else:
+                print(f"Failed to retrieve data for {stock_code}")
+
+    except Exception as e:
+        print(e)
+        remove_symbol_from_json(stock_code)
 
 with open('./stocks_values.json', 'w') as json_file:
     json.dump(values_data, json_file, indent=4)
@@ -63,16 +80,6 @@ def find_previous_value(stock_symbol, date_str, json_days, entries):
 
     # 存在しなければさらに1日さかのぼる
     return find_previous_value(stock_symbol, previous_date_str, json_days, entries)
-
-def remove_symbol_from_json(symbol):
-    with open('./stock_name.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-
-    for category in data:
-        data[category] = [company for company in data[category] if company["symbol"] != symbol]
-
-    with open('./stock_name.json', 'w', encoding="utf-8") as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
 
 
 with open('stocks_values.json', 'r') as file:

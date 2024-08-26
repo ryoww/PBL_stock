@@ -10,3 +10,4 @@ model
 scrape_data/
 __pycache__
 __pycache__/key.cpython-311.pyc
+nohup.out

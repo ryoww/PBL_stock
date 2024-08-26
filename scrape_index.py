@@ -1,8 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver import ChromeOptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+import chromedriver_binary
 
 import time
 import json
@@ -11,7 +13,7 @@ import requests
 from key import BASE_URL
 
 
-index_codes = ['VIX', 'NASDAQ', 'INDEXSP: .INX', 'DJI']
+index_codes = ['VIX', 'INDEXNASDAQ: .IXIC', 'INDEXSP: .INX', 'INDEXDJX: .DJI']
 index_names = ['vix', 'NASDAQ', 'SP_500', 'NY_Dow']
 
 i = 0
@@ -114,7 +116,7 @@ for index_code in index_codes:
     caps = DesiredCapabilities.CHROME
     caps['goog:loggingPrefs'] = {'performance': 'ALL'}
 
-    options = Options()
+    options = ChromeOptions()
 
     options.add_experimental_option("detach", True)
 
@@ -190,6 +192,8 @@ for index_code in index_codes:
     driver.close()
 
 
+# for array in values_array:
+#     print(array)
 
 for index_name, index_value in zip(index_names, values_array):
     index_for(index_value, index_name)
