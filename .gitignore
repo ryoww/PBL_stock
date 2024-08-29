@@ -11,3 +11,4 @@ backup2.sql
 scrape_data
 run_server.sh
 nohup.out
+sql_backup.sh
