@@ -9,6 +9,7 @@ import chromedriver_binary
 import time
 import json
 import requests
+from datetime import datetime, timedelta
 
 from key import BASE_URL
 
@@ -182,7 +183,7 @@ for index_code in index_codes:
 
     target_string = fr'[["wrb.fr","AiCwsd","[[[[\"{index_code}\",'
 
-    print(type(batch_request_urls))
+    # print(type(batch_request_urls))
 
     response = requests.post(batch_request_urls[0], headers=headers, data=post_data)
     # print(response.text)
@@ -192,8 +193,119 @@ for index_code in index_codes:
     driver.close()
 
 
-# for array in values_array:
-#     print(array)
+values_data = {}
+def to_dict(names, arrays):
+    for name, array in zip(names, arrays):
+        print(array)
+        unique_entries = {}
+        
+        for sp in array:
+            date = f'{sp[0][0]}-{sp[0][1]}-{sp[0][2]}'
+            close = f'{str(sp[2][0])}'
+            update_data = {'date': date, 'close': close}
+            
+            # 日付が既にunique_entriesに存在しなければ追加
+            if date not in unique_entries:
+                unique_entries[date] = update_data
+        
+        # 結果をリストにしてvalues_dataに格納
+        values_data[name] = list(unique_entries.values())
+    
+    return values_data
 
-for index_name, index_value in zip(index_names, values_array):
-    index_for(index_value, index_name)
+index_values = to_dict(index_names, values_array)
+
+
+with open('./index_values.json', 'w') as json_file:
+    json.dump(index_values, json_file, indent=4)
+
+
+def parse_date(date_str):
+    return datetime.strptime(date_str, '%Y-%m-%d')
+
+
+def find_previous_value(stock_symbol, date_datetime, json_days, entries):
+    # 再帰的に1日ずつ前にさかのぼる
+    date_obj = date_datetime - timedelta(days=1)
+
+    # エントリーに前日の日付が存在するか確認
+    for entry in entries:
+        if parse_date(entry['date']) == date_obj:
+            return entry['close']  # 存在すればその値を返す
+
+    # 存在しなければさらに1日さかのぼる
+    return find_previous_value(stock_symbol, date_obj, json_days, entries)
+
+
+with open('./index_values.json', 'r') as file:
+    data = json.load(file)
+
+
+def remove_symbol_from_json(symbol):
+    with open('./stock_name.json', 'r', encoding="utf-8") as file:
+        data = json.load(file)
+
+    for category in data:
+        data[category] = [company for company in data[category] if company["symbol"] != symbol]
+
+    with open('./stock_name.json', 'w', encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
+
+
+post_url = f'{BASE_URL}/spot_update'
+
+for index_code, entries in data.items():
+    # print(entries)
+    print(f'Index Code : {index_code}')
+    
+    days_url = f'{BASE_URL}/null_index/{index_code}'
+    days = requests.get(days_url).json()
+    
+    json_days = list(set(entry['date'] for entry in entries))
+    
+    sorted_dates = sorted(json_days, key=lambda date: datetime.strptime(date, '%Y-%m-%d'))
+    
+    # print(sorted_dates)
+    # print(days)
+    
+    try:
+        for date, id_list in days.items():
+            print(date)
+            if date not in json_days:
+                update_value = find_previous_value(index_code, parse_date(date), reversed(sorted_dates), entries)
+                print(f'Missing date: {date}, filling with previous value: {update_value}')
+        
+                for id in id_list:
+                    data = {
+                        'id' : id,
+                        'column_name' : index_code,
+                        'update_value' : update_value
+                    }
+                    
+                    print(data)
+                    
+                    response = requests.post(post_url, json=data)
+                    print(response)
+
+            else:
+                for entry in entries:
+                    if entry['date'] == date:
+                        update_value = entry['close']
+                        print(f"Date: {date}, Close: {update_value}")
+
+                        for id in id_list:
+                            data = {
+                                'id' : id,
+                                'column_name' : index_code,
+                                'update_value' : update_value.replace(',', '')
+                            }
+                            print(data)
+
+                            response = requests.post(post_url, json=data)
+                            print(response)
+                        
+
+    except Exception as e:
+        print(f'Error : {e}')
+        

@@ -1,14 +1,19 @@
 {
     "a": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "A",
             "company_name": "アジレント・テクノロジー Agilent Technologies, Inc.",
             "description": "化学分析 電子計測機器"
-        },
-        {
-            "symbol": "AAL",
-            "company_name": "アメリカン・エアラインズ・グループ American Airlines Group Inc.",
-            "description": "航空会社"
         },
         {
             "symbol": "AAPL",
@@ -161,6 +166,11 @@
             "description": "REIT - 特殊"
         },
         {
+            "symbol": "AMTM",
+            "company_name": "アメンタム・ホールディングス Amentum Holdings, Inc.",
+            "description": "先進エンジニアリング 技術ソリューション"
+        },
+        {
             "symbol": "AMZN",
             "company_name": "アマゾン・ドット・コム Amazon.com, Inc.",
             "description": "インターネットストア"
@@ -206,9 +216,19 @@
             "description": "自動運転支援システム"
         },
         {
+            "symbol": "ARE",
+            "company_name": "アレクサンドリア・リアル・エステイト・エクイティーズ Alexandria Real Estate Equities, Inc.",
+            "description": "REIT - オフィス"
+        },
+        {
             "symbol": "ATO",
             "company_name": "アトモス・エナジー Atmos Energy Corporation",
             "description": "天然ガス"
+        },
+        {
+            "symbol": "AVB",
+            "company_name": "アバロンベイ・コミュニティーズ AvalonBay Communities, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "AVGO",
@@ -243,6 +263,16 @@
     ],
     "b": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "BA",
             "company_name": "ボーイング The Boeing Company",
             "description": "航空宇宙機器"
@@ -263,11 +293,6 @@
             "description": "医薬品・医療機器"
         },
         {
-            "symbol": "BBWI",
-            "company_name": "バス・アンド・ボディ・ワークス Bath & Body Works, Inc.",
-            "description": "パーソナルケア 美容製品"
-        },
-        {
             "symbol": "BBY",
             "company_name": "ベスト・バイ Best Buy Co., Inc.",
             "description": "家電量販店"
@@ -283,6 +308,11 @@
             "description": "資産運用持株会社"
         },
         {
+            "symbol": "BF-B",
+            "company_name": "ブラウンフォーマン Brown-Forman Corporation",
+            "description": "スピリッツ・ワイン"
+        },
+        {
             "symbol": "BG",
             "company_name": "バンジ・グローバル Bunge Global SA",
             "description": "穀物・オイルシード"
@@ -291,11 +321,6 @@
             "symbol": "BIIB",
             "company_name": "バイオジェン Biogen Inc.",
             "description": "バイオ医薬品"
-        },
-        {
-            "symbol": "BIO",
-            "company_name": "バイオ・ラッド・ラボラトリーズ Bio-Rad Laboratories, Inc.",
-            "description": "ライフサイエンス 臨床診断製品"
         },
         {
             "symbol": "BK",
@@ -333,6 +358,11 @@
             "description": "金融データ処理 ソリューション"
         },
         {
+            "symbol": "BRK-B",
+            "company_name": "バークシャー・ハサウェイ（クラスB） Berkshire Hathaway Inc. (Class B)",
+            "description": "投資持株会社"
+        },
+        {
             "symbol": "BRO",
             "company_name": "ブラウン・アンド・ブラウン Brown & Brown, Inc.",
             "description": "独立系保険仲介"
@@ -359,6 +389,16 @@
         }
     ],
     "c": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "C",
             "company_name": "シティグループ Citigroup Inc.",
@@ -390,9 +430,19 @@
             "description": "損害保険"
         },
         {
+            "symbol": "CBOE",
+            "company_name": "Cboe・グローバル・マーケッツ Cboe Global Markets, Inc.",
+            "description": "デリバティブ取引所"
+        },
+        {
             "symbol": "CBRE",
             "company_name": "CBRE・グループ CBRE Group, Inc.",
             "description": "事業用不動産サービス"
+        },
+        {
+            "symbol": "CCI",
+            "company_name": "クラウン・キャッスル Crown Castle Inc.",
+            "description": "REIT - 特殊"
         },
         {
             "symbol": "CCL",
@@ -540,6 +590,11 @@
             "description": "オンライン 中古車オークション"
         },
         {
+            "symbol": "CPT",
+            "company_name": "カムデン・プロパティ・トラスト Camden Property Trust",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "CRL",
             "company_name": "チャールズ・リバー・ラボラトリーズ・インターナショナル Charles River Laboratories International, Inc.",
             "description": "医薬品開発 業務受託機関"
@@ -612,6 +667,16 @@
     ],
     "d": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "D",
             "company_name": "ドミニオン・エナジー Dominion Energy, Inc.",
             "description": "電力 & ガス持株会社"
@@ -642,6 +707,11 @@
             "description": "フットウェア アパレル"
         },
         {
+            "symbol": "DELL",
+            "company_name": "デル・テクノロジーズ Dell Technologies Inc.",
+            "description": "パソコン・クラウド ITインフラ"
+        },
+        {
             "symbol": "DFS",
             "company_name": "ディスカバー・ファイナンシャル・サービシズ Discover Financial Services",
             "description": "クレジットカード"
@@ -670,6 +740,11 @@
             "symbol": "DIS",
             "company_name": "ウォルト・ディズニー The Walt Disney Company",
             "description": "エンターテインメント"
+        },
+        {
+            "symbol": "DLR",
+            "company_name": "デジタル・リアルティ・トラスト Digital Realty Trust, Inc.",
+            "description": "REIT - 特殊"
         },
         {
             "symbol": "DLTR",
@@ -725,9 +800,24 @@
             "symbol": "DXCM",
             "company_name": "デクスコム DexCom, Inc.",
             "description": "糖尿病患者用 CGMシステム"
+        },
+        {
+            "symbol": "N/A",
+            "company_name": "",
+            "description": ""
         }
     ],
     "e": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "EA",
             "company_name": "エレクトロニック・アーツ Electronic Arts Inc.",
@@ -799,14 +889,34 @@
             "description": "DXソフトウェア コンサルティング"
         },
         {
+            "symbol": "EQIX",
+            "company_name": "エクイニクス Equinix, Inc.",
+            "description": "REIT - 特殊"
+        },
+        {
+            "symbol": "EQR",
+            "company_name": "エクイティ・レジデンシャル Equity Residential",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "EQT",
             "company_name": "EQT EQT Corporation",
             "description": "独立系天然ガス"
         },
         {
+            "symbol": "ERIE",
+            "company_name": "イリー・インデムニティー Erie Indemnity Company",
+            "description": "損害・ビジネス 生命保険"
+        },
+        {
             "symbol": "ES",
             "company_name": "エバーソース・エナジー Eversource Energy",
             "description": "電力 & ガス持株会社"
+        },
+        {
+            "symbol": "ESS",
+            "company_name": "エセックス・プロパティ・トラスト Essex Property Trust, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "ETN",
@@ -817,11 +927,6 @@
             "symbol": "ETR",
             "company_name": "エンタジー Entergy Corporation",
             "description": "発電・配電"
-        },
-        {
-            "symbol": "ETSY",
-            "company_name": "エッツィ Etsy, Inc.",
-            "description": "手工芸品 ECプラットフォーム"
         },
         {
             "symbol": "EVRG",
@@ -847,9 +952,24 @@
             "symbol": "EXPE",
             "company_name": "エクスぺディア・グループ Expedia Group, Inc.",
             "description": "オンライン 旅行サービス"
+        },
+        {
+            "symbol": "EXR",
+            "company_name": "エクストラ・スペース・ストレージ Extra Space Storage Inc.",
+            "description": "REIT - 産業"
         }
     ],
     "f": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "F",
             "company_name": "フォード・モーター Ford Motor Company",
@@ -926,6 +1046,11 @@
             "description": "エンターテインメント"
         },
         {
+            "symbol": "FRT",
+            "company_name": "フェデラル・リアルティ・インベストメント・トラスト Federal Realty Investment Trust",
+            "description": "REIT - リテール"
+        },
+        {
             "symbol": "FSLR",
             "company_name": "ファースト・ソーラー First Solar, Inc.",
             "description": "太陽電池 半導体薄膜技術"
@@ -942,6 +1067,16 @@
         }
     ],
     "g": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "GD",
             "company_name": "ゼネラル・ダイナミクス General Dynamics Corporation",
@@ -1039,6 +1174,16 @@
         }
     ],
     "h": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "HAL",
             "company_name": "ハリバートン Halliburton Company",
@@ -1142,6 +1287,16 @@
     ],
     "i": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "IBM",
             "company_name": "IBM International Business Machines Corporation",
             "description": "情報システムサービス"
@@ -1182,6 +1337,11 @@
             "description": "会計・税務ソフト クラウドサービス"
         },
         {
+            "symbol": "INVH",
+            "company_name": "インビテーション・ホームズ Invitation Homes Inc.",
+            "description": "REIT - 住宅"
+        },
+        {
             "symbol": "IP",
             "company_name": "インターナショナル・ペーバー International Paper Company",
             "description": "製紙 ライナー・パルプ"
@@ -1200,6 +1360,11 @@
             "symbol": "IR",
             "company_name": "インガソール・ランド Ingersoll Rand Inc.",
             "description": "コンプレッサー エアツールメーカー"
+        },
+        {
+            "symbol": "IRM",
+            "company_name": "アイアン・マウンテン Iron Mountain Incorporated",
+            "description": "REIT - 特殊"
         },
         {
             "symbol": "ISRG",
@@ -1223,6 +1388,16 @@
         }
     ],
     "j": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "J",
             "company_name": "ジェイコブズ・ソリューションズ Jacobs Solutions Inc.",
@@ -1266,6 +1441,16 @@
     ],
     "k": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "K",
             "company_name": "ケラノバ Kellanova",
             "description": "スナック菓子"
@@ -1289,6 +1474,16 @@
             "symbol": "KHC",
             "company_name": "クラフト・ハインツ The Kraft Heinz Company",
             "description": "食品 & 飲料"
+        },
+        {
+            "symbol": "KIM",
+            "company_name": "キムコ・リアルティ Kimco Realty Corporation",
+            "description": "REIT - リテール"
+        },
+        {
+            "symbol": "KKR",
+            "company_name": "コールバーグ・クラビス・ロバーツ KKR & Co. Inc.",
+            "description": "投資会社"
         },
         {
             "symbol": "KLAC",
@@ -1327,6 +1522,16 @@
         }
     ],
     "l": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "L",
             "company_name": "ロウズ Loews Corporation",
@@ -1420,9 +1625,24 @@
     ],
     "m": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "MA",
             "company_name": "マスターカード Mastercard Incorporated",
             "description": "クレジットカード"
+        },
+        {
+            "symbol": "MAA",
+            "company_name": "ミッドアメリカ・アパートメント・コミュニティーズ Mid-America Apartment Communities, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "MAR",
@@ -1597,6 +1817,16 @@
     ],
     "n": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "NCLH",
             "company_name": "ノルウェージャン・クルーズ・ライン・ホールディングス Norwegian Cruise Line Holdings Ltd.",
             "description": "クルーズ客船運航"
@@ -1699,6 +1929,21 @@
     ],
     "o": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "O",
+            "company_name": "リアルティ・インカム Realty Income Corporation",
+            "description": "REIT - リテール"
+        },
+        {
             "symbol": "ODFL",
             "company_name": "オールド・ドミニオン・フレイト・ライン Old Dominion Freight Line, Inc.",
             "description": "小口トラック 輸送サービス"
@@ -1740,6 +1985,16 @@
         }
     ],
     "p": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "PANW",
             "company_name": "パロ・アルト・ネットワークス Palo Alto Networks, Inc.",
@@ -1821,6 +2076,11 @@
             "description": "REIT - 産業"
         },
         {
+            "symbol": "PLTR",
+            "company_name": "パランティア・テクノロジーズ Palantir Technologies Inc.",
+            "description": "ビッグデータ解析"
+        },
+        {
             "symbol": "PM",
             "company_name": "フィリップ・モリス・インターナショナル Philip Morris International Inc.",
             "description": "タバコ"
@@ -1866,6 +2126,11 @@
             "description": "生命保険"
         },
         {
+            "symbol": "PSA",
+            "company_name": "パブリック・ストレージ Public Storage",
+            "description": "REIT - 産業"
+        },
+        {
             "symbol": "PSX",
             "company_name": "フィリップス・66 Phillips 66",
             "description": "石油精製・製品販売"
@@ -1884,9 +2149,24 @@
             "symbol": "PYPL",
             "company_name": "ペイパル・ホールディングス PayPal Holdings, Inc.",
             "description": "デジタル 決済プラットフォーム"
+        },
+        {
+            "symbol": "N/A",
+            "company_name": "",
+            "description": ""
         }
     ],
     "q": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "QCOM",
             "company_name": "クアルコム QUALCOMM Incorporated",
@@ -1900,9 +2180,24 @@
     ],
     "r": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "RCL",
             "company_name": "ロイヤル・カリビアン・クルーズ Royal Caribbean Cruises Ltd.",
             "description": "クルーズ客船運航"
+        },
+        {
+            "symbol": "REG",
+            "company_name": "リージェンシー・センターズ Regency Centers Corporation",
+            "description": "REIT - リテール"
         },
         {
             "symbol": "REGN",
@@ -1967,6 +2262,16 @@
     ],
     "s": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "SBAC",
             "company_name": "SBA・コミュニケーションズ SBA Communications Corporation",
             "description": "REIT - 特殊"
@@ -2020,6 +2325,11 @@
             "symbol": "SOLV",
             "company_name": "ソルベンタム Solventum Corporation",
             "description": "ヘルスケア"
+        },
+        {
+            "symbol": "SPG",
+            "company_name": "サイモン・プロパティ・グループ Simon Property Group, Inc.",
+            "description": "REIT - リテール"
         },
         {
             "symbol": "SPGI",
@@ -2085,9 +2395,24 @@
             "symbol": "SYY",
             "company_name": "シスコ Sysco Corporation",
             "description": "食品サービス ホスピタリティ"
+        },
+        {
+            "symbol": "N/A",
+            "company_name": "",
+            "description": ""
         }
     ],
     "t": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "T",
             "company_name": "AT&T AT&T Inc.",
@@ -2115,7 +2440,7 @@
         },
         {
             "symbol": "TEL",
-            "company_name": "TE・コネクティビティ TE Connectivity Ltd.",
+            "company_name": "TE・コネクティビティ TE Connectivity plc",
             "description": "コネクティビティ ソリューション"
         },
         {
@@ -2221,6 +2546,16 @@
     ],
     "u": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "UAL",
             "company_name": "ユナイテッド・エアラインズ・ホールディングス United Airlines Holdings, Inc.",
             "description": "航空会社"
@@ -2229,6 +2564,11 @@
             "symbol": "UBER",
             "company_name": "ウーバー・テクノロジーズ Uber Technologies, Inc.",
             "description": "配車携帯アプリ"
+        },
+        {
+            "symbol": "UDR",
+            "company_name": "UDR UDR, Inc.",
+            "description": "REIT - 住宅"
         },
         {
             "symbol": "UHS",
@@ -2264,13 +2604,33 @@
             "symbol": "USB",
             "company_name": "U.S. バンコープ U.S. Bancorp",
             "description": "銀行"
+        },
+        {
+            "symbol": "N/A",
+            "company_name": "",
+            "description": ""
         }
     ],
     "v": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "V",
             "company_name": "ビザ Visa Inc.",
             "description": "クレジットカード"
+        },
+        {
+            "symbol": "VICI",
+            "company_name": "VICI・プロパティーズ VICI Properties Inc.",
+            "description": "REIT - 分散型"
         },
         {
             "symbol": "VLO",
@@ -2308,6 +2668,11 @@
             "description": "電力小売・発電"
         },
         {
+            "symbol": "VTR",
+            "company_name": "ベンタス Ventas, Inc.",
+            "description": "REIT - ヘルスケア施設"
+        },
+        {
             "symbol": "VTRS",
             "company_name": "バイアトリス Viatris Inc.",
             "description": "ジェネリック医薬品"
@@ -2319,6 +2684,16 @@
         }
     ],
     "w": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "WAB",
             "company_name": "ウェスティングハウス・エア・ブレーキ・テクノロジーズ Westinghouse Air Brake Technologies Corporation",
@@ -2390,12 +2765,27 @@
             "description": "保険仲介 コンサルティング"
         },
         {
+            "symbol": "WY",
+            "company_name": "ウェアーハウザー Weyerhaeuser Company",
+            "description": "REIT - 特殊"
+        },
+        {
             "symbol": "WYNN",
             "company_name": "ウィン・リゾーツ Wynn Resorts, Limited",
             "description": "統合型リゾート"
         }
     ],
     "x": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "XEL",
             "company_name": "エクセル・エナジー Xcel Energy Inc.",
@@ -2414,12 +2804,32 @@
     ],
     "y": [
         {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
             "symbol": "YUM",
             "company_name": "ヤム・ブランズ Yum! Brands, Inc.",
             "description": "ファーストフード チェーン"
         }
     ],
     "z": [
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
+        {
+            "symbol": "",
+            "company_name": "",
+            "description": ""
+        },
         {
             "symbol": "ZBH",
             "company_name": "ジンマー・バイオメット・ホールディングス Zimmer Biomet Holdings, Inc.",
