@@ -1,0 +1,13 @@
+[Unit]
+Description=For Stock Prediction Server
+After=network.target
+
+[Service]
+Type=simple
+User=ryo
+WorkingDirectory=/home/ryo/server/PBL_stock/
+ExecStart=/home/ryo/.pyenv/versions/3.11.9/bin/pipenv run gunicorn --workers 4 --bind 0.0.0.0:8999 app:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

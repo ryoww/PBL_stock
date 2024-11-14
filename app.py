@@ -58,6 +58,8 @@ update_column_data_schema = UpdateColumnDataSchema()
 spot_update_schema = SpotUpdateSchema()
 spot_get_schema = SpotGetSchema()
 
+ALLOWED_COLUMNS = ['vix', 'SP_500', 'NY_Dow', 'NASDAQ']
+
 # Helper function to get connection from the pool
 def get_db_connection():
     try:
@@ -457,20 +459,23 @@ def get_null_values(stock_code):
         connection.close()
 
 @app.route("/null_index/<string:index_code>", methods=["GET"])
-def get_null_values(stock_code):
-    logger.info(f"Fetching null value IDs for stock_code: {stock_code}")
+def get_null_index(index_code):
+    if index_code not in ALLOWED_COLUMNS:
+        return make_response("Invalid column name", 400)
+    
+    logger.info(f"Fetching null value IDs for stock_code: {index_code}")
 
-    query = """
+    query = f"""
     SELECT id, date
     FROM stock_dataset
-    WHERE AND value IS NULL
+    WHERE {index_code} IS NULL
     """
 
     connection = get_db_connection()
     cursor = connection.cursor(dictionary=True)
 
     try:
-        cursor.execute(query, (stock_code,))
+        cursor.execute(query)  # パラメータなしで実行
         print("Executed query:", cursor.statement)
         rows = cursor.fetchall()
         print("Fetched rows:", rows)
@@ -491,6 +496,7 @@ def get_null_values(stock_code):
     finally:
         cursor.close()
         connection.close()
+
 
 
 # Run the server
