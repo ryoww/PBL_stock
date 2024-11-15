@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_PATH="/mnt/smb/Backup/SQL/stock_backup.sql"
+BACKUP_PATH="/mnt/main/Backup/SQL/stock_backup.sql"
 
 DB_USER="stock"
 DB_PASSWORD="ryotaro1212"
