@@ -7,6 +7,8 @@ import torch
 from torch.optim import AdamW
 from transformers import BertJapaneseTokenizer, BertForSequenceClassification
 
+from key import BASE_URL
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
@@ -73,7 +75,6 @@ modelname_1 = './model/bert_0_9261.pt'
 
 load_model(model, optimizer, modelname_1)
 
-BASE_URL = 'http://192.168.1.222:8999'
 
 db_len = int(requests.get(f'{BASE_URL}/get_len').json()['max_id'])
 print(db_len)

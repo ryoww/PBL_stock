@@ -16,10 +16,10 @@ import json
 from datetime import datetime
 import os
 
+from key import BASE_URL
+
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print(device)
-
-BASE_URL = 'http://192.168.1.222:8999'
 
 print(requests.get(f'{BASE_URL}/').text)
 

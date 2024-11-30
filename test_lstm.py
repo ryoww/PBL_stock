@@ -10,10 +10,11 @@ from tqdm import tqdm
 
 import json
 
+from key import BASE_URL
+
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
-BASE_URL = 'http://192.168.1.222:8999'
 
 def list_files(directory):
     files_and_directories = os.listdir(directory)
