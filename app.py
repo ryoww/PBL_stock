@@ -175,6 +175,29 @@ def get_len():
         cursor.close()
         connection.close()
 
+@app.route("/get_min_null_id", methods=["GET"])
+def get_min_null_id():
+    logger.info("Getting the min null id of the table")
+    
+    query = "SELECT MIN(id) AS min_null_id FROM stock_dataset WHERE headline_despair IS NULL"
+    
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+    
+    try:
+        cursor.execute(query)
+        print("Executed query:", cursor.statement)
+        result = cursor.fetchone()
+        print("Max ID:", result)
+        return jsonify(result)
+    except Error as e:
+        logger.error(f"Error fetching max id: {e}")
+        print("Error message:", e)
+        return make_response("Failed to get max id", 500)
+    finally: 
+        cursor.close()
+        connection.close()
+
 @app.route("/ml_data/<int:id>", methods=["POST"])
 def post_ml_data(id):
     ml_data = request.get_json()

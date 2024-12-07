@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=ryo
 WorkingDirectory=/home/ryo/server/PBL_stock/
-ExecStart=/home/ryo/.pyenv/versions/3.11.9/bin/pipenv run gunicorn --workers 4 --bind 0.0.0.0:8999 app:app
+ExecStart=/home/ryo/.pyenv/versions/3.11.10/bin/pipenv run gunicorn --workers 4 --bind 0.0.0.0:8999 app:app
 Restart=on-failure
 
 [Install]
