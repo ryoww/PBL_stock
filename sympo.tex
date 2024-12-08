@@ -1,0 +1,84 @@
+% コンパイル方法: lualatex filename.tex
+\documentclass[a4paper,11pt]{article}
+
+% マージン設定
+\usepackage[top=20mm,bottom=25mm,left=20mm,right=20mm]{geometry}
+
+% LuaLaTeX用日本語対応パッケージ
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+
+% 必要なパッケージ
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[english,japanese]{babel}
+\usepackage{multicol} % 二段組用パッケージ
+\usepackage{indentfirst}
+
+% フォント設定
+\newjfontfamily\TitleJFont{BIZ UDPGothic}[BoldFont=BIZ UDPGothicBold]
+\newjfontfamily\SectionJFont{BIZ UDPGothic}[BoldFont=BIZ UDPGothicBold]
+
+% セクション見出しのカスタマイズ
+\titleformat{\section}
+  {\large\bfseries\SectionJFont}
+  {\thesection}
+  {1em}{}
+
+% customabstract 環境を定義
+\newenvironment{customabstract}
+{\noindent\hfuzz=10pt\hbadness=10000\begin{flushleft}\fontsize{16pt}{16pt}\small}
+{\end{flushleft}}
+
+% タイトル情報
+\title{{\TitleJFont\bfseries 感情分析と時系列モデルを統合したデータ駆動型予測システム \\ }}
+\author{\large\TitleJFont\bfseries 東京都立産業技術高等専門学校 ものづくり工学科 情報通信工学コース \\ \large\TitleJFont\bfseries 下沢 亮太郎}
+\date{}
+
+\begin{document}
+
+% タイトルの表示
+\maketitle
+\thispagestyle{empty}
+
+% アブストラクト部分
+\begin{customabstract}
+　キーワード : 機械学習 時系列予測 感情分析 BERT LSTM
+\end{customabstract}
+
+\setlength{\columnsep}{40pt}
+
+% 二段組の開始
+\begin{multicols}{2}
+
+\section{緒言}
+このテンプレートは、簡潔な日本語文書を作成するためのものです。アブストラクト部分は一段組で、それ以降は二段組の構成を採用しています。
+
+\section{数式の例}
+以下に数式の例を示します。
+\begin{equation}
+E = mc^2
+\end{equation}
+
+\section{図の例}
+図を以下のように挿入できます。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{example-image} % 適切な画像パスを指定
+    \caption{サンプル画像}
+\end{figure}
+
+\section{結言}
+ご質問がありましたら以下にご連絡ください。
+
+\noindent\hrulefill\\
+お問い合わせ先\\
+氏名：下沢 亮太郎 \\
+E-mail : \href{mailto:example@example.ac.jp}{example@example.ac.jp}
+
+\end{multicols}
+
+\end{document}

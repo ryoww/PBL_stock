@@ -1,3 +1,6 @@
 Pipfile
 key.py
 client_secret
+*.aux
+*.log
+*.synctex.gz
