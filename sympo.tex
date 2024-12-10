@@ -48,19 +48,25 @@
 \begin{document}
 
 % タイトルの表示
-\maketitle
-\thispagestyle{empty}
+% \maketitle
+% \thispagestyle{empty}
 
-% アブストラクト部分
-\begin{customabstract}
-　キーワード : 機械学習 時系列予測 感情分析 BERT LSTM
-\end{customabstract}
+% % アブストラクト部分
 
 \setlength{\columnsep}{40pt}
 
+\twocolumn[
+  \maketitle
+
+  \vspace{-2em}
+  \begin{customabstract}
+  　キーワード : 機械学習 時系列予測 感情分析 BERT LSTM
+  \end{customabstract}
+]
 
 % 二段組の開始
-\begin{multicols*}{2}
+% \begin{multicols*}{2}
+
 
 \section{緒言}
 社会的な事象に影響を与えることが多いのは文字列や映像なことが多いという事実に対して有名な時系列予測モデルは入力に数値しかとらないことが多い.
@@ -92,6 +98,6 @@ BERT(Bidirectional Encoder Representations from Transformers)はGoogleによっ�
 氏名：下沢 亮太郎 \\
 E-mail : \href{mailto:example@example.ac.jp}{example@example.ac.jp}
 
-\end{multicols*}
+% \end{multicols*}
 
 \end{document}
