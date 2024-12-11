@@ -28,7 +28,7 @@ current_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M')
 path = f'models_lstm/{current_datetime}/'
 
 # JSONファイルの読み込み
-with open('./scrape_data/stock_name.json', 'r', encoding="utf-8") as file:
+with open('./stock_name.json', 'r', encoding="utf-8") as file:
     JSON_data = json.load(file)
 
 class MyLSTM(nn.Module):

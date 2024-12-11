@@ -6,32 +6,78 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error as mse, mean_absolute_error as mae, r2_score as r2
 
 import torch
-from torch import optim, nn
+from torch import nn, optim
+from torch.utils.data import DataLoader
+
 from torchinfo import summary
 
-from iTransformer import iTransformer
+from torch.utils.tensorboard import SummaryWriter
 
 from tqdm import tqdm
 
 import requests
 import json
 from datetime import datetime
+
 import os
+import shutil
+
+from key import BASE_URL
+
+EPOCH = 100
+HIDDEN_DIM = 128
+N_LAYERS = 2
+PREDICT_DAYS = 30
+
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print(device)
-
-BASE_URL = 'http://192.168.1.222:8999'
-
 print(requests.get(f'{BASE_URL}/').text)
 
-current_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
-path = f'models_itransformer/{current_datetime}/'
+def clear_directory(target_dir):
+    # ディレクトリが存在するかチェック
+    if not os.path.exists(target_dir):
+        print(f"{target_dir} は存在しません。")
+        return
+    
+    # target_dir内の全ファイル・ディレクトリを取得
+    for item in os.listdir(target_dir):
+        item_path = os.path.join(target_dir, item)
+        
+        # ファイルなら削除
+        if os.path.isfile(item_path):
+            os.remove(item_path)
+        
+        # ディレクトリなら再帰的に削除
+        elif os.path.isdir(item_path):
+            shutil.rmtree(item_path)
+    
+    print(f"{target_dir} 内のすべてのファイル・ディレクトリを削除しました。")
 
-# JSONファイルの読み込み
-with open('./stock_name.json', 'r', encoding="utf-8") as file:
-    data = json.load(file)
+
+path = f'./models_lstm/models'
+clear_directory(path)
+
+
+with open('./stock_name.json', 'r', encoding='utf-8') as file:
+    data_dict = json.load(file)
+
+
+class MyLSTM(nn.Module):
+    def __init__(self, feature_size, hidden_dim, n_layers):
+        super(MyLSTM, self).__init__()
+        self.lstm = nn.LSTM(feature_size, hidden_dim, n_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, 1)
+        
+    def forward(self, x):
+        h_0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device, dtype=torch.float32)
+        c_0 = torch.zeros(self.lstm.num_layers, x.size(0), self.lstm.hidden_size).to(x.device, dtype=torch.float32)
+        out, _ = self.lstm(x, (h_0, c_0))
+        out = out[:, -1, :]  # 最後の時刻の出力を使用
+        out = self.fc(out)
+        return out
+
 
 def norm(column):
     norm_value = np.linalg.norm(column)
@@ -40,84 +86,79 @@ def norm(column):
     else:
         return column / norm_value, norm_value
 
-try:
-    os.makedirs(path, exist_ok=True)
-    print(f"フォルダが作成されました: {path}")
-except OSError as error:
-    print(f"フォルダの作成に失敗しました: {error}")
 
-# 全てのシンボルをプリント
-for category in data:
-    for company in data[category]:
+def safe_norm(col):
+    result = norm(col)
+    # norm関数の戻り値がタプル(正規化データ, norm値)の場合は正規化データを返す
+    if isinstance(result, tuple):
+        return result[0]
+    else:
+        return result
 
-        # stock_code = company["symbol"]
-        stock_code = 'AAL'
+
+# 正規化対象列
+columns_to_norm = [
+    'NY_Dow',
+    'SP_500',
+    'content_concern',
+    'content_despair',
+    'content_excitement',
+    'content_optimism',
+    'content_stability',
+    'headline_concern',
+    'headline_despair',
+    'headline_excitement',
+    'headline_optimism',
+    'headline_stability',
+    'value',
+    'vix'
+]
+
+
+for category in data_dict:
+    for company in data_dict[category]:
+        stock_code = company['symbol']
         print(stock_code)
         
         df = requests.get(f'{BASE_URL}/ml_data/{stock_code}').json()
         df = pd.DataFrame(df)
-        print(df.info())
-
-        exclude_columns = ['date', 'time']
-        columns = [col for col in df.columns if col not in exclude_columns]
-        print(columns)
         
-        # 各列を個別に正規化して、辞書に格納
-        ny_dow = norm(df['NY_Dow'])[0]
-        sp_500 = norm(df['SP_500'])[0]
-        content_concern = df['content_concern']
-        content_despair = df['content_despair']
-        content_excitement = df['content_excitement']
-        content_optimism = df['content_optimism']
-        content_stability = df['content_stability']
-        headline_concern = df['headline_concern']
-        headline_despair = df['headline_despair']
-        headline_excitement = df['headline_excitement']
-        headline_optimism = df['headline_optimism']
-        headline_stability = df['headline_stability']
-        value = norm(df['value'])[0]
-        vix = norm(df['vix'])[0]
-
-        # 正規化されたデータを辞書にまとめる
-        data_dict = {
-            'NY_Dow': ny_dow,
-            'SP_500': sp_500,
-            'content_concern': content_concern,
-            'content_despair': content_despair,
-            'content_excitement': content_excitement,
-            'content_optimism': content_optimism,
-            'content_stability': content_stability,
-            'headline_concern': headline_concern,
-            'headline_despair': headline_despair,
-            'headline_excitement': headline_excitement,
-            'headline_optimism': headline_optimism,
-            'headline_stability': headline_stability,
-            'value': value,
-            'vix': vix
-        }
-
-        # 辞書をデータフレームに変換
-        data = pd.DataFrame(data_dict)
-        data['date'] = pd.to_datetime(df['date'])
-        data.set_index('date', inplace=True)
+        df['date'] = pd.to_datetime(df['date'])
+        df.set_index('date', inplace=True)
         
-        data = data.resample('D').max()
-        print(data.info())
-        print(data)
+        # 日付ごとに集計(ここでは sum を使用)
+        df = df.resample('D').sum()
+        df = df.reset_index()
         
-        df_train, df_test = train_test_split(data, test_size=0.1, shuffle=False)
+        # 各カラムを正規化
+        normed_data = {col: safe_norm(df[col]) for col in columns_to_norm}
         
-        # window_sizeの設定とテストデータが小さい場合の調整
+        data_result = pd.DataFrame(normed_data)
+        
+        # 再度 'date' をインデックスに設定
+        data_result['date'] = df['date']
+        data_result.set_index('date', inplace=True)
+        
+        print(data_result.info())
+        
+        # train_test_split用にインデックスをリセット
+        data_result = data_result.reset_index(drop=True)
+        
+        # データ分割
+        df_train, df_test = train_test_split(data_result, test_size=0.1, shuffle=False)
+        
         window_size = 5
         n_train = len(df_train) - window_size
         n_test = len(df_test) - window_size
-
+        
         if n_test <= 0:
-            print("テストデータが小さすぎるため、window_sizeを1に設定します。")
+            print('テストデータが小さすぎるため,window_sizeを1に設定します')
+            
             window_size = 1
             n_train = len(df_train) - window_size
             n_test = len(df_test) - window_size
-
+        
+        
         # トレーニングデータとテストデータの準備
         train = np.array([df_train.iloc[i:i+window_size].values for i in range(n_train)], dtype=np.float32)
         train_labels = np.array([df_train.iloc[i+window_size]['value'] for i in range(n_train)], dtype=np.float32)
@@ -131,35 +172,26 @@ for category in data:
         test_data = torch.tensor(test, dtype=torch.float32).to(device) if test.size > 0 else None
         test_labels = torch.tensor(test_labels, dtype=torch.float32).to(device) if test_labels.size > 0 else None
         
-        # iTransformerの設定
         feature_size = train_data.shape[2]
-        lookback_len = window_size
-        net = iTransformer(
-            num_variates=feature_size,
-            lookback_len=lookback_len,
-            dim=256,
-            depth=6,
-            heads=8,
-            dim_head=64,
-            pred_length=12,  # 12ステップ先の値を予測
-        )
+        hidden_dim = HIDDEN_DIM
+        n_layers = N_LAYERS
+        net = MyLSTM(feature_size, hidden_dim, n_layers)
         
         criterion = nn.MSELoss()
-        optimizer = optim.AdamW(net.parameters(), lr=0.001)
+        optimizer = optim.AdamW(net.parameters(), lr=1e-7)
         
         summary(net)
 
         net.to(device)
         train_data, train_labels = train_data.to(device), train_labels.to(device)
         
-        epochs = 300
+        epochs = EPOCH
         loss_history = []
         
         for epoch in tqdm(range(epochs), desc='Training Epochs'):
             net.train()
             optimizer.zero_grad()
-            output_dict = net(train_data)
-            output = output_dict[12]  # 12ステップ先の予測値を使用
+            output = net(train_data)
             loss = criterion(output.squeeze(), train_labels)
             loss.backward()
             optimizer.step()
@@ -167,20 +199,12 @@ for category in data:
             
             if (epoch+1) % 10 == 0:
                 print(f'Epoch {epoch+1}/{epochs}, Loss: {loss.item()}')
-        
-        temp_model_path = f'./models_itransformer/temp/temp_model.pth'
+
+        temp_model_path = f'./models_lstm/temp/temp_model.pth'
         os.makedirs(os.path.dirname(temp_model_path), exist_ok=True)
         torch.save(net.state_dict(), temp_model_path)
         
-        net = iTransformer(
-            num_variates=feature_size,
-            lookback_len=lookback_len,
-            dim=256,
-            depth=6,
-            heads=8,
-            dim_head=64,
-            pred_length=12,  # 12ステップ先の値を予測
-        )
+        net = MyLSTM(feature_size, hidden_dim, n_layers)
         net.load_state_dict(torch.load(temp_model_path))
         net.to(device)
         net.eval()
@@ -191,7 +215,7 @@ for category in data:
         for k in tqdm(range(n_train), desc="Predicting Training Data"):
             x = torch.tensor(train[k]).reshape(1, window_size, feature_size).to(device).float()
             y = net(x)
-            predicted_train_plot.append(y[12].item())  # 12ステップ先の予測値を取得
+            predicted_train_plot.append(y.item())  # 予測値を取得
 
         # テストデータに対する予測
         predicted_test_plot = []
@@ -199,21 +223,21 @@ for category in data:
             for k in tqdm(range(n_test), desc="Predicting Test Data"):
                 x = torch.tensor(test[k]).reshape(1, window_size, feature_size).to(device).float()
                 y = net(x)
-                predicted_test_plot.append(y[12].item())  # 12ステップ先の予測値を取得
+                predicted_test_plot.append(y.item())  # 予測値を取得
 
-            # 20日先の予測
+            # 30日先の予測
             future_predictions = []
             last_window = test[-1]  # テストデータの最後のウィンドウを使用
 
-            for _ in range(20):
+            for _ in range(PREDICT_DAYS):
                 x = torch.tensor(last_window).reshape(1, window_size, feature_size).to(device)
                 y = net(x)
-                future_predictions.append(y[12].item())
+                future_predictions.append(y.item())
                 
                 # スカラー値を抽出してから代入
-                new_point = y[12].cpu().detach().numpy().item()
+                new_point = y.cpu().detach().numpy().item()
                 last_window = np.roll(last_window, -1, axis=0)
-                last_window[-1, 12] = new_point  # ここでは `value` 列を予測している前提
+                last_window[-1, 12] = new_point  # ここでは `value` 列が12番目として想定
 
             # NaNを含むかチェック
             if np.isnan(test_labels.cpu().numpy()).any() or np.isnan(predicted_test_plot).any():
@@ -230,7 +254,7 @@ for category in data:
         train_mse = mse(train_labels.cpu().numpy(), predicted_train_plot)
         print(f'Train MSE: {train_mse}, Train MAE: {train_mae}, Train R2: {train_r2}')
 
-        new_model_path = f'./models_itransformer/{current_datetime}/{stock_code}-{train_r2:.2f}-{train_mse:.2f}.pth'
+        new_model_path = f'./models_lstm/models/{stock_code}-{train_r2:.2f}-{train_mse:.2f}.pth'
         os.makedirs(os.path.dirname(new_model_path), exist_ok=True)
         torch.save(net.state_dict(), new_model_path)
 

@@ -77,13 +77,13 @@ load_model(model, optimizer, modelname_1)
 
 
 db_len = int(requests.get(f'{BASE_URL}/get_len').json()['max_id'])
-print(db_len)
+print(f'len : {db_len}')
 
-i = 1
+min_null_id = int(requests.get(f'{BASE_URL}/get_min_null_id').json()['min_null_id'])
 
-while i <= db_len:
-    response = requests.get(f'{BASE_URL}/row_data/{i}').json()
-    print(i)
+while min_null_id <= db_len:
+    response = requests.get(f'{BASE_URL}/row_data/{min_null_id}').json()
+    print(min_null_id)
     content = response['content']
     headline = response['headline']
 
@@ -105,9 +105,9 @@ while i <= db_len:
         "content_stability": float(content_array[4])
     }
     
-    post_response = requests.post(f'{BASE_URL}/ml_data/{i}', json=data)
-    print(i, post_response.status_code, post_response.text)
+    post_response = requests.post(f'{BASE_URL}/ml_data/{min_null_id}', json=data)
+    print(min_null_id, post_response.status_code, post_response.text)
     
     # time.sleep(0.1)
     
-    i += 1
+    min_null_id += 1
