@@ -1,3 +1,4 @@
+import shutil
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -35,7 +36,7 @@ def extract_before_dash(files):
     return original_files, modified_files
 
 # ここでディレクトリパスを指定
-directory_path = './models_lstm/2024-08-04_20-58/'
+directory_path = './models_lstm/models/'
 
 file_list = list_files(directory_path)
 
@@ -72,6 +73,27 @@ def norm(column):
     else:
         return column / norm_value, norm_value
 
+def clear_directory(target_dir):
+    # ディレクトリが存在するかチェック
+    if not os.path.exists(target_dir):
+        print(f"{target_dir} は存在しません。")
+        return
+    
+    # target_dir内の全ファイル・ディレクトリを取得
+    for item in os.listdir(target_dir):
+        item_path = os.path.join(target_dir, item)
+        
+        # ファイルなら削除
+        if os.path.isfile(item_path):
+            os.remove(item_path)
+        
+        # ディレクトリなら再帰的に削除
+        elif os.path.isdir(item_path):
+            shutil.rmtree(item_path)
+    
+    print(f"{target_dir} 内のすべてのファイル・ディレクトリを削除しました。")
+
+clear_directory('./predictions')
 
 # 全てのシンボルをプリント
 for stock_code in modified_files:
