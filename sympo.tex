@@ -2,7 +2,7 @@
 \documentclass[a4paper,11pt]{article}
 
 % マージン設定
-\usepackage[top=15mm,bottom=25mm,left=20mm,right=20mm]{geometry}
+\usepackage[top=20mm,bottom=25mm,left=20mm,right=20mm]{geometry}
 
 % LuaLaTeX用日本語対応パッケージ
 \usepackage{luatexja}
@@ -20,15 +20,17 @@
 \usepackage{tikz} % カスタム点線用
 \usepackage{authblk} % 著者・所属パッケージ
 
+\renewcommand{\baselinestretch}{1.15}
+
 % フォント設定
 \newjfontfamily\TitleJFont{BIZ UDPGothic}[BoldFont=BIZ UDPGothicBold]
 \newjfontfamily\SectionJFont{BIZ UDPGothic}[BoldFont=BIZ UDPGothicBold]
 
 % セクション見出しのカスタマイズ
-\titleformat{\section}
-  {\large\bfseries\SectionJFont}
-  {\thesection}
-  {1em}{}
+% \titleformat{\section}
+%   {\large\bfseries\SectionJFont}
+%   {\thesection.}
+%   {1em}{}
 
 % customabstract 環境を定義
 \newenvironment{customabstract}
@@ -36,19 +38,18 @@
 {\end{flushleft}}
 
 % タイトル情報
-\title{{\TitleJFont\bfseries 感情分析と時系列モデルを統合した\\データ駆動型予測システムの開発 \\ ーPBL科目実践紹介ー}}
+\title{{\TitleJFont\bfseries\fontsize{14pt}{14pt} 感情分析と時系列予測を統合したデータ駆動型システムの開発 \\ \normalsize --- PBL科目実践紹介 ---}}
 
 % 著者と所属のカスタマイズ
 \renewcommand\Authfont{\large\TitleJFont\bfseries} % 著者のフォント
 \renewcommand\Affilfont{\large\TitleJFont\bfseries} % 所属のフォント
 \setlength{\affilsep}{1em} % 所属と名前の間隔を調整
 
-\author[1]{〇下沢 亮太郎}
-\affil[1]{東京都立産業技術高等専門学校\\ものづくり工学科 情報通信工学コース}
+\author{}
 
 \date{}
 
-\titlespacing*{\section}{0pt}{8pt}{5pt}
+\titlespacing*{\section}{0pt}{9pt}{5pt}
 
 \begin{document}
 
@@ -57,28 +58,37 @@
 \twocolumn[
     \maketitle
 
-    \thispagestyle{empty}
+    \vspace{-6.5em}
 
-    \vspace{-2em}
-    \begin{customabstract}
-    　キーワード : 機械学習 時系列予測 感情分析 BERT LSTM
-    \end{customabstract}
+    \begin{center}
+      {\large\TitleJFont\bfseries\fontsize{12pt}{12pt}\selectfont{(東京都立産業技術高等専門学校$^1$)}}\\
+      {\vspace{0.3em}}
+      {\large\TitleJFont\bfseries\fontsize{12pt}{12pt}\selectfont{○下沢 亮太郎$^1$・蓑手 智紀$^1$・石垣 雄太朗$^1$・高田 拓$^1$・笠原 美左和$^1$}}\\
+      {\vspace{0.3em}}
+      {\large\TitleJFont\bfseries\fontsize{12pt}{12pt}\selectfont{宮野 智行$^1$・吉田 嵩$^1$・福田 恵子$^1$}}
+    \end{center}
+
+    \vspace{1em}
+    \noindent キーワード : 画像生成, 機械学習, 時系列予測, 感情分析, BERT, LSTM
+    \vspace{1em}
+    \thispagestyle{empty}
 ]
 
 \section{緒言}
 
-都立産技高専荒川キャンパスでは,選抜された3～5年生を対象に,IoT/AI技術を学習する未来工学教育プログラムを実施している.5年生のPBL(Project Based Learning)科目では,学生たちの自由な発想を基に,学習した知見や技術を利用してアイデア実装に挑戦している.本報告では,PBL科目で取り組んだ内容について紹介する.
+都立産技高専荒川キャンパスでは、選抜された3～5年生を対象に、IoT/AI技術を学習する未来工学教育プログラムを実施しています。5年生のPBL(Project Based Learning)科目では、学生たちの自由な発想を基に、学習した知見や技術を活用してアイデアを実現する取り組みが行われています。本報告では、PBL科目での取り組みについて紹介します。
 
-社会的な事象に影響を与えることが多いのは文字列や映像なことが多いという事実に対して有名な時系列予測モデルは入力に数値しかとらないことが多い.
+社会的な事象に影響を与えることが多いのは文字列や映像に関連することが多い一方で、一般的な時系列予測モデルは数値データを入力とする場合がほとんどです。
 
-そこで,本研究ではニュースの文章をBERTという自然言語に特化した分類モデルが出力した値を「感情らしさ」として採用し,よく使われる指標とともに時系列予測に特化したLSTMという機械学習モデルで学習し,予測した.
+そこで、本研究ではニュースの文章をBERT(Bidirectional Encoder Representations from Transformers)という自然言語処理モデルを利用して数値化し、「感情らしさ」として活用しました。その上で、時系列予測に特化したLSTM(Long Short Term Memory)を利用して、株価の推移を学習し、予測しました。
 
 \section{BERTの転移学習}
-BERT(Bidirectional Encoder Representations from Transformers)はGoogleによって事前学習されたモデルをクライアント側で用意したデータセットで転移学習(Fine-tuning)することで任意の形式で出力するモデルを作ることができる.
 
-ChatGPTで作成した存在しない企業のニュースとそれに応じた失望,楽観,懸念,興奮,安定の5つのパラメータに点数を振ったデータセットを作成し,転移学習を行った.
+BERTは、Googleによって開発された自然言語処理モデルであり、転移学習を行うことで特定のタスクに適応させることができます。
 
-転移学習を行ったBERTモデルの推論例を表1に示す.プラスの文章として,「【速報】世界が注目するMVIDIAが決算発表「最終的な利益 前年比7.3倍2兆3300億円」勢い止まらず」,マイナスの文章として「UUスチール買収計画が窮地に　鉄鉄、訴訟も視野」という架空のニュースを推論した.プラスの文章では楽観と興奮,マイナスの文章では懸念と失望が高く出ていることから目標とした傾向を持っているモデルを作ることができたと考えられる.
+本研究では、ChatGPTを用いて作成した架空の企業ニュースと、それに応じた感情スコア（失望、楽観、懸念、興奮、安定の5つのパラメータ）を付与したデータセットを用いて、転移学習を行いました。
+
+転移学習後のBERTモデルの推論例を表1に示します。プラスの文章として「【速報】世界が注目するMVIDIAが決算発表『最終的な利益 前年比7.3倍2兆3300億円』勢い止まらず」、マイナスの文章として「UUスチール買収計画が窮地に 鉄鉄、訴訟も視野」という架空のニュースを用いました。プラスの文章では「楽観」と「興奮」、マイナスの文章では「懸念」と「失望」が高く出ており、期待した傾向を持つモデルを作成できたと考えられます。
 
 \begin{table}[htbp]
     \centering
@@ -92,21 +102,22 @@ ChatGPTで作成した存在しない企業のニュースとそれに応じた�
     \end{tabular}
 
     \caption{推論結果例}
-
 \end{table}
 
+\section{実験及び考察}
 
-
-
+本研究では、S\&P500に含まれる約500社の株式データを対象にモデルの学習を行いました。
 
 \section{結言}
-ご質問がありましたら以下にご連絡ください。
+
+本研究では、ニュースから得られる感情情報を活用し、株価推移を予測するシステムを構築しました。今後は、評価方法の改善やモデルのハイパーパラメータ調整を通じて、予測精度の向上を目指します。
 
 % カスタム点線を描画
 \noindent
 \begin{tikzpicture}
 \draw[dotted, thick] (0,0) -- (\linewidth,0);
 \end{tikzpicture}
+
 お問い合わせ先\\
 氏名：高田 拓 \\
 E-mail : \href{mailto:takada@metro-cit.ac.jp}{takada@metro-cit.ac.jp}
