@@ -1,8 +1,8 @@
 % コンパイル方法: lualatex filename.tex
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 % マージン設定
-\usepackage[top=20mm,bottom=25mm,left=20mm,right=20mm]{geometry}
+\usepackage[top=20mm, bottom=25mm, left=20mm, right=20mm]{geometry}
 
 % LuaLaTeX用日本語対応パッケージ
 \usepackage{luatexja}
@@ -14,7 +14,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage[english,japanese]{babel}
+\usepackage[english, japanese]{babel}
 \usepackage{multicol} % 二段組用パッケージ
 \usepackage{indentfirst}
 \usepackage{tikz} % カスタム点線用
@@ -27,10 +27,12 @@
 \newjfontfamily\SectionJFont{BIZ UDPGothic}[BoldFont=BIZ UDPGothicBold]
 
 % セクション見出しのカスタマイズ
-% \titleformat{\section}
-%   {\large\bfseries\SectionJFont}
-%   {\thesection.}
-%   {1em}{}
+\titleformat{\section}
+  {\large\bfseries\SectionJFont}
+  {\thesection.}
+  {1em}{}
+
+\setlength{\parindent}{1em}
 
 % customabstract 環境を定義
 \newenvironment{customabstract}
@@ -49,16 +51,20 @@
 
 \date{}
 
-\titlespacing*{\section}{0pt}{9pt}{5pt}
+\titlespacing*{\section}{0em}{0.3em}{0.3em}
 
 \begin{document}
 
-\setlength{\columnsep}{20pt}
+\setlength{\columnsep}{7.5mm}
 
 \twocolumn[
-    \maketitle
+    % \maketitle
 
-    \vspace{-6.5em}
+    \begin{center}
+        {\fontsize{14pt}{14pt}\selectfont \textbf{感情分析と時系列モデルを統合したデータ駆動型予測システムの開発 \\ \normalsize --- PBL科目実践紹介 ---}}
+    \end{center}
+
+    % \vspace{-6.5em}
 
     \begin{center}
       {\large\TitleJFont\bfseries\fontsize{12pt}{12pt}\selectfont{(東京都立産業技術高等専門学校$^1$)}}\\
@@ -76,22 +82,37 @@
 
 \section{緒言}
 
-都立産技高専荒川キャンパスでは、選抜された3～5年生を対象に、IoT/AI技術を学習する未来工学教育プログラムを実施しています。5年生のPBL(Project Based Learning)科目では、学生たちの自由な発想を基に、学習した知見や技術を活用してアイデアを実現する取り組みが行われています。本報告では、PBL科目での取り組みについて紹介します。
+都立産技高専荒川キャンパスでは、選抜された3～5年生を対象に、IoT/AI技術を学習する未来工学教育プログラムを実施しています。5年生のPBL(Project Based Learning)科目では、学生たちの自由な発想を基に、学習した知見や技術を活用してアイデアを実現する取り組みが行われています。本報告では、PBL科目での取り組みについて紹介する。
 
-社会的な事象に影響を与えることが多いのは文字列や映像に関連することが多い一方で、一般的な時系列予測モデルは数値データを入力とする場合がほとんどです。
 
-そこで、本研究ではニュースの文章をBERT(Bidirectional Encoder Representations from Transformers)という自然言語処理モデルを利用して数値化し、「感情らしさ」として活用しました。その上で、時系列予測に特化したLSTM(Long Short Term Memory)を利用して、株価の推移を学習し、予測しました。
+社会・経済指標などの時系列予測を精度よく行うためには、影響を与える社会的な事象をモデルに定量的に入れる必要がある。一般によく利用される時系列予測モデルでは、入力は数値であることが多い。しかし、社会的な事象の多くは、ニュースなどを通して、文章や映像で伝えられる。
 
-\section{BERTの転移学習}
 
-BERTは、Googleによって開発された自然言語処理モデルであり、転移学習を行うことで特定のタスクに適応させることができます。
+本研究では、経済指標として株価指数S\&P500に属している株式を用い、機械学習モデルであるLSTM(Long Short Term Memory)により、時系列予測する。また、社会的な事象の評価方法としては、ニュース記事を言語モデルBERT(Bidirectional Encoder Representations from Transformers)を用いて感情分類し、「感情らしさ」として評価する。これらの手法の概要と初期結果について報告する。
 
-本研究では、ChatGPTを用いて作成した架空の企業ニュースと、それに応じた感情スコア（失望、楽観、懸念、興奮、安定の5つのパラメータ）を付与したデータセットを用いて、転移学習を行いました。
 
-転移学習後のBERTモデルの推論例を表1に示します。プラスの文章として「【速報】世界が注目するMVIDIAが決算発表『最終的な利益 前年比7.3倍2兆3300億円』勢い止まらず」、マイナスの文章として「UUスチール買収計画が窮地に 鉄鉄、訴訟も視野」という架空のニュースを用いました。プラスの文章では「楽観」と「興奮」、マイナスの文章では「懸念」と「失望」が高く出ており、期待した傾向を持つモデルを作成できたと考えられます。
+% そこで、本研究ではニュースの文章をBERT(Bidirectional Encoder Representations from Transformers)という自然言語処理モデルを利用して数値化し、「感情らしさ」として活用しました。その上で、時系列予測に特化したLSTM(Long Short Term Memory)を利用して、株価の推移を学習し、予測した。
+
+\section{システムの概要}
+
+% BERTは、Googleによって開発された自然言語処理モデルであり、転移学習を行うことで特定のタスクに適応させることができる。
+
+% 本研究では、大規模言語モデルを用いて作成した架空の企業ニュースと、それに応じた感情スコア(失望、楽観、懸念、興奮、安定の5つのパラメータ)を付与したデータセットを用いて、転移学習を行った。
+
+% 転移学習後のBERTモデルの推論例を表1に示す。プラスの文章として「【速報】世界が注目するMVIDIAが決算発表『最終的な利益 前年比7。3倍2兆3300億円』勢い止まらず」、マイナスの文章として「UUスチール買収計画が窮地に 鉄鉄、訴訟も視野」という架空のニュースを用いた。プラスの文章では「楽観」と「興奮」、マイナスの文章では「懸念」と「失望」が高く出ており、期待した傾向を持つモデルを作成できたと考えられる。
+
+% BERTはGoogleが開発した自然言語処理モデルであり、転移学習により特定のタスクに適応可能である。
+
+本研究では、大規模言語モデルで作成した架空の企業ニュースと、感情スコア(失望、楽観、懸念、興奮、安定)を付与したデータセットを用いてBERTの転移学習を実施した。
+
+推論例として、「【速報】世界が注目するMVIDIAが決算発表『最終的な利益 前年比7。3倍2兆3300億円』勢い止まらず」というプラスの文章では「楽観」と「興奮」が高く、UUスチール買収計画が窮地に 鉄鉄、訴訟も視野」というマイナスの文章では「懸念」と「失望」が高く出たため、モデルは期待通りの傾向を示したといえる。
+
+
 
 \begin{table}[htbp]
     \centering
+    \caption{推論結果例}
+
     \begin{tabular}{|c|c|c|c|c|}\hline
         \multicolumn{5}{|c|}{プラスの文章} \\ \hline
         失望 & 楽観 & 懸念 & 興奮 & 安定 \\ \hline
@@ -101,21 +122,40 @@ BERTは、Googleによって開発された自然言語処理モデルであり�
         0.254 & 0.110 & 0.351 & 0.135 & 0.150 \\ \hline
     \end{tabular}
 
-    \caption{推論結果例}
 \end{table}
 
-\section{実験及び考察}
+また、LSTMの説明変数として5つの感情パラメータの他にNASDAQ100指数、S\&P500指数、恐怖指数を採用し、目的変数を各株式の一日の終値とした。
 
-本研究では、S\&P500に含まれる約500社の株式データを対象にモデルの学習を行いました。
+図1にシステム全体の概要図を示す。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.65\columnwidth]{./assets/system.png}
+    \caption{システム全体の概要図}
+\end{figure}
+
+
+
+\section{結果}
+
+約500社を1社ごとに学習したモデルのMAE(Mean Absolute Error)の分布を以下に示す。test\_maeの中央値が0.059となり、良い値に見えるが
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{./assets/graph.png}
+    \caption{MAEの分布}
+\end{figure}
+
+
 
 \section{結言}
 
-本研究では、ニュースから得られる感情情報を活用し、株価推移を予測するシステムを構築しました。今後は、評価方法の改善やモデルのハイパーパラメータ調整を通じて、予測精度の向上を目指します。
+本研究では、ニュースから得られる感情情報を活用し、株価推移を予測するシステムを構築した。今後は、評価方法の改善等を通じて、実用化を目指す。
 
 % カスタム点線を描画
 \noindent
 \begin{tikzpicture}
-\draw[dotted, thick] (0,0) -- (\linewidth,0);
+\draw[dotted, thick] (0, 0) -- (\linewidth, 0);
 \end{tikzpicture}
 
 お問い合わせ先\\
