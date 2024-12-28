@@ -2,14 +2,17 @@
 
 cd /home/ryo/scrape/PBL_stock/
 
-nohup /home/ryo/.pyenv/versions/3.11.9/bin/pipenv run python time_print.py
 
-nohup /home/ryo/.pyenv/versions/3.11.9/bin/pipenv run python scrape_news.py > /dev/null 2>&1
+/home/ryo/.pyenv/versions/3.11.10/bin/pipenv run python log_time.py start
 
-nohup /home/ryo/.pyenv/versions/3.11.9/bin/pipenv run python scrape_values.py > /dev/null 2>&1
+/home/ryo/.pyenv/versions/3.11.10/bin/pipenv run python scrape_news.py
 
-nohup /home/ryo/.pyenv/versions/3.11.9/bin/pipenv run python scrape_index.py > /dev/null 2>&1
+/home/ryo/.pyenv/versions/3.11.10/bin/pipenv run python scrape_values.py
+
+/home/ryo/.pyenv/versions/3.11.10/bin/pipenv run python scrape_index.py
 
 pgrep -f chrome | xargs -r kill
 
-nohup /home/ryo/.pyenv/versions/3.11.9/bin/pipenv run python time_print.py
+scp -P 224 ./stock_name.json ryo@192.168.1.100:/home/ryo/PBL_stock/stock_name.json
+
+/home/ryo/.pyenv/versions/3.11.10/bin/pipenv run python log_time.py end
